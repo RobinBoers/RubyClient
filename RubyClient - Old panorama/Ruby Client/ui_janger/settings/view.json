@@ -1,0 +1,300 @@
+/********************************************************
++*   @FMarquesPTO. All rights reserved. *
++*********************************************************/
+{
+  "namespace": "viewer_janger",
+
+  "viewer_button@new_button_toggle_janger.button_toggle": {
+    "$toggle_name": "settings",
+    "$control_name": "interface_button_toggle",
+    "$toggle_index": 103,
+    "$toggle_text": "View.."
+  },
+
+  "viewer_content_panel@new_common_janger.scrolling_screen_content_panel": {
+    "$title_text": "View..",
+    "$title_offset": [ 0, 9 ],
+    "$top_content": "viewer_janger.top_content",
+    "$scrolling_content": "viewer_janger.scrolling_content",
+    "$bottom_content": "viewer_janger.bottom_content",
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "interface_button_toggle",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  "top_content": {
+    "type": "panel",
+    "controls": [
+      { "title_label@new_common_janger.title_label": {} }
+    ]
+  },
+
+  "scrolling_content": {
+    "type": "stack_panel",
+    "size": [ 310, "100%c" ],
+    "controls": [
+      { "scrolling_dirt_background@scrolling_janger.scrolling_dirt_background": {} },
+     
+      {
+        "row_three@stacked_row": {
+          "$left_content": "viewer_janger.field_of_view_toggle",
+          "$right_content": "viewer_janger.view_bobbing_toggle"
+        }
+      },
+      {
+        "row_four@stacked_row": {
+          "$left_content": "viewer_janger.gui_scale_slider",
+          "$right_content": "viewer_janger.outline_selection_toggle",
+          "$right_vr_content": "viewer_janger.vr_outline_selection_toggle"
+        }
+      },
+      {
+        "row_six@stacked_row": {
+          "$left_content": "viewer_janger.fullscreen_toggle",
+          "$right_content": "viewer_janger.hide_paperdoll_toggle"
+        }
+      },
+
+      {
+        "row_seven@stacked_row": {
+          "$left_content": "viewer_janger.hud_opacity_slider",
+          "$right_content": "viewer_janger.hide_hud_toggle",
+          "$right_vr_content": "viewer_janger.vr_hide_hud_toggle"
+        }
+      },
+      {
+        "row_nine@stacked_row": {
+          "$left_content": "viewer_janger.hide_hand_toggle",
+          "$left_vr_content": "viewer_janger.vr_hide_hand_toggle",
+          "$right_content": "viewer_janger.player_names_toggle"
+        }
+      },
+      {
+        "row_ten@stacked_row": {
+          "$left_content": "viewer_janger.auto_save_icon_toggle",
+          "$right_content": "viewer_janger.setup_safe_zone_button",
+          "$right_substitute_content": "viewer_janger.screen_animations_toggle"
+        }
+      },
+      {
+        "row_eleven@stacked_row": {
+          "ignored": "$is_in_game",
+          "$right_content": "viewer_janger.screen_animations_toggle",
+          "$left_content": "viewer_janger.ui_profile_multioption_panel"
+        }
+      }
+     
+    ]
+  },
+
+  "bottom_content": {
+    "type": "panel",
+
+    "controls": [
+      { "settings_button@settings_janger.settings_button": { "offset": [ 0, 5 ] } }
+    ]
+  },
+
+  "stacked_row": {
+    "type": "panel",
+    "size": [ 310, 24 ],
+    "controls": [
+      { "$left_substitute_content@$left_substitute_content": { "ignored": "(not $is_in_game)", "offset": [ 0, 2 ] } },
+      { "$left_content@$left_content": { "offset": [ 0, 2 ] } },
+      { "$left_vr_content@$left_vr_content": { "offset": [ 0, 2 ] } },
+      { "$right_content@$right_content": { "offset": [ 160, 2 ] } },
+      { "$right_vr_content@$right_vr_content": { "offset": [ 160, 2 ] } },
+      { "$right_substitute_content@$right_substitute_content": { "ignored": "(not $is_in_game)", "$toggle_size": [ 150, 20 ], "offset": [ 160, 2 ] } }
+    ]
+  },
+
+  
+  "field_of_view_toggle@option_toggle_janger.option_toggle": {
+    "$option_label": "options.fov.dynamic",
+    "$option_binding_name": "#field_of_view_toggle",
+    "$option_enabled_binding_name": "#field_of_view_toggle_enabled",
+    "$toggle_name": "field_of_view_toggle"
+  },
+
+  "view_bobbing_toggle@option_toggle_janger.option_toggle": {
+    "$enabled": "(not $is_holographic or not $is_reality_mode)",
+    "$option_label": "options.viewBobbing",
+    "$option_binding_name": "#view_bobbing",
+    "$option_enabled_binding_name": "#view_bobbing_enabled",
+    "$toggle_name": "view_bobbing"
+  },
+
+  "gui_scale_slider@option_slider_janger.option_slider": {
+    "$enabled": "(not $is_holographic)",
+    "$option_label": "#gui_scale_slider_label",
+    "$slider_name": "gui_scale",
+    "$slider_value_binding_name": "#gui_scale",
+    "$slider_tts_text_value": "#gui_scale_text_value",
+    "$option_enabled_binding_name": "#gui_scale_enabled",
+    "$slider_steps_binding_name": "#gui_scale_steps",
+    "$label_bindings": [
+      {
+        "binding_name": "$option_label"
+      }
+    ],
+    "bindings": [
+      {
+        "binding_name": "#gui_scale_visible",
+        "binding_name_override": "#enabled"
+      }
+    ]
+  },
+
+  "outline_selection_toggle@option_toggle_janger.option_toggle": {
+    "ignored": "($is_holographic)",
+    "$option_label": "options.selection",
+    "$on_text": "options.selection.outline",
+    "$off_text": "options.selection.highlight",
+    "$option_binding_name": "#classic_box_selection",
+    "$option_enabled_binding_name": "#classic_box_selection_enabled",
+    "$toggle_name": "classic_box_selection"
+  },
+
+  "vr_outline_selection_toggle@option_toggle_janger.option_toggle": {
+    "ignored": "(not $is_holographic)",
+    "$option_label": "options.selection",
+    "$on_text": "options.selection.outline",
+    "$off_text": "options.selection.highlight",
+    "$option_binding_name": "#vr_classic_box_selection",
+    "$option_enabled_binding_name": "#vr_classic_box_selection_enabled",
+    "$toggle_name": "vr_classic_box_selection"
+  },
+
+
+  "fullscreen_toggle@option_toggle_janger.option_toggle": {
+    "$show_fullscreen_toggle|default": true,
+    "$enabled": "($show_fullscreen_toggle and not $is_holographic)",
+    "$option_label": "options.fullscreen",
+    "$option_binding_name": "#full_screen",
+    "$option_enabled_binding_name": "#full_screen_enabled",
+    "$toggle_name": "full_screen"
+  },
+ 
+
+  "hud_opacity_slider@option_slider_janger.option_slider": {
+    "$option_label": "#interface_opacity_slider_label",
+    "$slider_name": "interface_opacity",
+    "$slider_value_binding_name": "#interface_opacity",
+    "$slider_tts_text_value": "#interface_opacity_text_value",
+    "$option_enabled_binding_name": "#interface_opacity_enabled",
+    "$label_bindings": [
+      {
+        "binding_name": "$option_label"    
+      }
+    ]
+  },
+     
+  "hide_hud_toggle@option_toggle_janger.option_toggle": {
+    "ignored": "($is_holographic)",
+    "$option_label": "options.hud",
+    "$on_text": "options.hidden",
+    "$off_text": "options.visible",
+    "$option_binding_name": "#hide_hud",
+    "$option_enabled_binding_name": "#hide_hud_enabled",
+    "$toggle_name": "hide_hud"
+  },
+  
+  "vr_hide_hud_toggle@option_toggle_janger.option_toggle": {
+    "ignored": "(not $is_holographic)",
+    "$option_label": "options.hud",
+    "$on_text": "options.hidden",
+    "$off_text": "options.visible",
+    "$option_binding_name": "#vr_hide_hud",
+    "$option_enabled_binding_name": "#vr_hide_hud_enabled",
+    "$toggle_name": "vr_hide_hud"
+  },
+
+
+  "hide_hand_toggle@option_toggle_janger.option_toggle": {
+    "ignored": "($is_holographic)",
+    "$option_label": "options.hand",
+    "$on_text": "options.hidden",
+    "$off_text": "options.visible",
+    "$option_binding_name": "#hide_hand",
+    "$option_enabled_binding_name": "#hide_hand_enabled",
+    "$toggle_name": "hide_hand"
+  },
+
+  "vr_hide_hand_toggle@option_toggle_janger.option_toggle": {
+    "ignored": "(not $is_holographic)",
+    "$option_label": "options.hand",
+    "$on_text": "options.hidden",
+    "$off_text": "options.visible",
+    "$option_binding_name": "#vr_hide_hand",
+    "$option_enabled_binding_name": "#vr_hide_hand_enabled",
+    "$toggle_name": "vr_hide_hand"
+  },
+
+  "hide_paperdoll_toggle@option_toggle_janger.option_toggle": {
+    "$option_label": "options.paperdoll",
+    "$on_text": "options.hidden",
+    "$off_text": "options.visible",
+    "$option_binding_name": "#hide_paperdoll",
+    "$option_enabled_binding_name": "#hide_paperdoll_enabled",
+    "$toggle_name": "hide_paperdoll"
+  },
+
+  "player_names_toggle@option_toggle_janger.option_toggle": {
+    "$option_label": "options.ingamePlayerNames",
+    "$option_binding_name": "#ingame_player_names",
+    "$option_enabled_binding_name": "#ingame_player_names_enabled",
+    "$toggle_name": "ingame_player_names"
+  },
+
+  "auto_save_icon_toggle@option_toggle_janger.option_toggle": {
+    "$option_label": "options.autosaveicon",
+    "$option_binding_name": "#show_auto_save_icon",
+    "$option_enabled_binding_name": "#show_auto_save_icon_enabled",
+    "$toggle_name": "show_auto_save_icon"
+  },
+
+  "screen_animations_toggle@option_toggle_janger.option_toggle": {
+    "$enabled": "(not $is_holographic)",
+    "$option_label": "options.screenAnimations",
+    "$option_binding_name": "#screen_animations",
+    "$option_enabled_binding_name": "#screen_animations_enabled",
+    "$toggle_name": "screen_animations",
+    "bindings": [
+      {
+        "binding_name": "#screen_animations_visible",
+        "binding_name_override": "#enabled"
+      }
+    ]
+  },
+
+  "setup_safe_zone_button@button_janger.action_button": {
+    "$pressed_button_name": "setup_safe_zone_button",
+    "ignored": "$is_in_game",
+    "$button_text": "options.safeZone.title"
+  },
+
+  "ui_profile_multioption_panel@multioption_janger.multioption_panel": {
+    "$option_label": "options.uiprofile",
+    "$multi_options": [
+      {
+        "default@multioption_janger.multi_option_toggle": {
+          "$chooser_text_last": "options.uiprofile.classic",
+          "$next_option_name": "#ui_profile_radio_pocket",
+          "$last_option_name": "#ui_profile_radio_classic"
+        }
+      },
+      {
+        "small@multioption_janger.multi_option_toggle": {
+          "$chooser_text_last": "options.uiprofile.pocket",
+          "$next_option_name": "#ui_profile_radio_classic",
+          "$last_option_name": "#ui_profile_radio_pocket"
+        }
+      }
+    ]
+  }
+}

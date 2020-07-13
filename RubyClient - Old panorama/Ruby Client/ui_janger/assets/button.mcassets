@@ -1,0 +1,424 @@
+//File created and written by @FMarquesPTO. ©All rights reserved.
+//You are not allowed to use any code design in the file without permission.
+{
+  "namespace": "button_java",
+
+  //--------------------------------------------------------------------------------
+  // Button Java: Base
+  //--------------------------------------------------------------------------------
+
+  "button": {
+    "type": "button",
+    "$focus_id|default": "",
+    "$focus_override_down|default": "",
+    "$focus_override_up|default": "",
+    "$focus_override_left|default": "",
+    "$focus_override_right|default": "",
+    "focus_identifier": "$focus_id",
+    "focus_change_down": "$focus_override_down",
+    "focus_change_up": "$focus_override_up",
+    "focus_change_left": "$focus_override_left",
+    "focus_change_right": "$focus_override_right",
+    "focus_enabled": true,
+    "focus_magnet_enabled": true,
+    "$button_focus_precedence|default": 0,
+    "default_focus_precedence": "$button_focus_precedence",
+    "$button_tts_name|default": "",
+    "$button_tts_header|default": "",
+    "$tts_section_header|default": "",
+    "$button_tts_control_type_order_priority|default": -100,
+    "tts_name": "$button_tts_name",
+    "tts_control_header": "$button_tts_header",
+    "$default_state|default": false,
+    "$hover_state|default": false,
+    "$pressed_state|default": false,
+    "$locked_state|default": false,
+    "tts_section_header": "$tts_section_header",
+    "tts_control_type_order_priority": "$button_tts_control_type_order_priority",
+    "layer": 1,
+    "sound_name": "random.click",
+    "sound_volume": 1.0,
+    "sound_pitch": 1.0,
+    "locked_control": "",
+    "default_control": "default",
+    "hover_control": "hover",
+    "pressed_control": "pressed",
+    "button_mappings": [
+      {
+        "from_button_id": "button.menu_select",
+        "to_button_id": "$pressed_button_name",
+        "mapping_type": "pressed"
+      },
+      {
+        "from_button_id": "button.menu_ok",
+        "to_button_id": "$pressed_button_name",
+        "mapping_type": "focused"
+      }
+    ],
+    "$button_bindings|default": [],
+    "bindings": "$button_bindings"
+  },
+
+  //--------------------------------------------------------------------------------
+  // Button Java: Button (200px)
+  //--------------------------------------------------------------------------------
+
+  "classic_legacy_button@button_java.button": {
+    "size": "$button_size",
+    "$button_size": [ 200, 20 ],
+    "locked_control": "locked",
+    "$button_state|default": "button_java.button_state",
+    "$uv_size_image": "$button_200px_uv_size",
+    "$left_division_percentage": [ 100, 20 ],
+    "$right_division_percentage": [ 100, 20 ],
+    "controls": [
+      {
+        "default@$button_state": {
+          "$left_uv_image": "$button_200px_left_default_uv",
+          "$right_uv_image": "$button_200px_right_default_uv",
+          "$button_label_color": "$button_default_label_color",
+          "$default_state": true,
+          "layer": 2
+        } 
+      },
+      {
+        "hover@$button_state": {
+          "$left_uv_image": "$button_200px_left_hover_uv",
+          "$right_uv_image": "$button_200px_right_hover_uv",
+          "$button_label_color": "$button_hover_label_color",
+          "$hover_state": true,
+          "layer": 3
+        }
+      },
+      {
+        "pressed@$button_state": {
+          "$left_uv_image": "$button_200px_left_pressed_uv",
+          "$right_uv_image": "$button_200px_right_pressed_uv",
+          "$button_label_color": "$button_pressed_label_color",
+          "$pressed_state": true,
+          "layer": 4
+        }
+      },
+      {
+        "locked@$button_state": {
+          "$left_uv_image": "$button_200px_left_locked_uv",
+          "$right_uv_image": "$button_200px_right_locked_uv",
+          "$button_label_color": "$button_locked_label_color",
+          "$locked_state": true,
+          "layer": 5
+        } 
+      }
+    ]
+  },
+
+  //--------------------------------------------------------------------------------
+  // Button Java: Button (150px)
+  //--------------------------------------------------------------------------------
+
+  "classic_legacy_button_150px@button_java.button": {
+    "size": "$button_size",
+    "$button_size": [ 150, 20 ],
+    "locked_control": "locked",
+    "$button_state|default": "button_java.button_state",
+    "$uv_size_image": "$button_150px_uv_size",
+    "$left_division_percentage": [ 75, 20 ],
+    "$right_division_percentage": [ 75, 20 ],
+    "controls": [
+      {
+        "default@$button_state": {
+          "$left_uv_image": "$button_150px_left_default_uv",
+          "$right_uv_image": "$button_150px_right_default_uv",
+          "$button_label_color": "$button_default_label_color"
+        } 
+      },
+      {
+        "hover@$button_state": {
+          "$left_uv_image": "$button_150px_left_hover_uv",
+          "$right_uv_image": "$button_150px_right_hover_uv",
+          "$button_label_color": "$button_hover_label_color"
+        }
+      },
+      {
+        "pressed@$button_state": {
+          "$left_uv_image": "$button_150px_left_pressed_uv",
+          "$right_uv_image": "$button_150px_right_pressed_uv",
+          "$button_label_color": "$button_pressed_label_color"
+        }
+      },
+      {
+        "locked@$button_state": {
+          "$left_uv_image": "$button_150px_left_locked_uv",
+          "$right_uv_image": "$button_150px_right_locked_uv",
+          "$button_label_color": "$button_locked_label_color"
+        } 
+      }
+    ]
+  },
+
+  //--------------------------------------------------------------------------------
+  // Button Java: Button (73px)
+  //--------------------------------------------------------------------------------
+
+  "classic_legacy_button_73px@button_java.button": {
+    "size": "$button_size",
+    "$button_size|default": [ 73, 20 ],
+    "locked_control": "locked",
+    "$button_state|default": "button_java.button_state",
+    "$uv_size_image": "$button_73px_uv_size",
+    "$uv_size_image_right": "$button_73px_right_uv_size",
+    "$left_division_percentage": [ 36, 20 ],
+    "$right_division_percentage": [ 37, 20 ],
+    "controls": [
+      {
+        "default@$button_state": {
+          "$left_uv_image": "$button_73px_left_default_uv",
+          "$right_uv_image": "$button_73px_right_default_uv",
+          "$button_label_color": "$button_default_label_color"
+        } 
+      },
+      {
+        "hover@$button_state": {
+          "$left_uv_image": "$button_73px_left_hover_uv",
+          "$right_uv_image": "$button_73px_right_hover_uv",
+          "$button_label_color": "$button_hover_label_color"
+        }
+      },
+      {
+        "pressed@$button_state": {
+          "$left_uv_image": "$button_73px_left_pressed_uv",
+          "$right_uv_image": "$button_73px_right_pressed_uv",
+          "$button_label_color": "$button_pressed_label_color"
+        }
+      },
+      {
+        "locked@$button_state": {
+          "$left_uv_image": "$button_73px_left_locked_uv",
+          "$right_uv_image": "$button_73px_right_locked_uv",
+          "$button_label_color": "$button_locked_label_color"
+        } 
+      }
+    ]
+  },
+
+  //--------------------------------------------------------------------------------
+  // Button Java: Button (73px)
+  //--------------------------------------------------------------------------------
+
+  "classic_legacy_button_50px@button_java.button": {
+    "size": "$button_size",
+    "$button_size|default": [ 50, 20 ],
+    "locked_control": "locked",
+    "$button_state|default": "button_java.button_state",
+    "$uv_size_image": "$button_50px_uv_size",
+    "$left_division_percentage": [ 25, 20 ],
+    "$right_division_percentage": [ 25, 20 ],
+    "controls": [
+      {
+        "default@$button_state": {
+          "$left_uv_image": "$button_50px_left_default_uv",
+          "$right_uv_image": "$button_50px_right_default_uv",
+          "$button_label_color": "$button_default_label_color"
+        } 
+      },
+      {
+        "hover@$button_state": {
+          "$left_uv_image": "$button_50px_left_hover_uv",
+          "$right_uv_image": "$button_50px_right_hover_uv",
+          "$button_label_color": "$button_hover_label_color"
+        }
+      },
+      {
+        "pressed@$button_state": {
+          "$left_uv_image": "$button_50px_left_pressed_uv",
+          "$right_uv_image": "$button_50px_right_pressed_uv",
+          "$button_label_color": "$button_pressed_label_color"
+        }
+      },
+      {
+        "locked@$button_state": {
+          "$left_uv_image": "$button_50px_left_locked_uv",
+          "$right_uv_image": "$button_50px_right_locked_uv",
+          "$button_label_color": "$button_locked_label_color"
+        } 
+      }
+    ]
+  },
+
+  //--------------------------------------------------------------------------------
+  // Button Java: Button (20px)
+  //--------------------------------------------------------------------------------
+
+  "classic_legacy_button_20px@button_java.button": {
+    "size": "$button_size",
+    "$button_size|default": [ 20, 20 ],
+    "locked_control": "locked",
+    "$button_state|default": "button_java.button_state",
+    "$uv_size_image": "$button_20px_uv_size",
+    "$left_division_percentage": [ 10, 20 ],
+    "$right_division_percentage": [ 10, 20 ],
+    "controls": [
+      {
+        "default@$button_state": {
+          "$left_uv_image": "$button_20px_left_default_uv",
+          "$right_uv_image": "$button_20px_right_default_uv",
+          "$button_label_color": "$button_default_label_color",
+          "$default_state": true,
+          "layer": 2
+        } 
+      },
+      {
+        "hover@$button_state": {
+          "$left_uv_image": "$button_20px_left_hover_uv",
+          "$right_uv_image": "$button_20px_right_hover_uv",
+          "$button_label_color": "$button_hover_label_color",
+          "$hover_state": true,
+          "layer": 3
+        }
+      },
+      {
+        "pressed@$button_state": {
+          "$left_uv_image": "$button_20px_left_pressed_uv",
+          "$right_uv_image": "$button_20px_right_pressed_uv",
+          "$button_label_color": "$button_pressed_label_color",
+          "$pressed_state": true,
+          "layer": 4
+        }
+      },
+      {
+        "locked@$button_state": {
+          "$left_uv_image": "$button_20px_left_locked_uv",
+          "$right_uv_image": "$button_20px_right_locked_uv",
+          "$button_label_color": "$button_locked_label_color",
+          "$locked_state": true,
+          "layer": 5
+        } 
+      }
+    ]
+  },
+
+  //--------------------------------------------------------------------------------
+  // Button Java: Button (98px)
+  //--------------------------------------------------------------------------------
+
+  "classic_legacy_button_98px@button_java.button": {
+    "size": "$button_size",
+    "$button_size|default": [ 98, 20 ],
+    "locked_control": "locked",
+    "$button_state|default": "button_java.button_state",
+    "$uv_size_image": "$button_98px_uv_size",
+    "$left_division_percentage": [ 49, 20 ],
+    "$right_division_percentage": [ 49, 20 ],
+    "controls": [
+      {
+        "default@$button_state": {
+          "$left_uv_image": "$button_98px_left_default_uv",
+          "$right_uv_image": "$button_98px_right_default_uv",
+          "$button_label_color": "$button_default_label_color"
+        } 
+      },
+      {
+        "hover@$button_state": {
+          "$left_uv_image": "$button_98px_left_hover_uv",
+          "$right_uv_image": "$button_98px_right_hover_uv",
+          "$button_label_color": "$button_hover_label_color"
+        }
+      },
+      {
+        "pressed@$button_state": {
+          "$left_uv_image": "$button_98px_left_pressed_uv",
+          "$right_uv_image": "$button_98px_right_pressed_uv",
+          "$button_label_color": "$button_pressed_label_color"
+        }
+      },
+      {
+        "locked@$button_state": {
+          "$left_uv_image": "$button_98px_left_locked_uv",
+          "$right_uv_image": "$button_98px_right_locked_uv",
+          "$button_label_color": "$button_locked_label_color"
+        } 
+      }
+    ]
+  },
+
+  //--------------------------------------------------------------------------------
+  // Button Java: Other Buttons
+  //--------------------------------------------------------------------------------
+
+  "classic_legacy_button_hyperlink@button_java.button": {
+    "$pressed_button_name": "button.menu_open_uri",
+    "locked_control": "",
+    "size": "$button_size",
+    "property_bag": {
+      "#hyperlink": ""
+    }
+  },
+
+  "classic_legacy_action_button@button_java.classic_legacy_button_150px": {
+    "$pressed_button_name|default": "unset_button_name",
+    "$button_label|default": "unset $button_label"
+  },
+
+  //--------------------------------------------------------------------------------
+  // Button Java: Button State
+  //--------------------------------------------------------------------------------
+
+  "button_state": {
+    "type": "panel",
+    "$button_alpha|default": 1,
+    "$button_label|default": "",
+    "$button_label_color|default": [],
+    "$uv_size_image_right|default": "$uv_size_image",
+    "$uv_size_image_left|default": "$uv_size_image",
+    "$button_content|default": "",
+    "controls": [
+      { "$button_content@$button_content": {} },
+      {
+        "image_content": {
+          "type": "stack_panel",
+          "orientation": "horizontal",
+          "size": [ "100%", "100%" ],
+          "visible": "$show_button_image",
+          "$show_button_image|default": true,
+          "controls": [
+            {
+              "left_image": {
+                "type": "image",
+                "texture": "$widgets_texture",
+                "uv": "$left_uv_image",
+                "uv_size": "$uv_size_image_left",
+                "size": "$left_division_percentage",
+                "alpha": "$button_alpha",
+                "layer": 2
+              }
+            },
+            {
+              "right_image": {
+                "type": "image",
+                "texture": "$widgets_texture",
+                "size": "$right_division_percentage",
+                "uv": "$right_uv_image",
+                "uv_size": "$uv_size_image_right",
+                "alpha": "$button_alpha",
+                "layer": 2
+              }
+            }
+          ]
+        }
+      },
+      {
+        "label_content": {
+          "type": "label",
+          "text": "$button_label",
+          "color": "$button_label_color",
+          "shadow": true,
+          "alpha": "$button_alpha",
+          "anchor_from": "center",
+          "anchor_to": "center",
+          "layer": 10,
+          "bindings": "$button_label_bindings",
+          "$button_label_bindings|default": []
+        }
+      }
+    ]
+  }
+}

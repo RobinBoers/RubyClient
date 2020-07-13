@@ -1,0 +1,81 @@
+/********************************************************
++*   @FMarquesPTO. All rights reserved. *
++*********************************************************/
+{
+  "namespace": "more_edit_options_janger",
+
+  "more_edit_options_button@button_toggle_janger.button_toggle": {
+    "$enter_name": "more_edit_options",
+    "$toggle_text": "selectWorld.moreWorldOptions",
+    "$toggle_group_forced_index": 3
+  },
+
+  "more_edit_options_button_back@button_toggle_janger.button_toggle_back": {
+    "$back_name": "world_edit_more_edit_options",
+    "$toggle_size": [ 150, 20 ]
+  },
+
+  "more_edit_options_content_panel": {
+    "type": "panel",
+    "$title_text": "selectWorld.edit.title",
+    "controls": [
+      { "top_title_panel@common_janger.top_title_panel": {} },
+      { "menu_content_panel@menu_content_panel": {} }
+    ],
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "more_edit_options_button_toggle",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "more_options_game_settings_toggle_button",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  "menu_content_panel": {
+    "type": "panel",
+    "size": [ 310, 182 ],
+    "anchor_from": "center",
+    "anchor_to": "top_middle",
+    "offset": [ 0, "-35%" ],
+    "controls": [
+      { "enter_seed_box@enter_seed_box": {} },
+      { "seed_box_info@option_text_edit_box_janger.option_label": { "text": "selectWorld.seedInfo", "offset": [ 55, 37 ] } },
+      { "experimental_gameplay_toggle@game_settings_janger.experimental_gameplay_toggle": { "offset": [ 0, 54 ] } },
+      { "cheats_info@option_text_edit_box_janger.option_label": { "text": "selectWorld.newFeatures.info", "offset": [ 5, 74 ] } },
+      { "allow_cheats_toggle@allow_cheats_toggle": { "offset": [ 0, 104 ] } },
+      { "cheats_info@option_text_edit_box_janger.option_label": { "text": "selectWorld.allowCommands.info", "offset": [ 5, 124 ] } },
+      { "game_settings_button@game_settings_janger.game_settings_button": { "offset": [ 160, 104 ] } },
+      { "more_options_button@more_edit_options_janger.more_edit_options_button_back": { "offset": [ 0, 142 ] } }
+    ]
+  },
+
+  "enter_seed_box@option_text_edit_box_janger.option_text_edit_box": {
+    "$tts_section_header": "createWorldScreen.worldPreferences",
+    "$enabled": "($is_seeds_enabled or not $education_edition)",
+    "$option_label": "selectWorld.enterSeed",
+    "$option_binding_name": "#world_seed",
+    "$option_enabled_binding_name": "#world_seed_enabled",
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "$text_box_name": "world_seed_text_box",
+    "$pressed_button_name": "choose_ugc_level_seed",
+    "$button_tts_header": "accessibility.settings.chooseSeed"
+  },
+
+  "allow_cheats_toggle@option_toggle_janger.option_toggle": {
+    "$tts_section_header": "createWorldScreen.cheatSettings",
+    "$option_label": "selectWorld.allowCommands",
+    "$option_binding_name": "#allow_cheats",
+    "$option_enabled_binding_name": "#allow_cheats_enabled",
+    "$toggle_name": "allow_cheats",
+    "$focus_override_right": "FOCUS_OVERRIDE_STOP",
+    "$toggle_binding_condition": "always_when_visible"
+  }
+}

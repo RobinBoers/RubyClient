@@ -1,0 +1,32 @@
+{
+   "format_version" : 2,
+   "header" : {
+      "description" : "Clear Water, Ore Borders, Clean UI, VanillaTweaks textures and much more!",
+      "name" : "§cRuby Client §6Version §21 - §fRED UI",
+      "uuid" : "331f77ff-edb8-4410-be16-c845d7480b1e",
+      "version" : [ 1, 0, 0 ],
+      "min_engine_version" : [ 1, 14, 0 ]
+   },
+   "modules" : [
+      {
+         "description" : "Ruby Client V1",
+         "type" : "resources",
+         "uuid" : "362009a1-bb12-438b-b6fc-1b3b4cdfc2ff",
+         "version" : [ 5, 0, 0 ]
+      }
+   ],
+   
+   "subpacks": [
+      {
+         "folder_name": "astral",
+         "name": "Enable Ruby GUI Textures (Dark Mode + Clear UI)",
+         "memory_tier": 1
+      },
+      {
+         "folder_name": "Nothing",
+         "name": "Default (Use this for better compatibility with your resource packs.)",
+         "memory_tier": 1
+      }
+    
+   ]
+}

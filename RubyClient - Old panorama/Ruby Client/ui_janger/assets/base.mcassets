@@ -1,0 +1,155 @@
+//File created and written by @FMarquesPTO. ©All rights reserved.
+//You are not allowed to use any code design in the file without permission.
+{
+  "namespace": "base_java",
+
+  //--------------------------------------------------------------------------------
+  // Base Java: Screen
+  //--------------------------------------------------------------------------------
+
+  "screen_base": {
+    "type": "panel",
+    "$top_panel_size|default": [ "100%", 32 ],
+    "$middle_panel_size|default": [ "100%", "fill" ],
+    "$bottom_panel_size|default": [ "100%", 32 ],
+    "$top_content_panel|default": "base_java.screen_base_top_content_panel",
+    "$middle_content_panel|default": "",
+    "$bottom_content_panel|default": "",
+    "$bg|default": true,
+    "$scroll_panel|default": false,
+    "$scroll_panel_size|default": [ 310, "100%" ],
+    "$scroll_offset|default": [ 160, 0 ],
+    "controls": [
+      { "bg@base_java.dirt_background": { "visible": "$bg" } },
+      { "substitute_bg@base_java.in_game_background": { "visible": "(not $bg)", "ignored": "$ignored_sb_bg" } },
+      {
+        "stack_panel": {
+          "type": "stack_panel",
+          "size": [ "100%", "100%" ],
+          "controls": [
+            {
+              "top_panel": {
+                "type": "panel",
+                "size": "$top_panel_size",
+                "controls": [
+                  { "$top_content_panel@$top_content_panel": {} }
+                ]
+              }
+            },
+            {
+              "middle_panel": {
+                "type": "panel",
+                "size": "$middle_panel_size",
+                "controls": [
+                  { "$middle_content_panel@$middle_content_panel": {} },
+                  { "border_shadow@base_java.border_shadow": { "ignored": "(not $scroll_panel)" } },
+                  { "scrolling_panel@scrolling_panel_java.scrolling_panel": { "ignored": "(not $scroll_panel)" } }
+                ]
+              }
+            },
+            {
+              "bottom_panel": {
+                "type": "panel",
+                "size": "$bottom_panel_size",
+                "controls": [
+                  { "$bottom_content_panel@$bottom_content_panel": {} }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "screen_base_top_content_panel": {
+    "type": "panel",
+    "controls": [
+      { "@screen_title": {} }
+    ]
+  },
+
+  "screen_title":{
+    "type": "label",
+    "text": "$screen_title",
+    "color": "white",
+    "shadow": true,
+    "offset": "$offset_title",
+    "$offset_title|default": [ 0, 0 ],
+    "$anchor_title|default": "center",
+    "anchor_from": "$anchor_title",
+    "anchor_to": "$anchor_title",
+    "layer": 10,
+    "bindings": "$screen_title_bindings",
+    "$screen_title_bindings|default": [] 
+  },
+
+  "scroll_dark_bg": {
+    "type": "screen",
+    "controls": [
+      {
+        "background@base_java.dirt_background": {
+          "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+          "layer": 0,
+          "color": [ 0.15, 0.15, 0.15 ],
+          "offset": [ 0, -100 ],
+          "size": [ 1000, 2000 ]
+        }
+      }
+    ]
+  },
+
+  "border_shadow": {
+    "type": "panel",
+    "layer": 10,
+    "controls": [
+      {
+        "top_gradient": {
+          "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+          "size": [ "100%", 5 ],
+          "type": "custom",
+          "renderer": "gradient_renderer",
+          "color1": [ 0, 0, 0, 1 ],
+          "color2": [ 0, 0, 0, 0 ]
+        }
+      },
+      {
+        "bottom_gradient": {
+          "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle",
+          "size": [ "100%", 5 ],
+          "type": "custom",
+          "renderer": "gradient_renderer",
+          "color1": [ 0, 0, 0, 0 ],
+          "color2": [ 0, 0, 0, 1 ]
+        }
+      }
+    ]
+  },
+
+  "dirt_background": {
+    "type": "image",
+    "texture": "$options_background_texture",
+    "color": [ 0.30, 0.30, 0.30 ],
+    "tiled": true,
+    "size": [ "300%", "300%" ],
+    "tiled_scale": "$options_bg_tiled_scale",
+    "layer": -2
+  },
+
+  "in_game_background": {
+    "type": "image",
+    "texture": "$white_base_image_texture",
+    "color": "$in_game_background_color",
+    "size": [ 2000, 2000 ],
+    "alpha": "$screen_bg_alpha",
+    "$screen_bg_alpha|default": "$in_game_background_alpha",
+    "layer": -10
+  },
+
+  "in_container_background@in_game_background": {
+    "$screen_bg_alpha": "$in_container_background_alpha"
+  }
+}

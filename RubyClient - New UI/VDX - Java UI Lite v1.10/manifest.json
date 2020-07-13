@@ -1,0 +1,17 @@
+{
+  "format_version": 2,
+  "header": {
+    "description": "By @CrisXolt, an experimental UI pack made since Q4 of 2016.",
+    "name": "VDX: Java UI Lite v1.10",
+    "uuid": "84823e19-c369-4553-bf3a-375d585c69a5",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 14, 0]
+  },
+  "modules": [
+    {
+      "type": "resources",
+      "uuid": "462d4323-c1c0-4dbd-9d21-9e37b10be7e3",
+      "version": [0, 0, 1]
+    }
+  ]
+}

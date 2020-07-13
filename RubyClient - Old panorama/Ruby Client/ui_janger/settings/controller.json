@@ -1,0 +1,221 @@
+/********************************************************
++*   @FMarquesPTO. All rights reserved. *
++*********************************************************/
+{
+  "namespace": "controller_janger",
+
+  "controller_button@new_button_toggle_janger.button_toggle": {
+    "$toggle_name": "settings",
+    "$control_name": "controller_view",
+    "$toggle_index": 106,
+    "$toggle_text": "options.controller"
+  },
+
+  "controller_settings_button@new_button_toggle_janger.button_toggle": {
+    "$toggle_name": "controller",
+    "$control_name": "controller_settings_view",
+    "$toggle_index": 1,
+    "$toggle_text": "options.controllerSettings"
+  },
+
+  "controller_content_panel": {
+    "type": "panel",
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "controller_view",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ],
+    "controls": [
+      { "controller_content@controller_janger.controller_content": {} },
+      { "controller_settings@controller_janger.controller_settings_content_panel": {} }
+    ]
+  },
+
+  "controller_content@common_janger.scrolling_screen_content_panel": {
+    "$title_text": "controls.title",
+    "$title_offset": [ 0, 5 ],
+    "$top_zone_size": [ "100%", 40 ],
+    "$top_content": "controller_janger.controller_top_content",
+    "$scrolling_content": "controller_janger.controller_scrolling_content",
+    "$bottom_content": "controller_janger.controller_bottom_content",
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "controller_settings_view",
+        "source_property_name": "(not #toggle_state)",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  "controller_settings_content_panel": {
+    "type": "panel",
+    "$title_text": "options.controllerSettings.title",
+    "controls": [
+      { "top_title_panel@new_common_janger.top_title_panel": {} },
+      { "controller_settings_content@controller_janger.controller_settings_content": {} }
+    ],
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "controller_settings_view",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  "controller_top_content": {
+    "type": "panel",
+    "controls": [
+      { "top_title_panel@new_common_janger.top_title_panel": {} },
+      {
+        "box_content": {
+          "type": "panel",
+          "size": [ 310, 20 ],
+          "offset": [ 0, 7 ],
+          "controls": [
+            { "controller_settings_button@controller_janger.controller_settings_button": {} },
+            { "auto_jump_toggle@controller_janger.auto_jump_toggle": { "offset": [ 160, 0 ] } }
+          ]
+        }
+      }
+    ]
+  },
+
+  "controller_scrolling_content": {
+    "type": "panel",
+    "size": [ 326, "100%c" ],
+    "$keymapping_grid_dimension": "#gamepad_grid_dimension",
+    "$keymapping_collection": "gamepad_collection",
+    "controls": [
+      { "scrolling_dirt_background@scrolling_janger.scrolling_dirt_background": {} },
+      { "gamepad_keymapping_grid@controls_janger.gamepad_mapping_grid": {} }
+    ]
+  },
+
+  "controller_settings_content": {
+    "type": "panel",
+    "size": [ 310, 182 ],
+    "anchor_from": "center",
+    "anchor_to": "top_middle",
+    "offset": [ 0, "-40%" ],
+    "controls": [
+      { "sensitivity_slider@controller_janger.sensitivity_slider": {} },
+      { "invert_y_axis_toggle@controller_janger.invert_y_axis_toggle": { "offset": [ 160, 0 ] } },
+      { "full_keyboard_gameplay_toggle@controller_janger.hide_tooltips_toggle": { "offset": [ 0, 24 ] } },
+      { "hide_keyboard_tooltips_toggle@controller_janger.hide_gamepad_cursor_toggle": { "offset": [ 160, 24 ] } },
+      { "gamepad_swap_ab_toggle@controller_janger.gamepad_swap_ab_toggle": { "offset": [ 0, 48 ] } },
+      { "gamepad_swap_xy@controller_janger.gamepad_swap_xy_toggle": { "offset": [ 160, 48 ] } },
+      { "gamepad_cursor_sensitivity_slider@controller_janger.gamepad_cursor_sensitivity_slider": { "offset": [ 0, 72 ] } },
+      { "not_controller_settings_button@controller_janger.not_controller_settings_button": { "offset": [ 0, 114 ] } }
+    ]
+  },
+
+  "hide_tooltips_toggle@option_toggle_janger.option_toggle": {
+    "$option_label": "options.hidetooltips",
+    "$option_binding_name": "#hide_tooltips",
+    "$option_enabled_binding_name": "#hide_tooltips_enabled",
+    "$toggle_name": "hide_tooltips",
+    "$focus_override_right": "FOCUS_OVERRIDE_STOP"
+  },
+
+  "hide_gamepad_cursor_toggle@option_toggle_janger.option_toggle": {
+    "$option_label": "options.hidegamepadcursor",
+    "$option_binding_name": "#hide_gamepad_cursor",
+    "$option_enabled_binding_name": "#hide_gamepad_cursor_enabled",
+    "$toggle_name": "hide_gamepad_cursor",
+    "$focus_override_right": "FOCUS_OVERRIDE_STOP"
+  },
+
+  "gamepad_swap_ab_toggle@option_toggle_janger.option_toggle": {
+    "$option_label": "options.swapGamepadAB",
+    "$option_binding_name": "#swap_gamepad_ab_buttons",
+    "$option_enabled_binding_name": "#swap_gamepad_ab_buttons_enabled",
+    "$toggle_name": "swap_gamepad_ab_buttons",
+    "$focus_override_right": "FOCUS_OVERRIDE_STOP"
+  },
+
+  "gamepad_swap_xy_toggle@option_toggle_janger.option_toggle": {
+    "$option_label": "options.swapGamepadXY",
+    "$option_binding_name": "#swap_gamepad_xy_buttons",
+    "$option_enabled_binding_name": "#swap_gamepad_xy_buttons_enabled",
+    "$toggle_name": "swap_gamepad_xy_buttons",
+    "$focus_override_right": "FOCUS_OVERRIDE_STOP"
+  },
+
+  "gamepad_cursor_sensitivity_slider@option_slider_janger.option_slider": {
+    "$option_label": "#gamepad_cursor_sensitivity_slider_label",
+    "$slider_name": "gamepad_cursor_sensitivity",
+    "$slider_value_binding_name": "#gamepad_cursor_sensitivity",
+    "$slider_tts_text_value": "#gamepad_cursor_sensitivity_text_value",
+    "$option_enabled_binding_name": "#gamepad_cursor_sensitivity_enabled",
+    "$focus_override_right": "FOCUS_OVERRIDE_STOP",
+    "$label_bindings": [
+      {
+        "binding_name": "$option_label"
+      }
+    ]
+  },
+
+  "sensitivity_slider@option_slider_janger.option_slider": {
+    "$option_label": "#controller_sensitivity_slider_label",
+    "$slider_name": "controller_sensitivity",
+    "$slider_value_binding_name": "#controller_sensitivity",
+    "$slider_tts_text_value": "#controller_sensitivity_text_value",
+    "$option_enabled_binding_name": "#controller_sensitivity_enabled",
+    "$focus_override_right": "FOCUS_OVERRIDE_STOP",
+    "$label_bindings": [
+      {
+        "binding_name": "$option_label"
+      }
+    ]
+  },
+
+  "invert_y_axis_toggle@option_toggle_janger.option_toggle": {
+    "$option_label": "options.invertYAxis",
+    "$option_binding_name": "#controller_invert_y_axis",
+    "$option_enabled_binding_name": "#controller_invert_y_axis_enabled",
+    "$toggle_name": "controller_invert_y_axis",
+    "$focus_override_right": "FOCUS_OVERRIDE_STOP"
+  },
+
+  "auto_jump_toggle@option_toggle_janger.option_toggle": {
+    "$option_label": "options.autojump",
+    "$option_binding_name": "#controller_autojump",
+    "$option_enabled_binding_name": "#controller_autojump_enabled",
+    "$toggle_name": "controller_autojump",
+    "$focus_override_right": "FOCUS_OVERRIDE_STOP"
+  },
+
+  "controller_bottom_content": {
+    "type": "stack_panel",
+    "size": [ 310, 20 ],
+    "offset": [ 0, -4 ],
+    "orientation": "horizontal",
+    "controls": [
+      { "reset_button@controller_janger.reset_button": {} },
+      { "spacer": { "type": "panel", "size": [ 10, "100%" ] } },
+      { "settings_button@settings_janger.settings_button": { "size": [ 150, 20 ] } }
+    ]
+  },
+
+  "reset_button@button_janger.action_button": {
+    "$pressed_button_name": "button.reset_gamepad_bindings",
+    "$button_text": "Reset Keys",
+    "$focus_override_right": "FOCUS_OVERRIDE_STOP"
+  },
+
+  "not_controller_settings_button@new_button_toggle_janger.button_toggle": {
+    "$toggle_name": "controller",
+    "$control_name": "not_controller_settings_view",
+    "$toggle_index": 0,
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "$back_button": true,
+    "$toggle_text": "gui.done"
+  }
+}

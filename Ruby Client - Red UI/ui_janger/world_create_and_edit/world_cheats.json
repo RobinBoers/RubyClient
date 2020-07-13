@@ -1,0 +1,283 @@
+/********************************************************
++*   @FMarquesPTO. All rights reserved. *
++*********************************************************/
+{
+  "namespace": "world_cheats_janger",
+
+  "world_cheats_button@new_button_toggle_janger.button_toggle": {
+    "$toggle_name": "game_settings",
+    "$control_name": "world_cheats_view",
+    "$toggle_text": "Cheats...",
+    "$toggle_index": 2
+  },
+
+  "not_world_cheats_button@new_button_toggle_janger.button_toggle": {
+    "$toggle_name": "game_settings",
+    "$control_name": "world_cheats_view",
+    "$toggle_text": "gui.done",
+    "$back_button": true,
+    "$toggle_indes": 0
+  },
+
+  "world_cheats_content_panel": {
+    "type": "panel",
+    "$title_text": "World Cheats",
+    "controls": [
+      { "top_title_panel@new_common_janger.top_title_panel": {} },
+      { "world_cheats_content@world_cheats_janger.world_cheats_content": {} },
+      { "bottom_content@bottom_content": {} }
+    ],
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "world_cheats_view",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  "world_cheats_content": {
+    "type": "panel",
+    "size": [ 310, 182 ],
+     "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "offset": [ 0, 40 ],
+    "controls": [
+      { "random_tick_speed@random_tick_speed": {} },
+      //Education Edition View
+      { "classroom_settings_toggle@classroom_settings_toggle": { "offset": [ 0, 54 ] } },
+      { "code_builder_toggle@code_builder_toggle": { "offset": [ 160, 54 ] } },
+      { "always_day_toggle@always_day_toggle": { "ignored": "(not $education_edition)", "offset": [ 0, 78 ] } },
+      { "perfect_weather@perfect_weather": { "offset": [ 160, 78 ] } },
+      { "player_damage@player_damage": { "offset": [ 0, 102 ] } },
+      { "pvp_damage@pvp_damage": { "offset": [ 160, 102 ] } },
+      { "allow_destructive_items@allow_destructive_items": { "offset": [ 0, 126 ] } },
+      { "allow_mobs@allow_mobs": { "offset": [ 160, 126 ] } },
+      { "immutable_world@immutable_world": { "offset": [ 0, 150 ] } },
+      //Not Education Edition View
+      { "always_day_toggle@always_day_toggle": { "offset": [ 0, 54 ] } },
+      { "daylight_cycle_toggle@daylight_cycle_toggle": { "offset": [ 160, 54 ] } },
+      { "weather_cycle_toggle@weather_cycle_toggle": { "offset": [ 0, 78 ] } },
+      { "keep_inventory_toggle@keep_inventory_toggle": { "offset": [ 160, 78 ] } },
+      { "mob_spawn_toggle@mob_spawn_toggle": { "offset": [ 0, 102 ] } },
+      { "mob_griefing_toggle@mob_griefing_toggle": { "offset": [ 160, 102 ] } },
+      { "entities_drop_loot_toggle@entities_drop_loot_toggle": { "offset": [ 0, 126 ] } },
+      { "command_blocks_enabled_toggle@command_blocks_enabled_toggle": { "offset": [ 160, 126 ] } },
+      { "education_toggle@education_toggle": { "offset": [ 0, 150 ] } }
+    ]
+  },
+
+  "code_builder_toggle@option_toggle_janger.option_toggle": {
+    "$tts_section_header": "createWorldScreen.cheatSettings",
+    "ignored": "(not $education_edition)",
+    "$option_label": "options.codeBuilder",
+    "$option_binding_name": "#code_builder",
+    "$option_enabled_binding_name": "#code_builder_enabled",
+    "$toggle_name": "code_builder",
+    "$focus_override_right": "FOCUS_OVERRIDE_STOP",
+    "$toggle_binding_condition": "always_when_visible"
+  },
+  
+  "education_toggle@option_toggle_janger.option_toggle": {
+    "$tts_section_header": "createWorldScreen.cheatSettings",
+    "ignored": "$education_edition",
+    "$option_label": "createWorld.settings.educationFeatures",
+    "$option_binding_name": "#education_toggle",
+    "$option_enabled_binding_name": "#education_toggle_enabled",
+    "$toggle_name": "education_toggle",
+    "$focus_override_right": "FOCUS_OVERRIDE_STOP"
+  },
+
+  "always_day_toggle@option_toggle_janger.option_toggle": {
+    "$tts_section_header": "createWorldScreen.cheatSettings",
+    "$option_label": "createWorld.settings.alwaysDay",
+    "$option_binding_name": "#always_day",
+    "$option_enabled_binding_name": "#always_day_enabled",
+    "$toggle_name": "always_day",
+    "$focus_override_right": "FOCUS_OVERRIDE_STOP",
+    "$toggle_binding_condition": "always_when_visible"
+  },
+
+  "daylight_cycle_toggle@option_toggle_janger.option_toggle": {
+    "$tts_section_header": "createWorldScreen.cheatSettings",
+    "ignored": "$education_edition",
+    "$option_label": "createWorld.settings.daylightCycle",
+    "$option_binding_name": "#daylight_cycle",
+    "$option_enabled_binding_name": "#daylight_cycle_enabled",
+    "$toggle_name": "daylight_cycle",
+    "$focus_override_right": "FOCUS_OVERRIDE_STOP",
+    "$toggle_binding_condition": "always_when_visible"
+  },
+
+  "keep_inventory_toggle@option_toggle_janger.option_toggle": {
+    "$tts_section_header": "createWorldScreen.cheatSettings",
+    "ignored": "$education_edition",
+    "$option_label": "createWorld.settings.keepInventory",
+    "$option_binding_name": "#keep_inventory",
+    "$option_enabled_binding_name": "#keep_inventory_enabled",
+    "$toggle_name": "keep_inventory",
+    "$focus_override_right": "FOCUS_OVERRIDE_STOP",
+    "$toggle_binding_condition": "always_when_visible"
+  },
+
+  "mob_spawn_toggle@option_toggle_janger.option_toggle": {
+    "$tts_section_header": "createWorldScreen.cheatSettings",
+    "ignored": "$education_edition",
+    "$option_label": "createWorld.settings.mobSpawn",
+    "$option_binding_name": "#mob_spawn",
+    "$option_enabled_binding_name": "#mob_spawn_enabled",
+    "$toggle_name": "mob_spawn",
+    "$focus_override_right": "FOCUS_OVERRIDE_STOP",
+    "$toggle_binding_condition": "always_when_visible"
+  },
+
+  "mob_griefing_toggle@option_toggle_janger.option_toggle": {
+    "$tts_section_header": "createWorldScreen.cheatSettings",
+    "ignored": "$education_edition",
+    "$option_label": "createWorld.settings.mobGriefing",
+    "$option_binding_name": "#mob_griefing",
+    "$option_enabled_binding_name": "#mob_griefing_enabled",
+    "$toggle_name": "mob_griefing",
+    "$focus_override_right": "FOCUS_OVERRIDE_STOP",
+    "$toggle_binding_condition": "always_when_visible"
+  },
+
+  "entities_drop_loot_toggle@option_toggle_janger.option_toggle": {
+    "$tts_section_header": "createWorldScreen.cheatSettings",
+    "ignored": "$education_edition",
+    "$option_label": "createWorld.settings.entitiesDropLoot",
+    "$option_binding_name": "#entities_drop_loot",
+    "$option_enabled_binding_name": "#entities_drop_loot_enabled",
+    "$toggle_name": "entities_drop_loot",
+    "$focus_override_right": "FOCUS_OVERRIDE_STOP",
+    "$toggle_binding_condition": "always_when_visible"
+  },
+
+  "weather_cycle_toggle@option_toggle_janger.option_toggle": {
+    "$tts_section_header": "createWorldScreen.cheatSettings",
+    "ignored": "$education_edition",
+    "$option_label": "createWorld.settings.weatherCycle",
+    "$option_binding_name": "#weather_cycle",
+    "$option_enabled_binding_name": "#weather_cycle_enabled",
+    "$toggle_name": "weather_cycle",
+    "$focus_override_right": "FOCUS_OVERRIDE_STOP",
+    "$toggle_binding_condition": "always_when_visible"
+  },
+
+  "command_blocks_enabled_toggle@option_toggle_janger.option_toggle": {
+    "$tts_section_header": "createWorldScreen.cheatSettings",
+    "ignored": "$education_edition",
+    "$option_label": "createWorld.settings.commands",
+    "$option_binding_name": "#command_blocks_enabled",
+    "$option_enabled_binding_name": "#command_blocks_enabled_on",
+    "$toggle_name": "command_blocks_enabled",
+    "$focus_override_right": "FOCUS_OVERRIDE_STOP",
+    "$toggle_binding_condition": "always_when_visible"
+  },
+
+  "random_tick_speed@option_text_edit_box_janger.option_text_edit_box_with_text_button": {
+    "$option_label": "createWorld.settings.randomTickSpeed",
+    "$option_binding_name": "#random_tick_speed",
+    "$option_enabled_binding_name": "#random_tick_speed_enabled",
+    "$max_text_edit_length": 4,
+    "$text_edit_box_text_type": "NumberChars",
+    "$text_box_name": "random_tick_speed_text_box",
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "$button_text": ">",
+    "$pressed_button_name": "reset_random_tick_speed"
+  },
+
+  "classroom_toggle@option_toggle_janger.option_toggle": {
+    "ignored": "(not $education_edition)",
+    "bindings": [
+      {
+        "binding_name": "#classroom_settings_visible",
+        "binding_name_override": "#enabled"
+      }
+    ]
+  },
+
+  "classroom_settings_toggle@option_toggle_janger.option_toggle": {
+    "$tts_section_header": "createWorldScreen.cheatSettings",
+    "ignored": "(not $education_edition)",
+    "$option_label": "createWorldScreen.classroomsettings",
+    "$option_binding_name": "#classroom_settings",
+    "$option_enabled_binding_name": "#classroom_settings_enabled",
+    "$toggle_name": "classroom_settings",
+    "$focus_override_right": "FOCUS_OVERRIDE_STOP",
+    "$toggle_binding_condition": "always_when_visible"
+  },
+
+  "perfect_weather@world_gamerules_janger.classroom_toggle": {
+    "$tts_section_header": "createWorldScreen.cheatSettings",
+    "$option_label": "createWorldScreen.perfectweather",
+    "$option_binding_name": "#perfect_weather",
+    "$option_enabled_binding_name": "#perfect_weather_enabled",
+    "$toggle_name": "perfect_weather",
+    "$focus_override_right": "FOCUS_OVERRIDE_STOP",
+    "$toggle_binding_condition": "always_when_visible"
+  },
+
+  "allow_mobs@world_gamerules_janger.classroom_toggle": {
+    "$tts_section_header": "createWorldScreen.cheatSettings",
+    "$option_label": "createWorldScreen.allowmobs",
+    "$option_binding_name": "#allow_mobs",
+    "$option_enabled_binding_name": "#allow_mobs_enabled",
+    "$toggle_name": "allow_mobs",
+    "$focus_override_right": "FOCUS_OVERRIDE_STOP",
+    "$toggle_binding_condition": "always_when_visible"
+  },
+
+  "allow_destructive_items@world_gamerules_janger.classroom_toggle": {
+    "$tts_section_header": "createWorldScreen.cheatSettings",
+    "$option_label": "createWorldScreen.allowdestructiveitems",
+    "$option_binding_name": "#allow_destructive_items",
+    "$option_enabled_binding_name": "#allow_destructive_items_enabled",
+    "$toggle_name": "allow_destructive_items",
+    "$focus_override_right": "FOCUS_OVERRIDE_STOP",
+    "$toggle_binding_condition": "always_when_visible"
+  },
+
+  "player_damage@world_gamerules_janger.classroom_toggle": {
+    "$tts_section_header": "createWorldScreen.cheatSettings",
+    "$option_label": "createWorldScreen.playerdamage",
+    "$option_binding_name": "#player_damage",
+    "$option_enabled_binding_name": "#player_damage_enabled",
+    "$toggle_name": "player_damage",
+    "$focus_override_right": "FOCUS_OVERRIDE_STOP",
+    "$toggle_binding_condition": "always_when_visible"
+  },
+
+  "immutable_world@world_gamerules_janger.classroom_toggle": {
+    "$tts_section_header": "createWorldScreen.cheatSettings",
+    "$option_label": "createWorldScreen.immutableworld",
+    "$option_binding_name": "#immutable_world",
+    "$option_enabled_binding_name": "#immutable_world_enabled",
+    "$toggle_name": "immutable_world",
+    "$focus_override_right": "FOCUS_OVERRIDE_STOP",
+    "$toggle_binding_condition": "always_when_visible"
+  },
+
+  "pvp_damage@world_gamerules_janger.classroom_toggle": {
+    "$tts_section_header": "createWorldScreen.cheatSettings",
+    "$option_label": "createWorldScreen.pvpdamage",
+    "$option_binding_name": "#pvp_damage",
+    "$option_enabled_binding_name": "#pvp_damage_enabled",
+    "$toggle_name": "pvp_damage",
+    "$focus_override_right": "FOCUS_OVERRIDE_STOP",
+    "$toggle_binding_condition": "always_when_visible"
+  },
+
+  "bottom_content": {
+    "type": "panel",
+    "size": [ 200, 20 ],
+    "anchor_from": "bottom_middle",
+    "anchor_to": "bottom_middle",
+    "offset": [ 0, -7 ],
+    "controls": [
+      { "back@world_cheats_janger.not_world_cheats_button": { "size": [ 200, 20 ] } }
+    ]
+  }
+}

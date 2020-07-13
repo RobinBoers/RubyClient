@@ -1,0 +1,148 @@
+/********************************************************
++*   @FMarquesPTO. All rights reserved. *
++*********************************************************/
+{
+  "namespace": "accessibility_janger",
+
+  "accessibility_button@new_button_toggle_janger.button_toggle": {
+    "$toggle_name": "settings",
+    "$control_name": "accessibility_view",
+    "$toggle_text": "options.accessibility",
+    "$toggle_index": 100
+  },
+
+  "accessibility_content_panel": {
+    "type": "panel",
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "accessibility_view",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ],
+    "controls": [
+      { "accessibility_content@accessibility_content": { "ignored": "$is_in_game" } },
+      { "world_accessibility_content@world_accessibility_content": { "ignored": "(not $is_in_game)" } },
+      { "broadcast_content_panel@broadcast_janger.broadcast_content_panel": {} },
+      { "storage_content_panel@storage_janger.storage_content_panel": { "ignored": "$is_in_game" } },
+      {
+        "game_settings_content_panel@game_settings_janger.game_settings_content_panel": {
+          "ignored": "(not $is_in_game)",
+          "$game_settings_toggle_index": 2
+        }
+      }
+    ]
+  },
+
+  "accessibility_content": {
+    "type": "panel",
+    "$title_text": "options.accessibility.title",
+    "controls": [
+      { "top_title_panel@new_common_janger.top_title_panel": {} },
+      { "content_panel@accessibility_janger.content_panel": {} }
+    ],
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "broadcast_view",
+        "source_property_name": "(not #toggle_state)",
+        "target_property_name": "#visible"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "storage_view",
+        "source_property_name": "(not #toggle_state)",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  "world_accessibility_content@accessibility_content": {
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "broadcast_view",
+        "source_property_name": "(not #toggle_state)",
+        "target_property_name": "#visible"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "game_settings_view",
+        "source_property_name": "(not #toggle_state)",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  "content_panel": {
+    "type": "panel",
+    "size": [ 310, 182 ],
+    "anchor_from": "center",
+    "anchor_to": "top_middle",
+    "offset": [ 0, "-40%" ],
+    "controls": [
+      { "ui_speech_toggle@ui_speech_toggle": {} },
+      { "chat_speech_toggle@chat_speech_toggle": { "offset": [ 160, 0 ] } },
+      { "broadcast_button@broadcast_janger.broadcast_button": { "$enabled": "$can_support_broadcast", "offset": [ 0, 24 ] } },
+      { "game_settings_button@game_settings_janger.game_settings_button": { "offset": [ 160, 24 ], "ignored": "(not $is_in_game)" } },
+      { "storage_button@storage_janger.storage_button": { "$enabled": false, "offset": [ 160, 24 ], "ignored": "$is_in_game" } },
+      { "perspective_multioption_panel@perspective_multioption_panel": { "offset": [ 0, 48 ], "ignored": "(not $is_in_game)" } },
+      { "show_coordinates_toggle@show_coordinates_toggle": { "offset": [ 160, 48 ], "ignored": "(not $is_in_game)" } },
+      { "settings_button@settings_janger.settings_button": { "offset": [ 0, 123 ] } }
+    ]
+  },
+
+  "ui_speech_toggle@option_toggle_janger.option_toggle": {
+    "$enabled": "$text_to_speech_supported",
+    "$option_label": "options.accessibility.uiSpeech",
+    "$option_binding_name": "#enable_ui_text_to_speech",
+    "$option_enabled_binding_name": "#enable_ui_text_to_speech_enabled",
+    "$toggle_name": "enable_ui_text_to_speech"
+  },
+
+  "chat_speech_toggle@option_toggle_janger.option_toggle": {
+    "$enabled": "$text_to_speech_supported",
+    "$option_label": "options.accessibility.chatSpeech",
+    "$option_binding_name": "#enable_chat_text_to_speech",
+    "$option_enabled_binding_name": "#enable_chat_text_to_speech_enabled",
+    "$toggle_name": "enable_chat_text_to_speech"
+  },
+
+  "perspective_multioption_panel@multioption_janger.multioption_panel": {
+    "$option_label": "options.perspective",
+    "$multi_options": [
+      {
+        "own@multioption_janger.multi_option_toggle": {
+          "$chooser_text_last": "options.perspective.own",
+          "$next_option_name": "#thirdperson_radio_third_back",
+          "$last_option_name": "#thirdperson_radio_first"
+        }
+      },
+      {
+        "back@multioption_janger.multi_option_toggle": {
+          "$chooser_text_last": "options.perspective.back",
+          "$next_option_name": "#thirdperson_radio_third_front",
+          "$last_option_name": "#thirdperson_radio_third_back"
+        }
+      },
+      {
+        "front@multioption_janger.multi_option_toggle": {
+          "$chooser_text_last": "options.perspective.front",
+          "$next_option_name": "#thirdperson_radio_first",
+          "$last_option_name": "#thirdperson_radio_third_front"
+        }
+      }
+    ]
+  },
+
+  "show_coordinates_toggle@option_toggle_janger.option_toggle": {
+    "$tts_section_header": "createWorldScreen.worldSettings",
+    "$option_label": "options.showCoordinates",
+    "$option_binding_name": "#show_coordinates",
+    "$option_enabled_binding_name": "#show_coordinates_enabled",
+    "$toggle_name": "show_coordinates",
+    "$focus_override_right": "FOCUS_OVERRIDE_STOP",
+    "$toggle_binding_condition": "always_when_visible"
+  }
+}

@@ -1,0 +1,307 @@
+/********************************************************
++*   @FMarquesPTO. All rights reserved. *
++*********************************************************/
+{
+  "namespace": "video_janger",
+
+  "video_button@new_button_toggle_janger.button_toggle": {
+    "$toggle_name": "settings",
+    "$control_name": "video_view",
+    "$toggle_index": 103,
+    "$toggle_text": "options.video"
+  },
+
+  "video_content_panel@new_common_janger.scrolling_screen_content_panel": {
+    "$title_text": "options.video.title",
+    "$title_offset": [ 0, 9 ],
+    "$top_content": "video_janger.top_content",
+    "$scrolling_content": "video_janger.scrolling_content",
+    "$bottom_content": "video_janger.bottom_content",
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "video_view",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  "top_content": {
+    "type": "panel",
+    "controls": [
+      { "title_label@new_common_janger.title_label": {} }
+    ]
+  },
+
+  "scrolling_content": {
+    "type": "stack_panel",
+    "size": [ 310, "100%c" ],
+    "controls": [
+      { "scrolling_dirt_background@scrolling_janger.scrolling_dirt_background": {} },
+      {
+        "row_zero@stacked_row": {
+          "$left_content": "video_janger.vsync_dropdown",
+          "$right_content": ""
+     
+        }
+      },
+      {
+        "row_one@stacked_row": {
+          "$left_content": "video_janger.graphics_toggle",
+          "$right_content": "video_janger.smooth_lighting_toggle",
+          "$right_vr_content": "video_janger.vr_render_distance_slider"
+        }
+      },
+      {
+        "row_two@stacked_row": {
+          "$left_content": "video_janger.texel_anti_aliasing_toggle",
+          "$left_vr_content": "video_janger.vr_smooth_lighting_toggle",
+          "$right_content": "video_janger.max_framerate_slider"
+        }
+      },
+      {
+        "row_five@stacked_row": {
+          "$left_content": "video_janger.brightness_slider",
+          "$left_vr_content": "video_janger.vr_brightness_slider",
+          "$right_content": "video_janger.clouds_toggle"
+        }
+      },
+      {
+        "row_six@stacked_row": {
+          "$left_content": "video_janger.bubbles_toggle",
+          "$right_content": "video_janger.skies_toggle"
+        }
+      },
+     
+      {
+        "row_twelve@stacked_row": {
+          "$left_content": "video_janger.render_distance_slider",
+          "$right_content": "video_janger.particle_render_distance_slider"
+        }
+      },
+      {
+        "row_thirteen@stacked_row": {
+          "$left_content": "video_janger.msaa_slider",
+          "$right_content": ""
+        }
+      }
+    ]
+  },
+
+  "bottom_content": {
+    "type": "panel",
+
+    "controls": [
+      { "settings_button@settings_janger.settings_button": { "offset": [ 0, 5 ] } }
+    ]
+  },
+
+  "stacked_row": {
+    "type": "panel",
+    "size": [ 310, 24 ],
+    "controls": [
+      { "$left_substitute_content@$left_substitute_content": { "ignored": "(not $is_in_game)", "offset": [ 0, 2 ] } },
+      { "$left_content@$left_content": { "offset": [ 0, 2 ] } },
+      { "$left_vr_content@$left_vr_content": { "offset": [ 0, 2 ] } },
+      { "$right_content@$right_content": { "offset": [ 160, 2 ] } },
+      { "$right_vr_content@$right_vr_content": { "offset": [ 160, 2 ] } },
+      { "$right_substitute_content@$right_substitute_content": { "ignored": "(not $is_in_game)", "$toggle_size": [ 150, 20 ], "offset": [ 160, 2 ] } }
+    ]
+  },
+
+  "graphics_toggle@option_toggle_janger.option_toggle": {
+    "$enabled": "(not $is_holographic)",
+    "$option_label": "Graphics",
+    "$on_text": "options.graphics.fancy",
+    "$off_text": "options.graphics.fast",
+    "$option_binding_name": "#graphics_toggle",
+    "$option_enabled_binding_name": "#graphics_toggle_enabled",
+    "$toggle_name": "graphics_toggle"
+  },
+
+  "render_distance_slider@option_slider_janger.option_slider": {
+    "ignored": "($is_holographic)",
+    "$option_label": "#render_distance_slider_label",
+    "$slider_name": "render_distance",
+    "$slider_value_binding_name": "#render_distance",
+    "$slider_tts_text_value": "#render_distance_text_value",
+    "$option_enabled_binding_name": "#render_distance_enabled",
+    "$slider_steps_binding_name": "#render_distance_steps",
+    "$label_bindings": [
+      {
+        "binding_name": "$option_label"
+      }
+    ]
+  },
+
+  "vsync_dropdown@option_dropdown_janger.option_dropdown": {
+    "$option_label": "V-Sync Settings",
+    "$dropdown_content": "general_section.vysnc_dropdown_content",
+    "offset": [ 120, 2 ],
+    "$dropdown_area": "content_area",
+    "$dropdown_name": "vsync_dropdown",
+    "$options_dropdown_toggle_label_binding": "#vsync_dropdown_toggle_label",
+    "$option_enabled_binding_name": "#vsync_dropdown_enabled",
+    "$dropdown_scroll_content_size": [ "100%", "200%" ]
+  },
+
+
+  "vr_render_distance_slider@option_slider_janger.option_slider": {
+    "ignored": "(not $is_holographic)",
+    "$option_label": "#vr_render_distance_slider_label",
+    "$slider_name": "vr_render_distance",
+    "$slider_value_binding_name": "#vr_render_distance",
+    "$slider_tts_text_value": "#vr_render_distance_text_value",
+    "$option_enabled_binding_name": "#vr_render_distance_enabled",
+    "$slider_steps_binding_name": "#vr_render_distance_steps",
+    "$label_bindings": [
+      {
+        "binding_name": "$option_label"
+      }
+    ]
+  },
+ 
+  
+    "particle_render_distance_slider@option_slider_janger.option_slider": {
+        "ignored": "($is_holographic)",
+        "$option_label": "#particle_render_distance_slider_label",
+        "$slider_name": "particle_render_distance",
+        "$slider_value_binding_name": "#particle_render_distance",
+        "$option_enabled_binding_name": "#particle_render_distance_enabled",
+        "$label_bindings": [
+          {
+            "binding_name": "#particle_render_distance_slider_label"
+          }
+        ]
+      },
+    
+      "option_toggle_0_0@option_toggle_janger.option_toggle": {
+        "$option_label": "options.dev_enableDebugUI",
+        "$option_binding_name": "#dev_enable_debug_ui",
+        "$option_enabled_binding_name": "#dev_enable_debug_ui_enabled",
+        "$toggle_name": "dev_enable_debug_ui"
+      },
+
+      "texel_anti_aliasing_toggle@option_toggle_janger.option_toggle": {
+        "$option_label": "Text Anti-Aliasing",
+        "$option_binding_name": "#texel_aa",
+        "$option_enabled_binding_name": "#texel_aa_enabled",
+        "$toggle_name": "texel_aa",
+        "bindings": [
+          {
+            "binding_name": "#show_texel_aa"
+           }
+        ]
+      },
+
+      "msaa_slider@option_slider_janger.option_slider": {
+        "ignored": "($is_holographic or $is_win10_arm)",
+        "$option_label": "#msaa_slider_label",
+        "$slider_name": "msaa",
+        "$slider_value_binding_name": "#msaa",
+        "$slider_tts_text_value": "#msaa_text_value",
+        "$option_enabled_binding_name": "#msaa_enabled",
+        "$slider_steps_binding_name": "#msaa_steps",
+        "$label_bindings": [
+          {
+            "binding_name": "$option_label"
+          }
+        ],
+        "bindings": [
+          {
+            "binding_name": "#show_msaa",
+            "binding_name_override": "#visible"
+          }
+        ]
+      },
+    
+  "smooth_lighting_toggle@option_toggle_janger.option_toggle": {
+    "ignored": "($is_holographic)",
+    "$option_label": "options.ao",
+    "$option_binding_name": "#smooth_lighting",
+    "$option_enabled_binding_name": "#smooth_lighting_enabled",
+    "$toggle_name": "smooth_lighting"
+  },
+
+  "vr_smooth_lighting_toggle@option_toggle_janger.option_toggle": {
+    "ignored": "(not $is_holographic)",
+    "$option_label": "options.ao",
+    "$option_binding_name": "#vr_smooth_lighting",
+    "$option_enabled_binding_name": "#vr_smooth_lighting_enabled",
+    "$toggle_name": "vr_smooth_lighting"
+  },
+
+  "max_framerate_slider@option_slider_janger.option_slider": {
+    "$option_label": "#max_framerate_slider_label",
+    "$slider_name": "max_framerate",
+    "$slider_value_binding_name": "#max_framerate",
+    "$slider_tts_text_value": "#max_framerate_text_value",
+    "$option_enabled_binding_name": "#max_framerate_enabled",
+    "$slider_steps_binding_name": "#max_framerate_steps",
+    "$label_bindings": [
+      {
+        "binding_name": "$option_label"
+      }
+    ]
+  },
+
+  
+  "brightness_slider@option_slider_janger.option_slider": {
+    "ignored": "($is_holographic)",
+    "$option_label": "#gamma_slider_label",
+    "$slider_name": "gamma",
+    "$slider_value_binding_name": "#gamma",
+    "$slider_tts_text_value": "#gamma_text_value",
+    "$option_enabled_binding_name": "#gamma_enabled",
+    "$focus_override_up": "FOCUS_OVERRIDE_STOP",
+    "$label_bindings": [
+      {
+        "binding_name": "$option_label"
+      }
+    ]
+  },
+
+  "vr_brightness_slider@option_slider_janger.option_slider": {
+    "ignored": "(not $is_holographic)",
+    "$option_label": "#vr_gamma_slider_label",
+    "$slider_name": "vr_gamma",
+    "$slider_value_binding_name": "#vr_gamma",
+    "$slider_tts_text_value": "#vr_gamma_text_value",
+    "$option_enabled_binding_name": "#vr_gamma_enabled",
+    "$label_bindings": [
+      {
+        "binding_name": "$option_label"
+      }
+    ]
+  },
+
+  "clouds_toggle@option_toggle_janger.option_toggle": {
+    "$option_label": "options.renderClouds",
+    "$option_binding_name": "#render_clouds",
+    "$option_enabled_binding_name": "#render_clouds_enabled",
+    "$toggle_name": "render_clouds"
+  },
+
+ 
+  "skies_toggle@option_toggle_janger.option_toggle": {
+    "$option_label": "options.skies",
+    "$on_text": "options.skies.fancy",
+    "$off_text": "options.skies.fast",
+    "$option_binding_name": "#fancy_skies",
+    "$option_enabled_binding_name": "#fancy_skies_enabled",
+    "$toggle_name": "fancy_skies"
+  },
+
+  
+  "bubbles_toggle@option_toggle_janger.option_toggle": {
+    "$option_label": "options.bubbleparticles",
+    "$on_text": "options.bubbleparticles.fancy",
+    "$off_text": "options.bubbleparticles.fast",
+    "ignored": "$is_in_game",
+    "$option_binding_name": "#bubble_particles",   
+    "$option_enabled_binding_name": "#bubble_particles_enabled",
+    "$toggle_name": "bubble_particles"
+  }
+
+}

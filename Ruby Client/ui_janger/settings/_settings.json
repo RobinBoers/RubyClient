@@ -1,0 +1,318 @@
+/********************************************************
++*   @FMarquesPTO. All rights reserved. *
++*********************************************************/
+{
+  "namespace": "settings_janger",
+
+  "settings_screen_content_panel": {
+    "type": "panel",
+    "$is_in_game|default": false,
+    "controls": [
+      { "settings_content_panel@settings_janger.settings_content_panel": { "ignored": "$is_in_game" } },
+      { "world_settings_content_panel@settings_janger.world_settings_content_panel": { "ignored": "(not $is_in_game)" } },
+      { "accessibility_content_panel@accessibility_janger.accessibility_content_panel": {} },
+      { "profile_content_panel@profile_janger.profile_content_panel": {} },
+      { "sound_content_panel@sound_janger.sound_content_panel": {} },
+      { "video_content_panel@video_janger.video_content_panel": {} },
+      { "mouse_content_panel@mouse_janger.mouse_content_panel": {} },
+      { "controller_content_panel@controller_janger.controller_content_panel": {} },
+      { "language_content_panel@language_janger.language_content_panel": {} },
+      { "resource_packs_content_panel@resource_packs_java.resource_packs_content_panel": { "ignored": "$is_in_game" } },
+      { "touch_content_panel@touch_janger.touch_content_panel": {} },
+      { "viewer_content_panel@viewer_janger.viewer_content_panel": {} },
+      {
+        "popup_dialog_factory": {
+          "type": "factory",
+          "control_ids": {
+            "purchase_failed": "@realms_create.popup_dialog__purchase_failed",
+            "purchase_in_progress": "@realms_create.popup_dialog__purchase_in_progress",
+            "share_by_link": "@realms_whitelist.popup_dialog__share_by_link",
+            "options_modal": "@realms_whitelist.popup_dialog__options",
+            "backups_modal": "@realms_settings.popup_dialog__backups"
+          }
+        }
+      }
+    ]
+  },
+
+  "world_settings_screen_content_panel@settings_screen_content_panel": {
+    "$is_in_game": true
+  },
+
+  "settings_content_panel": {
+    "type": "panel",
+    "$title_text": "options.title",
+    "controls": [
+      { "top_title_panel@common_janger.top_title_panel": {} },
+      { "menu_content_panel@settings_janger.menu_content_panel": {} }
+    ],
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "accessibility_view",
+        "source_property_name": "(not #toggle_state)",
+        "target_property_name": "#visible"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "profile_view",
+        "source_property_name": "(not #toggle_state)",
+        "target_property_name": "#visible"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "sound_view",
+        "source_property_name": "(not #toggle_state)",
+        "target_property_name": "#visible"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "video_view",
+        "source_property_name": "(not #toggle_state)",
+        "target_property_name": "#visible"
+      },
+      
+        {
+          "binding_type": "view",
+          "source_control_name": "interface_button_toggle",
+          "source_property_name": "(not #toggle_state)",
+          "target_property_name": "#visible"
+        },
+
+        {
+          "binding_type": "view",
+          "source_control_name": "resource_packs_button_toggle_enter",
+          "source_property_name": "(not #toggle_state)",
+          "target_property_name": "#visible"
+        },
+    
+      {
+        "binding_type": "view",
+        "source_control_name": "mouse_view",
+        "source_property_name": "(not #toggle_state)",
+        "target_property_name": "#visible"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "language_view",
+        "source_property_name": "(not #toggle_state)",
+        "target_property_name": "#visible"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "controller_view",
+        "source_property_name": "(not #toggle_state)",
+        "target_property_name": "#visible"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "touch_view",
+        "source_property_name": "(not #toggle_state)",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  "world_settings_content_panel@settings_content_panel": {
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "accessibility_view",
+        "source_property_name": "(not #toggle_state)",
+        "target_property_name": "#visible"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "profile_view",
+        "source_property_name": "(not #toggle_state)",
+        "target_property_name": "#visible"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "sound_view",
+        "source_property_name": "(not #toggle_state)",
+        "target_property_name": "#visible"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "video_view",
+        "source_property_name": "(not #toggle_state)",
+        "target_property_name": "#visible"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "resource_packs_button_toggle_enter",
+        "source_property_name": "(not #toggle_state)",
+        "target_property_name": "#visible"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "interface_button_toggle",
+        "source_property_name": "(not #toggle_state)",
+        "target_property_name": "#visible"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "mouse_view",
+        "source_property_name": "(not #toggle_state)",
+        "target_property_name": "#visible"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "language_view",
+        "source_property_name": "(not #toggle_state)",
+        "target_property_name": "#visible"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "controller_view",
+        "source_property_name": "(not #toggle_state)",
+        "target_property_name": "#visible"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "touch_view",
+        "source_property_name": "(not #toggle_state)",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  "menu_content_panel": {
+    "type": "panel",
+    "size": [ 310, 182 ],
+    "anchor_from": "center",
+    "anchor_to": "top_middle",
+    "offset": [ 0, "-40%" ],
+    "controls": [
+      { "fov_slider@settings_janger.fov_slider": {} },
+      {
+        "difficulty_multioption_panel@difficulty_multioption_panel": {
+          "ignored": "(not $is_in_game)",
+          "offset": [ 160, 0 ]
+        }
+      },
+      {
+        "accessibility_button@accessibility_janger.accessibility_button": {
+          "offset": "$offset",
+          "variables": [
+            { "requires": "(not $is_in_game)", "$offset": [ 160, 0 ] },
+            { "requires": "$is_in_game", "$offset": [ 0, 117 ] }
+          ]
+        } 
+      },
+      { "profile_button@profile_janger.profile_button": { "$tts_section_header": "options.title", "offset": [ 0, 45 ] } },
+      { "sound_button@sound_janger.sound_button": { "offset": [ 160, 45 ] } },
+      { "video_button@video_janger.video_button": { "offset": [ 0, 69 ] } },
+      { "viewer_button@viewer_janger.viewer_button": { "offset": [ 0, 93 ] } },
+      { "mouse_button@mouse_janger.mouse_button": { "offset": [ 160, 69 ] } },
+      { "perspective_multioption_panel@perspective_multioption_panel": { "offset": [ 0, 141 ] } },
+      { "language_button@language_janger.language_button": { "offset": [ 160 , 141 ] } },
+      { "controller_button@controller_janger.controller_button": { "offset": [ 160, 93 ] } },
+      {
+        "resource_packs_button@resource_packs_java.resource_packs_button_toggle": { 
+          "offset": [ -80, 36 ],
+          "ignored": "$is_in_game"
+        }
+      },
+      { "touch_button@touch_janger.touch_button": { "offset": [ 160, 117 ] } },
+      { "exit_button@settings_janger.exit_button": {} }
+    ]
+  },
+
+  "fov_slider@option_slider_janger.option_slider": {
+    "$ignored": "($is_holographic and $is_reality_mode and not $is_pregame)",
+    "$option_label": "#field_of_view_slider_label",
+    "$slider_tts_text_value": "#field_of_view_text_value",
+    "$slider_name": "field_of_view",
+    "$slider_value_binding_name": "#field_of_view",
+    "$option_enabled_binding_name": "#field_of_view_enabled",
+    "$label_bindings": [
+      {
+        "binding_name": "$option_label"
+      }
+    ]
+  },
+
+  "difficulty_multioption_panel@multioption_janger.multioption_panel": {
+    "$option_label": "options.difficulty",
+    "$multi_options": [
+      {
+        "creative@multioption_janger.multi_option_toggle": {
+          "$chooser_text_last": "options.difficulty.peaceful",
+          "$next_option_name": "#world_difficulty_radio_easy",
+          "$last_option_name": "#world_difficulty_radio_peaceful"
+        }
+      },
+      {
+        "easy@multioption_janger.multi_option_toggle": {
+          "$chooser_text_last": "options.difficulty.easy",
+          "$next_option_name": "#world_difficulty_radio_normal",
+          "$last_option_name": "#world_difficulty_radio_easy"
+        }
+      },
+      {
+        "normal@multioption_janger.multi_option_toggle": {
+          "$chooser_text_last": "options.difficulty.normal",
+          "$next_option_name": "#world_difficulty_radio_hard",
+          "$last_option_name": "#world_difficulty_radio_normal"
+        }
+      },
+      {
+        "hard@multioption_janger.multi_option_toggle": {
+          "$chooser_text_last": "options.difficulty.hard",
+          "$next_option_name": "#world_difficulty_radio_peaceful",
+          "$last_option_name": "#world_difficulty_radio_hard"
+        }
+      }
+    ]
+  },
+
+  "perspective_multioption_panel@multioption_janger.multioption_panel": {
+    "$option_label": "options.perspective",
+    "$multi_options": [
+      {
+        "own@multioption_janger.multi_option_toggle": {
+          "$chooser_text_last": "options.perspective.own",
+          "$next_option_name": "#thirdperson_radio_third_back",
+          "$last_option_name": "#thirdperson_radio_first"
+        }
+      },
+      {
+        "back@multioption_janger.multi_option_toggle": {
+          "$chooser_text_last": "options.perspective.back",
+          "$next_option_name": "#thirdperson_radio_third_front",
+          "$last_option_name": "#thirdperson_radio_third_back"
+        }
+      },
+      {
+        "front@multioption_janger.multi_option_toggle": {
+          "$chooser_text_last": "options.perspective.front",
+          "$next_option_name": "#thirdperson_radio_first",
+          "$last_option_name": "#thirdperson_radio_third_front"
+        }
+      }
+    ]
+  },
+
+  "settings_button@new_button_toggle_janger.button_toggle": {
+    "$toggle_name": "settings",
+    //Reset Control
+    "$control_name": "settings_view",
+    "$toggle_index": 50,
+    "$toggle_text": "gui.done",
+    //As exit button
+    "$button_back": true,
+    "$toggle_size": [ 200, 20 ],
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle"
+  },
+
+  "exit_button@button_janger.classic_button": {
+    "size": [ 200, 10 ],
+    "$pressed_button_name": "button.menu_exit",
+    "anchor_from": "bottom_middle",
+    "anchor_to": "bottom_middle",
+    "$button_text": "Done"
+  }
+}

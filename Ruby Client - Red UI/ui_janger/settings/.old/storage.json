@@ -1,0 +1,45 @@
+/********************************************************
++*   @FMarquesPTO. All rights reserved. *
++*********************************************************/
+{
+  "namespace": "storage_janger",
+
+  "storage_button@button_toggle_janger.button_toggle": {
+    "$toggle_group_forced_index": 78, //$storage_managment_forced_index when I enable again.
+    "$enter_name": "storage_management",
+    "visible": "($is_pregame and not $education_edition_china)",
+    "$toggle_text": "Storage...",
+    "$glyph_texture": "textures/ui/storageIcon",
+    "$glyph_color_texture": "textures/ui/storageIconColor",
+    "$glyph_uv": [ 0, 0 ],
+    "$glyph_size": [ 17, 16 ],
+    "$toggle_property_bag": {
+      "#panel_title": "menu.storageManagement"
+    }
+  },
+
+  "storage_button_back@button_toggle_janger.button_toggle_back": {
+    "$toggle_group_forced_index": 101,
+    "$back_name": "accessibility_storage"
+  },
+
+  "storage_content_panel": {
+    "type": "stack_panel",
+    "size": [ "100%", "100%" ],
+    "$title_text": "options.storage.title",
+    "$back_button": "storage_janger.storage_button_back",
+    "controls": [
+      { "top_title_panel@common_janger.top_title_panel": {} },
+      { "storage_management_content_panel@storage_management_janger.storage_management_content_panel": {} },
+      { "bottom_back_panel@common_janger.bottom_back_panel": { "size": [ "100%", 32 ] } }
+    ],
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "storage_management_button_toggle",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ]
+  }
+}

@@ -1,0 +1,321 @@
+/********************************************************
++*   @FMarquesPTO. All rights reserved. *
++*   I don't have controller, but @HawfHuman and @CrizArtEx *
++*   in their Java UIs, when using controller is dropdown *
++*   instead of Multioption. *Console Edition too. *
++*********************************************************/
+{
+  "namespace": "option_dropdown_janger",
+
+  "option_dropdown": {
+    "type": "panel",
+    "size": "$dropdown_size",
+    "$dropdown_size|default": [ 150, 20 ],
+    "controls": [
+      { "control@option_dropdown_janger.option_dropdown_control": {} }
+    ]
+  },
+
+  "option_dropdown_no_scroll": {
+    "type": "panel",
+    "size": "$dropdown_size",
+    "$dropdown_size|default": [ 150, 20 ],
+    "controls": [
+      { "control@dropdown_janger.option_dropdown_control_no_scroll": {} }
+    ]
+  },
+
+  "option_dropdown_control": {
+    "type": "panel",
+    "$option_dropdown_size|default": [ "100%", 30 ],
+    "size": "$option_dropdown_size",
+    "$dropdown_background_control|default": "dropdown_janger.dropdown_background",
+    "$option_dropdown_type|default": "dropdown_janger.dropdown",
+    "$option_label|default": "",
+    "font_type": "smooth",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "controls": [
+      {
+        "dropdown@$option_dropdown_type": {
+          "$dropdown_toggle": "option_dropdown_janger.dropdown_option_toggle",
+          "font_type": "smooth",
+          "$dropdown_background": "$dropdown_background_control",
+          // you need to specify the content with "$dropdown_content"
+          "$dropdown_content|default": "unset_dropdown_content",
+          // you need to specify a unique name with "$dropdown_name"
+          "$dropdown_name|default": "unset $dropdown_name",
+          // you need to specify a the label with "$options_dropdown_toggle_label_binding"
+          "$options_dropdown_toggle_label_binding|default": "unset $options_dropdown_toggle_label_text",
+          "$locked_alpha": 0.5,
+          "$toggle_tts_header": "$option_label"
+        }
+      }
+    ]
+  },
+
+  "option_dropdown_control_no_scroll@option_dropdown_janger.option_dropdown_control": {
+    "$option_dropdown_type": "dropdown_janger.dropdown_no_scrollpanel"
+  },
+
+  "dropdown_option_toggle@toggle_janger.classic_toggle": {
+    "size": [ "100%", 20 ],
+    "$toggle_tts_name": "accessibility.checkbox.tts.title",
+    "$toggle_tts_toggle_on_text": "accessibility.state.checked",
+    "$toggle_tts_toggle_off_text": "accessibility.state.unchecked",
+    "$toggle_tab_focus_binding_type|default": "none",
+    "$toggle_tab_focus_id_binding_type|default": "none",
+    "$toggle_tab_focus_override_left_binding_type|default": "none",
+    "$toggle_tab_focus_override_right_binding_type|default": "none",
+    "$toggle_tab_focus_override_down_binding_type|default": "none",
+    "$toggle_tab_focus_override_up_binding_type|default": "none",
+    "$toggle_on_hover_binding_type|default": "none",
+    "$toggle_tab_focus_binding_name|default": "",
+    "$toggle_tab_focus_id_binding_name|default": "",
+    "$toggle_tab_focus_override_right|default": "#focus_override_right",
+    "$toggle_tab_focus_override_down|default": "#focus_override_down",
+    "$toggle_tab_focus_override_up|default": "#focus_override_up",
+    "$toggle_tab_focus_override_left|default": "#focus_override_left",
+    "$toggle_on_hover_binding_name|default": "",
+    "$toggle_focus_wrap_enabled|default": true,
+    "$toggle_focus_magnet_enabled|default": true,
+    "$toggle_unchecked|default": false,
+    "$toggle_unchecked_hover|default": false,
+    "$toggle_checked_hover|default": false,
+    "$button_mappings|default": [
+      {
+        "from_button_id": "button.menu_select",
+        "to_button_id": "button.menu_select",
+        "mapping_type": "pressed"
+      },
+      {
+        "from_button_id": "button.menu_ok",
+        "to_button_id": "button.menu_ok",
+        "mapping_type": "focused"
+      },
+      {
+        "ignored": "(not $enable_directional_toggling)",
+        "from_button_id": "button.menu_left",
+        "to_button_id": "$toggle_off_button",
+        "mapping_type": "pressed",
+        "input_mode_condition": "gamepad_and_not_gaze"
+      },
+      {
+        "ignored": "(not $enable_directional_toggling)",
+        "from_button_id": "button.menu_right",
+        "to_button_id": "$toggle_on_button",
+        "mapping_type": "pressed",
+        "input_mode_condition": "gamepad_and_not_gaze"
+      }
+    ],
+    "focus_wrap_enabled": "$toggle_focus_wrap_enabled",
+    "focus_magnet_enabled": "$toggle_focus_magnet_enabled",
+    "$custom_toggle_binding_type|default": "none",
+    "$custom_toggle_binding_condition|default": "visible",
+    "$custom_toggle_state_binding_name|default": "",
+    "$custom_toggle_state_binding_name_override|default": "",
+    "$toggle_tts_header_binding_type|default": "none",
+    "$toggle_tts_header_binding_condition|default": "visible",
+    "$toggle_tts_header_binding_collection_name|default": "",
+    "$toggle_tts_header|default": "",
+    "button_mappings": "$button_mappings",
+    "bindings": [
+      {
+        "binding_type": "$toggle_binding_type",
+        "binding_condition": "$toggle_binding_condition",
+        "binding_collection_name": "$toggle_grid_collection_name",
+        "binding_name": "$toggle_state_binding_name",
+        "binding_name_override": "#toggle_state"
+      },
+      {
+        "binding_type": "$toggle_enabled_binding_type",
+        "binding_condition": "$toggle_enabled_binding_condition",
+        "binding_collection_name": "$toggle_grid_collection_name",
+        "binding_name": "$toggle_enabled_binding_name",
+        "binding_name_override": "#enabled"
+      },
+      {
+        "binding_collection_name": "$toggle_grid_collection_name",
+        "binding_type": "collection_details"
+      },
+      {
+        "binding_type": "$toggle_tab_focus_binding_type",
+        "binding_name": "$toggle_tab_focus_binding_name",
+        "binding_name_override": "#default_focus_precedence"
+      },
+      {
+        "binding_type": "$toggle_tab_focus_id_binding_type",
+        "binding_collection_name": "$toggle_grid_collection_name",
+        "binding_name": "$toggle_tab_focus_id_binding_name",
+        "binding_name_override": "#focus_identifier"
+      },
+      {
+        "binding_type": "$toggle_tab_focus_override_right_binding_type",
+        "binding_collection_name": "$toggle_grid_collection_name",
+        "binding_name": "$toggle_tab_focus_override_right",
+        "binding_name_override": "#focus_change_right"
+      },
+      {
+        "binding_type": "$toggle_tab_focus_override_left_binding_type",
+        "binding_collection_name": "$toggle_grid_collection_name",
+        "binding_name": "$toggle_tab_focus_override_left",
+        "binding_name_override": "#focus_change_left"
+      },
+      {
+        "binding_type": "$toggle_tab_focus_override_down_binding_type",
+        "binding_collection_name": "$toggle_grid_collection_name",
+        "binding_name": "$toggle_tab_focus_override_down",
+        "binding_name_override": "#focus_change_down"
+      },
+      {
+        "binding_type": "$toggle_tab_focus_override_up_binding_type",
+        "binding_collection_name": "$toggle_grid_collection_name",
+        "binding_name": "$toggle_tab_focus_override_up",
+        "binding_name_override": "#focus_change_up"
+      },
+      {
+        "binding_type": "$toggle_on_hover_binding_type",
+        "binding_name": "$toggle_on_hover_binding_name",
+        "binding_name_override": "#toggle_on_hover"
+      },
+      {
+        "binding_type": "$custom_toggle_binding_type",
+        "binding_condition": "$custom_toggle_binding_condition",
+        "binding_collection_name": "$toggle_grid_collection_name",
+        "binding_name": "$custom_toggle_state_binding_name",
+        "binding_name_override": "$custom_toggle_state_binding_name_override"
+      },
+      {
+        "binding_type": "$toggle_tts_header_binding_type",
+        "binding_condition": "$toggle_tts_header_binding_condition",
+        "binding_collection_name": "$toggle_tts_header_binding_collection_name",
+        "binding_name": "$toggle_tts_header"
+      }
+    ],
+    "$toggle_type_panel": "option_dropdown_janger.option_dropdown_content_panel",
+    "enabled": "$enabled",
+    "$toggle_enabled_binding_name|default": "$option_enabled_binding_name",
+    "$toggle_enabled_binding_type|default": "global",
+    "$toggle_binding_type|default": "global",
+    "variables": [
+      {
+        "requires": "(not $option_enabled_binding_name or not $enabled)",
+        "$toggle_enabled_binding_name": "#not_data_bound",
+        "$toggle_enabled_binding_type": "none"
+      }
+    ]
+  },
+
+  "option_dropdown_content_panel": {
+    "type": "stack_panel",
+    "layer": 3,
+    "anchor_from": "center",
+    "anchor_to": "center",
+    "$spacer|default": false,
+    "orientation": "horizontal",
+    "$options_dropdown_toggle_button_state_content|default": [ "100%c", 10 ],
+    "size": "$options_dropdown_toggle_button_state_content",
+    "controls": [
+      {
+        "option_label@option_toggle_janger.base_text": {
+          "text": "$option_label",
+          "font_type": "smooth",
+          "bindings": "$label_bindings"
+        }
+      },
+      {
+        "space@option_toggle_janger.base_text": {
+          "text": " ",
+          "ignored": "(not $spacer)"
+        }
+      },
+      {
+        "state_is_text@option_toggle_janger.base_text": {
+          "text": ": ",
+          "ignored": "$spacer"
+        }
+      },
+      {
+              "label@common.new_button_label": {
+                "layer": 1,
+                "$options_dropdown_label_color_binding_type|default": "none",
+                "$options_dropdown_label_color_binding|default": "",
+                "$options_dropdown_toggle_label_font_type|default": "default",
+                "text": "$options_dropdown_toggle_label_binding",
+                "font_type": "smooth",
+                "$options_dropdown_toggle_label_shadow|default": true,
+                "shadow": "$options_dropdown_toggle_label_shadow",
+                "alpha": "$content_alpha",
+                "$options_dropdown_toggle_label_binding_type|default": "global",
+                "$options_dropdown_toggle_label_binding_collection_name|default": "",
+                "$options_dropdown_label_bindings|default": [
+                  {
+                    "binding_name": "$options_dropdown_toggle_label_binding",
+                    "binding_condition": "none",
+                    "binding_type": "$options_dropdown_toggle_label_binding_type",
+                    "binding_collection_name": "$options_dropdown_toggle_label_binding_collection_name"
+                  },
+                  {
+                    "binding_name": "$options_dropdown_label_color_binding",
+                    "binding_type": "$options_dropdown_label_color_binding_type",
+                    "binding_name_override": "#color"
+                  }
+                ],
+                "bindings": "$options_dropdown_label_bindings"
+        }
+      }
+    ]
+  }
+}
+              "anchor_from": "center",
+                "anchor_to": "center",
+                "size": [ "default", "default" ],
+                "text_alignment": "center",
+                "max_size": [ "100%", 10 ],
+                "text": "$options_dropdown_toggle_label_binding",
+                "font_type": "$options_dropdown_toggle_label_font_type",
+                "$options_dropdown_toggle_label_shadow|default": true,
+                "shadow": "$options_dropdown_toggle_label_shadow",
+                "alpha": "$content_alpha",
+
+                "$options_dropdown_toggle_label_binding_type|default": "global",
+                "$options_dropdown_toggle_label_binding_collection_name|default": "",
+                "$options_dropdown_label_bindings|default": [
+                  {
+                    "binding_name": "$options_dropdown_toggle_label_binding",
+                    "binding_condition": "none",
+                    "binding_type": "$options_dropdown_toggle_label_binding_type",
+                    "binding_collection_name": "$options_dropdown_toggle_label_binding_collection_name"
+                  },
+                  {
+                    "binding_name": "$options_dropdown_label_color_binding",
+                    "binding_type": "$options_dropdown_label_color_binding_type",
+                    "binding_name_override": "#color"
+                  }
+                ],
+                "bindings": "$options_dropdown_label_bindings"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "space@option_toggle_janger.base_text": {
+          "text": " ",
+          "ignored": "(not $spacer)"
+        }
+      },
+      {
+        "state_is_text@option_toggle_janger.base_text": {
+          "text": ": ",
+          "ignored": "$spacer"
+        }
+      },
+      {
+        "state_text@option_toggle_janger.base_text": {
+          "text": "$state_text"
+        }
+      }
+    ]
+  }
+}

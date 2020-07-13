@@ -1,0 +1,146 @@
+/********************************************************
++*   @FMarquesPTO. All rights reserved. *
++*********************************************************/
+{
+  "namespace": "option_radio_janger",
+
+  "option_radio": {
+    "type": "panel",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "size": [ 270, "22px" ],
+    "$enabled|default": true,
+    "$radio_label_text|default": "Hi", //:/
+    "controls": [
+      { "control@option_radio_janger.radio_core": {} }
+    ]
+  },
+
+  "radio_state_common": {
+    "type": "panel",
+    "size": [ "100%", "100%" ],
+    "controls": [
+      {
+        "image_content_panel": {
+          "type": "panel",
+          "size": [ "100%", "100%" ],
+          "controls": [
+            {
+              "background_image": {
+                "type": "image",
+                "texture": "ui_janger/assets/.images/text_edit_box",
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "size": [ "100%", "100%" ],
+                "visible": "$wants_background"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "radio_content_panel": {
+          "type": "panel",
+          "size": [ "100% - 2px", "100% - 2px" ],
+          "controls": [
+            {
+              "$radio_type_panel@$radio_type_panel": { 
+                "layer": 3
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "radio_core@toggle_janger.toggle_common": {
+    "$radio_toggle_group": true,
+    "size": [ "100%", "100%" ],
+    "$toggle_name|default": "$toggle_state_binding_name",
+    "$toggle_enabled_binding_name": "$option_enabled_binding_name",
+    "enabled": "$enabled",
+    "$toggle_enabled_binding_type": "global",
+    "variables": [
+      {
+        "requires": "(not $option_enabled_binding_name or not $enabled)",
+        "$toggle_enabled_binding_name": "#not_data_bound",
+        "$toggle_enabled_binding_type": "none"
+      }
+    ],
+    "$radio_state_panel|default": "option_radio_janger.radio_state_common",
+    "$radio_type_panel|default": "option_radio_janger.radio_label",
+    "$text_color|default": [ 0.87, 0.87, 0.87 ],
+    "controls": [
+      {
+        "unchecked@$radio_state_panel": {
+          "$wants_background": false,
+          "$wants_border": false,
+          "layer": 3
+        }
+      },
+      {
+        "unchecked_hover@$radio_state_panel": {
+          "$wants_background": false,
+          "$wants_border": true,
+          "layer": 4
+       }
+      },
+      {
+        "unchecked_locked@$radio_state_panel": {
+          "$wants_background": false,
+          "$wants_border": false,
+          "layer": 1
+        }
+      },
+      {
+        "unchecked_locked_hover@$radio_state_panel": {
+          "$wants_background": false,
+          "$wants_border": false,
+          "layer": 1
+        }
+      },
+      {
+        "checked@$radio_state_panel": {
+          "$wants_background": true,
+          "$wants_border": false,
+          "layer": 3
+        }
+      },
+      {
+        "checked_hover@$radio_state_panel": {
+          "$wants_background": true,
+          "$wants_border": true,
+          "layer": 5
+       }
+      },
+      {
+        "checked_locked@$radio_state_panel": {
+         "$wants_background": true,
+          "$wants_border": false,
+          "layer": 1
+        }
+      },
+      {
+        "checked_locked_hover@$radio_state_panel": {
+          "$wants_background": true,
+          "$wants_border": false,
+          "layer": 1
+        }
+      }
+    ]
+  },
+
+  "radio_label": {
+    "type": "label",
+    "anchor_from": "center",
+    "anchor_to": "center",
+    "offset": [ 0, -2 ],
+    "text": "$radio_label_text",
+    "font_type": "normal",
+    "color": "$text_color",
+    "size": [ "default", "default" ],
+    "bindings": "$radio_label_bindings",
+    "layer": 5
+  }
+}

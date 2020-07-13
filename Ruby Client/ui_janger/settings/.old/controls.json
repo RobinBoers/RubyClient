@@ -1,0 +1,378 @@
+/********************************************************
++*   @FMarquesPTO. All rights reserved. *
++*********************************************************/
+{
+  "namespace": "controls_janger",
+
+  "label_panel": {
+    "type": "panel",
+    "size": [ "100%", 25 ],
+    "controls": [
+      {
+       "label_control": {
+         "type": "label",
+         "color": "white",
+         "anchor_from": "center",
+         "anchor_to": "center",
+         "text_alignment": "center",
+         "layer": 1,
+         "text": "$category_text"
+        }
+      }
+    ]
+  },
+
+  "binding_button@button_janger.classic_button": {
+    "size": [ 75, 20 ],
+    "$pressed_button_name": "button.binding_button",
+    "$button_type_panel": "controls_janger.binding_button_content",
+    "bindings": [
+      {
+        "binding_type": "collection_details",
+        "binding_collection_name": "$keymapping_collection"
+      }
+    ]
+  },
+
+  "binding_button_content": {
+    "type": "panel",
+    "size": [ 75, "100%" ],
+    "$image_texture|default": "assets/minecraft/textures/gui/widgets",
+    "controls": [
+      { "controller_focus@common_janger.controller_focus": {} },
+      {
+        "image_content_panel": {
+          "type": "panel",
+          "size": [ 75, 21 ],
+          "clips_children": true,
+          "layer": 3,
+          "controls": [
+            {
+              "left_side_image_panel": {
+                "type": "panel",
+                "size": [ "50%", 21 ],
+                "clips_children": true,
+                "anchor_from": "left_middle",
+                "anchor_to": "left_middle",
+                "controls": [
+                  {
+                    "left_side_image": {
+                      "type": "image",
+                      "texture": "$image_texture",
+                      "anchor_from": "left_middle",
+                      "anchor_to": "left_middle",
+                      "uv": "$image_position",
+                      "uv_size": "$image_size",
+                      "size": "$image_size"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "right_side_image_panel": {
+                "type": "panel",
+                "size": [ "50%", 21 ],
+                "clips_children": true,
+                "anchor_from": "right_middle",
+                "anchor_to": "right_middle",
+                "controls": [
+                  {
+                    "right_side_image": {
+                      "type": "image",
+                      "texture": "$image_texture",
+                      "anchor_from": "right_middle",
+                      "anchor_to": "right_middle",
+                      "uv": "$image_position",
+                      "uv_size": "$image_size",
+                      "size": "$image_size"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "default_label@common.new_button_label": {
+          "text": "#binding_button_text",
+          "shadow": true,
+          "tts_override_control_value": " ",
+          "layer": 5,
+          "bindings": [
+            {
+              "binding_name": "#binding_button_text",
+              "binding_condition": "none",
+              "binding_type": "collection",
+              "binding_collection_name": "$keymapping_collection"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "image_binding_button@button_janger.classic_button": {
+    "$pressed_button_name": "button.binding_button",
+    "size": [ 75, 20 ],
+    "$button_type_panel": "controls_janger.image_binding_button_content",
+    "bindings": [
+      {
+        "binding_type": "collection_details",
+        "binding_collection_name": "$keymapping_collection"
+      }
+    ]
+  },
+
+  "image_binding_button_content@common_buttons.button_content_panel": {
+    "controls": [
+      {
+        "base_icon_image": {
+          "type": "image",
+          "size": [ 24, 24 ],
+          "layer": 1,
+          "$gameplay_key_icon|default": "#binding_icon_sprite",
+          "bindings": [
+            {
+              "binding_name": "$gameplay_key_icon",
+              "binding_name_override": "#texture",
+              "binding_type": "collection",
+              "binding_collection_name": "$keymapping_collection"
+            }
+          ]
+        }
+      },
+      {
+        "default_label@common.new_button_label": {
+          "text": "#binding_button_text",
+          "shadow": true,
+          "bindings": [
+            {
+              "binding_name": "#binding_button_text",
+              "binding_type": "collection",
+              "binding_collection_name": "$keymapping_collection"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "reset_binding_button@button_janger.classic_button": {
+    "layer": 1,
+    "$button_text": "Reset",
+    "size": [ 50, 20 ],
+    "$pressed_button_name": "button.reset_binding"
+  },
+
+  "keymapping_item": {
+    "type": "stack_panel",
+    "orientation": "horizontal",
+    "layer": 1,
+    "size": [ 302, 20 ],
+    "controls": [
+      {
+        "option_info_label_control": {
+          "type": "panel",
+          "size": [ "fill", 20 ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "controls": [
+            {
+              "keymapping_label_control": {
+                "type": "label",
+                "color": "$generic_button_text_color",
+                "size": [ "100% - 4px", "default" ],
+                "anchor_from": "left_middle",
+                "anchor_to": "left_middle",
+                "text_alignment": "left",
+                "layer": 1,
+                "text": "#keymapping_name",
+                "bindings": [
+                  {
+                    "binding_name": "#keymapping_name",
+                    "binding_type": "collection",
+                    "binding_collection_name": "$keymapping_collection"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "keymapping_button_0@binding_button": {
+          "$button_tts_header": "#audible_keymapping_name",
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "bindings": [
+            {
+              "binding_type": "collection_details",
+              "binding_collection_name": "$keymapping_collection"
+            },
+            {
+              "binding_name":  "#audible_keymapping_name",
+              "binding_type":  "collection",
+              "binding_collection_name": "$keymapping_collection"
+            }
+          ]
+        }
+      },
+      { "spacer": { "type": "panel", "size": [ 12, "100%" ] } },
+      {
+        "keymapping_button_1@controls_janger.reset_binding_button": {
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "$pressed_button_name": "button.reset_binding",
+          "$button_tts_header": "accessibility.settings.reset",
+          "bindings": [
+            {
+              "binding_type": "collection_details",
+              "binding_collection_name": "$keymapping_collection"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "mouse_grid_item": {
+    "type": "panel",
+    "size": [ "100%", 21 ],
+    "clips_children": true,
+    "$position|default": [ 0, 0 ],
+    "layer": 10,
+    "bindings": [
+      {
+        // Hide this section when another keyboard type/layout is enabled
+        "binding_name": "#keyboard_show_standard_keyboard_options",
+        "binding_name_override": "#visible"
+      }
+    ],
+    "controls": [
+      {
+        "mouse_grid_item": {
+          "type": "stack_panel",
+          "size": [ "100%", "100%c" ],
+          "anchor_to": "top_left",
+          "anchor_from": "top_left",
+          "offset": "$position",
+          "controls": [
+            { "keymapping_grid@controls_janger.keymapping_grid": {} }
+          ]
+        }
+      }
+    ]
+  },
+
+  "keymapping_grid": {
+    "type": "grid",
+    "size": [ "100%", "default" ],
+    "layer": 1,
+    "grid_item_template": "controls_janger.keymapping_item",
+    "grid_dimension_binding": "$keymapping_grid_dimension",
+    "collection_name": "$keymapping_collection",
+    "anchor_to": "top_right",
+    "anchor_from": "top_right",
+    "bindings": [
+      {
+        "binding_name": "$keymapping_grid_dimension"
+      }
+    ]
+  },
+
+  // Key mappings to mimic mouse functionality if full keyboard gameplay is enabled
+  "full_keymapping_grid@controls_janger.keymapping_grid": {
+    "$keymapping_grid_dimension": "#keyboard_full_grid_dimension",
+    "$keymapping_collection": "keyboard_full_collection"
+  },
+
+  // gamepad controls
+  "gamepad_mapping_item": {
+    "type": "stack_panel",
+    "orientation": "horizontal",
+    "layer": 1,
+    "size": [ 302, 21 ],
+    "controls": [
+      {
+        "option_info_label_control": {
+          "type": "panel",
+          "size": [ "fill", 20 ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "controls": [
+            {
+              "keymapping_label_control": {
+                "type": "label",
+                "color": "$generic_button_text_color",
+                "size": [ "100% - 4px", "default" ],
+                "anchor_from": "left_middle",
+                "anchor_to": "left_middle",
+                "text_alignment": "left",
+                "layer": 1,
+                "text": "#keymapping_name",
+                "bindings": [
+                  {
+                    "binding_name": "#keymapping_name",
+                    "binding_type": "collection",
+                    "binding_collection_name": "$keymapping_collection"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "keymapping_button_0@controls_janger.image_binding_button": {
+          "$button_tts_header":  "#audible_keymapping_name",
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "bindings": [
+            {
+              "binding_type": "collection_details",
+              "binding_collection_name": "$keymapping_collection"
+            },
+            {
+              "binding_name":  "#audible_keymapping_name",
+              "binding_type":  "collection",
+              "binding_collection_name": "$keymapping_collection"
+            }
+          ]
+        }
+      },
+      { "spacer": { "type": "panel", "size": [ 12, "100%" ] } },
+      {
+        "keymapping_button_1@controls_janger.reset_binding_button": {
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "$pressed_button_name": "button.reset_binding",
+          "$button_tts_header": "accessibility.settings.reset",
+          "bindings": [
+            {
+              "binding_type": "collection_details",
+              "binding_collection_name": "$keymapping_collection"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "gamepad_mapping_grid": {
+    "type": "grid",
+    "size": [ "100%", "default" ],
+    "layer": 1,
+    "grid_item_template": "controls_janger.gamepad_mapping_item",
+    "grid_dimension_binding": "$keymapping_grid_dimension",
+    "collection_name": "$keymapping_collection",
+    "anchor_to": "top_right",
+    "anchor_from": "top_right",
+    "bindings": [
+      {
+        "binding_name": "$keymapping_grid_dimension"
+      }
+    ]
+  }
+}

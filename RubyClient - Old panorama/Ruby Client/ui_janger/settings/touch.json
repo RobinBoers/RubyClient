@@ -1,0 +1,132 @@
+/********************************************************
++*   @FMarquesPTO. All rights reserved. *
++*********************************************************/
+{
+  "namespace": "touch_janger",
+
+  "touch_button@new_button_toggle_janger.button_toggle": {
+    "$toggle_name": "settings",
+    "$control_name": "touch_view",
+    "$toggle_index": 108,
+    "$toggle_text": "options.touch"
+  },
+
+  "touch_content_panel": {
+    "type": "panel",
+    "$title_text": "controls.title",
+    "controls": [
+      { "top_title_panel@new_common_janger.top_title_panel": {} },
+      { "touch_content@touch_janger.touch_content": {} }
+    ],
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "touch_view",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  "touch_content": {
+    "type": "panel",
+    "size": [ 310, 182 ],
+    "anchor_from": "center",
+    "anchor_to": "top_middle",
+    "offset": [ 0, "-40%" ],
+    "controls": [
+      { "sensitivity_slider@sensitivity_slider": {} },
+      { "invert_y_axis_toggle@invert_y_axis_toggle": { "offset": [ 160, 0 ] } },
+      { "auto_jump_toggle@auto_jump_toggle": { "offset": [ 0, 24 ] } },
+      { "destroy_vibration_toggle@destroy_vibration_toggle": { "offset": [ 160, 24 ] } },
+      { "use_touch_pad_toggle@use_touch_pad_toggle": { "offset": [ 0, 48 ] } },
+      { "left_handed_toggle@left_handed_toggle": { "offset": [ 160, 48 ] } },
+      { "swap_jump_and_sneak_toggle@swap_jump_and_sneak_toggle": { "offset": [ 0, 72 ] } },
+      { "hotbar_only_touch_toggle@hotbar_only_touch_toggle": { "offset": [ 160, 72 ] } },
+      { "button_size_slider@button_size_slider": { "offset": [ 0, 96 ] } },
+      { "reset_button@reset_button": { "offset": [ 160, 96 ] } },
+      { "settings_button@settings_janger.settings_button": { "offset": [ 0, 141 ] } }
+    ]
+  },
+
+  "sensitivity_slider@option_slider_janger.option_slider": {
+    "$option_label": "#touch_sensitivity_slider_label",
+    "$slider_name": "touch_sensitivity",
+    "$slider_value_binding_name": "#touch_sensitivity",
+    "$slider_tts_text_value": "#touch_sensitivity_text_value",
+    "$option_enabled_binding_name": "#touch_sensitivity_enabled",
+    "$label_bindings": [
+      {
+        "binding_name": "$option_label"
+      }
+    ]
+  },
+
+  "invert_y_axis_toggle@option_toggle_janger.option_toggle": {
+    "$option_label": "options.invertYAxis",
+    "$option_binding_name": "#touch_invert_y_axis",
+    "$option_enabled_binding_name": "#touch_invert_y_axis_enabled",
+    "$toggle_name": "touch_invert_y_axis"
+  },
+
+  "auto_jump_toggle@option_toggle_janger.option_toggle": {
+    "$option_label": "options.autojump",
+    "$option_binding_name": "#touch_autojump",
+    "$option_enabled_binding_name": "#touch_autojump_enabled",
+    "$toggle_name": "touch_autojump"
+  },
+
+  "destroy_vibration_toggle@option_toggle_janger.option_toggle": {
+    "$option_label": "options.destroyvibration",
+    "$option_binding_name": "#touch_vibration",
+    "$option_enabled_binding_name": "#touch_vibration_enabled",
+    "$toggle_name": "touch_vibration"
+  },
+
+  "use_touch_pad_toggle@option_toggle_janger.option_toggle": {
+    "$option_label": "options.usetouchpad",
+    "$option_binding_name": "#split_controls",
+    "$option_enabled_binding_name": "#split_controls_enabled",
+    "$toggle_name": "split_controls"
+  },
+
+  "left_handed_toggle@option_toggle_janger.option_toggle": {
+    "$option_label": "options.lefthanded",
+    "$option_binding_name": "#left_handed",
+    "$option_enabled_binding_name": "#left_handed_enabled",
+    "$toggle_name": "left_handed"
+  },
+
+  "swap_jump_and_sneak_toggle@option_toggle_janger.option_toggle": {
+    "$option_label": "options.swapJumpAndSneak",
+    "$option_binding_name": "#swap_jump_and_sneak",
+    "$option_enabled_binding_name": "#swap_jump_and_sneak_enabled",
+    "$toggle_name": "swap_jump_and_sneak"
+  },
+
+  "hotbar_only_touch_toggle@option_toggle_janger.option_toggle": {
+    "$option_label": "options.hotbarOnlyTouch",
+    "$option_binding_name": "#hotbar_only_touch",
+    "$option_enabled_binding_name": "#hotbar_only_touch_enabled",
+    "$toggle_name": "hotbar_only_touch"
+  },
+
+  "button_size_slider@option_slider_janger.option_slider": {
+    "$option_label": "#button_size_slider_label",
+    "$slider_name": "button_size",
+    "$slider_value_binding_name": "#button_size",
+    "$slider_tts_text_value": "#button_size_text_value",
+    "$option_enabled_binding_name": "#button_size_enabled",
+    "$label_bindings": [
+      {
+        "binding_name": "$option_label"
+      }
+    ]
+  },
+
+  "reset_button@button_janger.action_button": {
+    "$pressed_button_name": "button.reset_touch_bindings",
+    "$button_text": "Reset Settings",
+    "$focus_override_down": "FOCUS_OVERRIDE_STOP"
+  }
+}

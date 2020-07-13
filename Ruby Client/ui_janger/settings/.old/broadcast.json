@@ -1,0 +1,121 @@
+/********************************************************
++*   @FMarquesPTO. All rights reserved. *
++*********************************************************/
+{
+  "namespace": "broadcast_janger",
+
+  "broadcast_button@button_toggle_janger.button_toggle": {
+    "$enter_name": "broadcast",
+    "$toggle_text": "options.broadcast",
+    "$toggle_group_forced_index": 50
+  },
+
+  "broadcast_button_back@button_toggle_janger.button_toggle_back": {
+    "$toggle_group_forced_index": 101,
+    "$back_name": "accessibility_broadcast"
+  },
+
+  "broadcast_content_panel": {
+    "type": "panel",
+    "$title_text": "options.broadcast.title",
+    "controls": [
+      { "top_title_panel@common_janger.top_title_panel": {} },
+      { "content_panel@broadcast_janger.content_panel": {} }
+    ],
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "broadcast_button_toggle",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "world_broadcast_button_toggle",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  "content_panel": {
+    "type": "panel",
+    "size": [ 310, 182 ],
+    "anchor_from": "center",
+    "anchor_to": "top_middle",
+    "offset": [ 0, "-37%" ],
+    "controls": [
+      { "create_mixer_description@create_mixer_description": {} },
+      { "get_create_mixer_button@get_create_mixer_button": { "offset": [ 0, 79 ] } },
+      { "launch_mixer_create_button@launch_mixer_create_button": { "offset": [ 0, 79 ] } },
+      { "start_broadcast_text@start_broadcast_text": { "offset": [ 0, 104 ] } },
+      { "start_broadcast_button@start_broadcast_button": { "offset": [ 0, 118 ] } },
+      { "broadcast_button_back@broadcast_janger.broadcast_button_back": { "offset": [ 0, 156 ] } }
+    ]
+  },
+
+  "create_mixer_description": {
+    "type": "panel",
+    "size": [ 310, "100%c" ],
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "controls": [
+      {
+        "create_mixer_description_text": {
+          "type": "label",
+          "color": "$information_text_color",
+          "size": [ "100%", "default" ],
+          "layer": 1,
+          "shadow": true,
+          "text_alignment": "center",
+         "text": "options.broadcast.mixerCreatePrompt"
+        }
+      }
+    ]
+  },
+
+  "get_create_mixer_button@button_janger.action_button": {
+    "$pressed_button_name": "button.get_mixer_create",
+    "$button_text": "options.broadcast.mixerCreate.get",
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "ignored": "$mixer_create_installed"
+  },
+
+  "launch_mixer_create_button@button_janger.action_button": {
+    "$pressed_button_name": "button.launch_mixer_create",
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "$button_text": "options.broadcast.mixerCreate.launch",
+    "ignored": "(not $mixer_create_installed)"
+  },
+
+  "start_broadcast_text": {
+    "ignored": "(not $is_ios)",
+    "type": "panel",
+    "size": [ "100%", "100%c" ],
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "controls": [
+      {
+        "create_mixer_label": {
+          "type": "label",
+          "color": "$information_text_color",
+          "size": [ "100%", "default" ],
+          "shadow": true,
+          "layer": 1,
+          "text_alignment": "center",
+          "text": "options.broadcast.startPrompt"
+        }
+      }
+    ]
+  },
+
+  "start_broadcast_button@button_janger.action_button": {
+    "ignored": "(not $is_ios)",
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "$pressed_button_name": "button.start_broadcast",
+    "$button_text": "options.broadcast.start"
+  }
+}

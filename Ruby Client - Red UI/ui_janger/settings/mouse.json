@@ -1,0 +1,243 @@
+/********************************************************
++*   @FMarquesPTO. All rights reserved. *
++*********************************************************/
+{
+  "namespace": "mouse_janger",
+
+  "mouse_button@new_button_toggle_janger.button_toggle": {
+    "$toggle_name": "settings",
+    "$control_name": "mouse_view",
+    "$toggle_index": 104,
+    "$toggle_text": "options.mouse"
+  },
+
+  "mouse_settings_button@new_button_toggle_janger.button_toggle": {
+    "$toggle_name": "mouse",
+    "$control_name": "mouse_settings_view",
+    "$toggle_index": 1,
+    "$toggle_text": "options.mouseSettings"
+  },
+
+  "mouse_content_panel": {
+    "type": "panel",
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "mouse_view",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ],
+    "controls": [
+      { "mouse_content@mouse_janger.mouse_content": {} },
+      { "mouse_settings@mouse_janger.mouse_settings_content_panel": {} }
+    ]
+  },
+
+  "mouse_content@new_common_janger.scrolling_screen_content_panel": {
+    "$title_text": "controls.title",
+    "$title_offset": [ 0, 5 ],
+    "$top_zone_size": [ "100%", 40 ],
+    "$top_content": "mouse_janger.mouse_top_content",
+    "$scrolling_content": "mouse_janger.mouse_scrolling_content",
+    "$bottom_content": "mouse_janger.mouse_bottom_content",
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "mouse_settings_view",
+        "source_property_name": "(not #toggle_state)",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  "mouse_settings_content_panel": {
+    "type": "panel",
+    "$title_text": "options.mouseSettings.title",
+    "controls": [
+      { "top_title_panel@common_janger.top_title_panel": {} },
+      { "middle_content@mouse_janger.mouse_settings_content": {} }
+    ],
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "mouse_settings_view",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  "mouse_top_content": {
+    "type": "panel",
+    "controls": [
+      { "top_title_panel@new_common_janger.top_title_panel": {} },
+      {
+        "box_content": {
+          "type": "panel",
+          "size": [ 310, 20 ],
+          "offset": [ 0, 7 ],
+          "controls": [
+            { "mouse_settings_button@mouse_janger.mouse_settings_button": {} },
+            { "auto_jump_toggle@mouse_janger.auto_jump_toggle": { "offset": [ 160, 0 ] } }
+          ]
+        }
+      }
+    ]
+  },
+
+  "mouse_scrolling_content": {
+    "type": "stack_panel",
+    "size": [ 326, "100%c" ],
+    "$keymapping_grid_dimension": "#keyboard_standard_grid_dimension",
+    "$keymapping_collection": "keyboard_standard_collection",
+    "controls": [
+      { "scrolling_dirt_background@scrolling_janger.scrolling_dirt_background": {} },
+      {
+        // Section that shows the keymappings for the standard keyboard layout
+        "keyboard_section": {
+          "type": "stack_panel",
+          "size": [ "100%", "100%c" ],
+          "bindings": [
+            {
+              // Hide this section when another keyboard type/layout is enabled
+              "binding_name": "#keyboard_show_standard_keyboard_options",
+              "binding_name_override": "#visible"
+            }
+          ],
+          "controls": [
+            { "keyboard_keymapping_grid@controls_janger.keymapping_grid": {} }
+          ]
+        }
+      },
+      {
+        // Section that shows the keymappings for the full keyboard layout
+        "full_keyboard_section": {
+          "type": "stack_panel",
+          "size": [ "100%", "100%c" ],
+          "bindings": [
+            {
+              // Show full keyboard section when the full keyboard toggle is enabled
+              "binding_name": "#keyboard_show_full_keyboard_options",
+              "binding_name_override": "#visible"
+            }
+          ],
+          "controls": [
+            { "keyboard_full_keymapping_grid@controls_janger.full_keymapping_grid": {} }
+          ]
+        }
+      }
+    ]
+  },
+
+  "mouse_settings_content": {
+    "type": "panel",
+    "size": [ 310, 182 ],
+    "anchor_from": "center",
+    "anchor_to": "top_middle",
+    "offset": [ 0, "-40%" ],
+    "controls": [ 
+      { "sensitivity_slider@mouse_janger.sensitivity_slider": {} },
+      { "invert_y_axis_toggle@mouse_janger.invert_y_axis_toggle": { "offset": [ 160, 0 ] } },
+      { "full_keyboard_gameplay_toggle@mouse_janger.full_keyboard_gameplay_toggle": { "offset": [ 0, 24 ] } },
+      { "hide_keyboard_tooltips_toggle@mouse_janger.hide_keyboard_tooltips_toggle": { "offset": [ 160, 24 ] } },
+      { "smooth_rotation_speed_slider@mouse_janger.smooth_rotation_speed_slider": { "offset": [ 0, 48 ] } },
+      { "not_mouse_settings_button@mouse_janger.not_mouse_settings_button": { "offset": [ 0, 83 ] } }
+    ]
+  },
+
+  "sensitivity_slider@option_slider_janger.option_slider": {
+    "$option_label": "#keyboard_mouse_sensitivity_slider_label",
+    "$slider_name": "keyboard_mouse_sensitivity",
+    "$slider_value_binding_name": "#keyboard_mouse_sensitivity",
+    "$slider_tts_text_value": "#keyboard_mouse_sensitivity_text_value",
+    "$option_enabled_binding_name": "#keyboard_mouse_sensitivity_enabled",
+    "$focus_override_right": "FOCUS_OVERRIDE_STOP",
+    "$label_bindings": [
+      {
+        "binding_name": "$option_label"
+      }
+    ]
+  },
+
+  "invert_y_axis_toggle@option_toggle_janger.option_toggle": {
+    "$option_label": "options.invertYAxis",
+    "$option_binding_name": "#keyboard_mouse_invert_y_axis",
+    "$option_enabled_binding_name": "#keyboard_mouse_invert_y_axis_enabled",
+    "$toggle_name": "keyboard_mouse_invert_y_axis",
+    "$focus_override_right": "FOCUS_OVERRIDE_STOP"
+  },
+
+  "auto_jump_toggle@option_toggle_janger.option_toggle": {
+    "$option_label": "options.autojump",
+    "$option_binding_name": "#keyboard_mouse_autojump",
+    "$option_enabled_binding_name": "#keyboard_mouse_autojump_enabled",
+    "$toggle_name": "keyboard_mouse_autojump",
+    "$focus_override_right": "FOCUS_OVERRIDE_STOP"
+  },
+
+  "full_keyboard_gameplay_toggle@option_toggle_janger.option_toggle": {
+    "$option_label": "options.fullKeyboardGameplay",
+    "$option_binding_name": "#keyboard_show_full_keyboard_options",
+    "$option_enabled_binding_name": "#keyboard_show_full_keyboard_options_enabled",
+    "$toggle_name": "keyboard_show_full_keyboard_options",
+    "$focus_override_right": "FOCUS_OVERRIDE_STOP"
+  },
+
+  "hide_keyboard_tooltips_toggle@option_toggle_janger.option_toggle": {
+    "$enabled": "$education_edition",
+    "$option_label": "options.hideKeyboardTooltips",
+    "$option_binding_name": "#hide_keyboard_tooltips",
+    "$option_enabled_binding_name": "#hide_keyboard_tooltips_enabled",
+    "$toggle_name": "hide_keyboard_tooltips",
+    "$focus_override_right": "FOCUS_OVERRIDE_STOP"
+  },
+
+  "smooth_rotation_speed_slider@option_slider_janger.option_slider": {
+    "$option_label": "#keyboard_smooth_rotation_speed_slider_label",
+    "$slider_name": "keyboard_smooth_rotation_speed",
+    "$slider_value_binding_name": "#keyboard_smooth_rotation_speed",
+    "$slider_tts_text_value": "#keyboard_smooth_rotation_speed_text_value",
+    "$option_enabled_binding_name": "#keyboard_smooth_rotation_speed_enabled",
+    "$focus_override_right": "FOCUS_OVERRIDE_STOP",
+    "$label_bindings": [
+      {
+        "binding_name": "$option_label"
+      }
+    ],
+    "bindings": [
+      {
+        "binding_name": "#keyboard_show_standard_keyboard_options",
+        "binding_name_override": "#visible"
+      }
+    ]
+  },
+
+  "mouse_bottom_content": {
+    "type": "stack_panel",
+    "size": [ 310, 20 ],
+    "offset": [ 0, -4 ],
+    "orientation": "horizontal",
+    "controls": [
+      { "reset_button@mouse_janger.reset_button": {} },
+      { "spacer": { "type": "panel", "size": [ "fill", "100%" ] } },
+      { "settings_button@settings_janger.settings_button": { "size": [ 150, 20 ] } }
+    ]
+  },
+
+  "reset_button@button_janger.action_button": {
+    "$pressed_button_name": "button.reset_keyboard_bindings",
+    "$button_text": "Reset Keys",
+    "$focus_override_right": "FOCUS_OVERRIDE_STOP"
+  },
+
+  "not_mouse_settings_button@new_button_toggle_janger.button_toggle": {
+    "$toggle_name": "mouse",
+    "$control_name": "not_mouse_settings_view",
+    "$toggle_index": 0,
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "$back_button": true,
+    "$toggle_text": "gui.done"
+  }
+}

@@ -1,0 +1,75 @@
+/********************************************************
++*   @FMarquesPTO. All rights reserved. *
++*********************************************************/
+{
+  "namespace": "world_edit_janger",
+
+  "world_edit_screen_content_panel": {
+    "type": "panel",
+    "controls": [
+      { "world_edit_content_panel@world_edit_janger.world_edit_content_panel": {} },
+      { "more_edit_options_content_panel@more_edit_options_janger.more_edit_options_content_panel": {} }
+    ]
+  },
+
+  "world_edit_content_panel": {
+    "type": "panel",
+    "$title_text": "selectWorld.edit.title",
+    "controls": [
+      { "top_title_panel@common_janger.top_title_panel": {} },
+      { "menu_content_panel@world_edit_janger.menu_content_panel": {} },
+      { "bottom_panel@bottom_panel": {} }
+    ],
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "more_edit_options_view",
+        "source_property_name": "(not #toggle_state)",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  "menu_content_panel": {
+    "type": "panel",
+    "size": [ 202, 182 ],
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "offset": [ 0, 40 ],
+    "$toggle_size": [ 200, 20 ],
+    "$button_size": [ 200, 20 ],
+    "controls": [
+      { "edit_name_box@edit_name_box": {} },
+      { "copy_world_button@copy_world_button": { "offset": [ 0, 56 ] } },
+      { "delete_world_button@delete_world_button": { "offset": [ 0, 80 ] } },
+      { "more_edit_options_button@more_edit_options_janger.more_edit_options_button": { "offset": [ 0, 118 ] } },
+      { "exit@settings_janger.exit_button": { "offset": [ 0, -20 ] } }
+    ]
+  },
+
+  "edit_name_box@option_text_edit_box_janger.option_text_edit_box": {
+    "$option_label": "selectWorld.enterName",
+    "$option_binding_name": "#world_name",
+    "$option_enabled_binding_name": "#world_name_enabled",
+    "$text_box_name": "world_name_text_box",
+    "$focus_override_right": "FOCUS_OVERRIDE_STOP",
+    "$tts_override_control_value": " "
+  },
+
+  "copy_world_button@button_janger.action_button": {
+    "$enabled": "(not $is_mp_client or not $trial or $is_pregame or not $export_disabled)",
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "$button_text": "gui.copyWorld",
+    "$pressed_button_name": "copy_world_button"
+  },
+
+  "delete_world_button@button_janger.action_button": {
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "$enabled": "(not $is_mp_client or not $trial or $is_pregame)",
+    "$button_text": "createWorldScreen.deleteWorld",
+    "$pressed_button_name": "delete_world_button",
+    "$focus_id": "delete_world_button"
+  }
+}

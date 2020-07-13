@@ -1,0 +1,80 @@
+//Modified by HJN
+{
+  "format_version": "1.10.0",
+  "particle_effect": {
+    "description": {
+      "identifier": "minecraft:critical_hit_emitter",
+      "basic_render_parameters": {
+        "material": "particles_alpha",
+        "texture": "textures/particle/particles"
+      }
+    },
+    "components": {
+      "minecraft:emitter_rate_steady": {
+        "spawn_rate": 520,
+        "max_particles": 900
+      },
+      "minecraft:emitter_lifetime_once": {
+        "active_time": 0.4
+      },
+      "minecraft:emitter_shape_point": {
+        "offset": [ "Math.random(0, variable.entity_scale*0.3)", "Math.random(0.8, variable.entity_scale*1.2)", "Math.random(0, variable.entity_scale*0.3)" ],
+        "direction": [ "Math.random(-0.75, 0.75)", "Math.random(-1.0, 1.0)", "Math.random(-0.75, 0.75)" ]
+      },
+      "minecraft:particle_initial_speed": "Math.random(10.0, 30.0)",
+      "minecraft:particle_lifetime_expression": {
+        "max_lifetime": "6.0 / (Math.random(0.0, 16.0) + 9.0)"
+      },
+      "minecraft:particle_motion_dynamic": {
+        "linear_acceleration": [ 0, -12.0, 0 ],
+        "linear_drag_coefficient": 13
+      },
+      "minecraft:particle_appearance_billboard": {
+        "size": [
+          "0.10 + variable.particle_random_1*0.05",
+          "0.10 + variable.particle_random_1*0.05"
+        ],
+        "facing_camera_mode": "rotate_xyz",
+        "uv": {
+          "texture_width": 128,
+          "texture_height": 128,
+          "flipbook": {
+            "base_UV": [ 0, 72 ],
+            "size_UV": [ 8, 8 ],
+            "step_UV": [ 8, 0 ],
+            "frames_per_second": 8,
+            "max_frame": 8,
+            "stretch_to_lifetime": true,
+            "loop": false
+          }
+        }
+      },
+      "minecraft:particle_appearance_tinting": {
+        "color": {
+          "gradient": [
+            [
+              "0.9 - variable.particle_random_4*0.2",
+              "0.81 - variable.particle_random_4*0.2",
+              "0.72 - variable.particle_random_4*0.2",
+              1.0
+            ],
+            [
+              "0.8 - variable.particle_random_4*0.2",
+              "0.72 - variable.particle_random_4*0.2",
+              "0.65 - variable.particle_random_4*0.2",
+              1.0
+            ],
+            [ 
+              "0.78 - variable.particle_random_4*0.2",
+              "0.54 - variable.particle_random_4*0.2",
+              "0.35 - variable.particle_random_4*0.2",
+              1.0 
+            ]
+          ],
+          "interpolant": "variable.particle_age/variable.particle_lifetime"
+        }
+      },
+      "minecraft:particle_appearance_lighting": {}
+    }
+  }
+}

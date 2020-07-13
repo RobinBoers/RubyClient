@@ -1,0 +1,65 @@
+/********************************************************
++*   (c) Mojang. All rights reserved             *
++*   (c) Microsoft. All rights reserved.        *
++*   Modified by:                                             *
++*   @FMarquesPTO. All rights reserved.  *
++*********************************************************/
+{
+  "namespace": "settings",
+
+  "dynamic_dialog_screen@common.base_screen": {
+    "type": "screen",
+    "cache_screen": true,
+    "button_mappings": [
+      {
+        "from_button_id": "button.menu_cancel",
+        "to_button_id": "button.menu_exit",
+        "mapping_type": "global"
+      },
+      {
+        "from_button_id": "button.menu_tab_left",
+        "to_button_id": "button.menu_tab_left",
+        "mapping_type": "global",
+        "scope": "view"
+      },
+      {
+        "from_button_id": "button.menu_tab_right",
+        "to_button_id": "button.menu_tab_right",
+        "mapping_type": "global",
+        "scope": "view"
+      }
+    ],
+    "$screen_content|default": "",
+    "$header_safezone_control": "none",
+    "$header_bar_control": "none",
+    "$is_full_screen_layout": false
+  },
+
+  "settings_screen_base@settings.dynamic_dialog_screen": {
+  },
+
+  "screen_world_create@settings_screen_base": {
+    "$screen_content": "world_create_janger.world_create_screen_content_panel",
+    "$screen_bg_content": ""
+  },
+
+  "screen_template_create@settings_screen_base": {
+    "$screen_content": "world_create_janger.world_create_screen_content_panel",
+    "$screen_bg_content": ""
+  },
+
+  "screen_world_edit@settings_screen_base": {
+    "$screen_content": "world_edit_janger.world_edit_screen_content_panel",
+    "$screen_bg_content": ""
+  },
+
+  "screen_controls_and_settings@settings_screen_base": {
+    "$screen_content": "settings_janger.settings_screen_content_panel",
+    "$screen_bg_content": ""
+  },
+
+  "screen_world_controls_and_settings@settings_screen_base": {
+    "$screen_content": "settings_janger.world_settings_screen_content_panel",
+    "$screen_bg_content": ""
+  }
+}

@@ -1,0 +1,138 @@
+/********************************************************
++*   @FMarquesPTO. All rights reserved. *
++*********************************************************/
+{
+  "namespace": "world_resource_packs_janger",
+
+  "world_resource_packs_button@new_button_toggle_janger.button_toggle": {
+    "$toggle_name": "game_settings",
+    "$control_name": "world_resource_packs_view",
+    "$toggle_text": "options.resourcepack",
+    "$toggle_index": 3
+  },
+
+  "not_world_resource_packs_button@new_button_toggle_janger.button_toggle": {
+    "$toggle_name": "game_settings",
+    "$control_name": "world_resource_packs_view",
+    "$toggle_text": "gui.done",
+    "$toggle_indes": 0,
+    "$back_button": true
+  },
+
+  "world_resource_packs_content_panel": {
+    "type": "stack_panel",
+    "size": [ "100%", "100%" ],
+    "$title_text": "resourcePacks.title",
+    "$title_offset": [ 0, 13 ],
+    "controls": [
+      { "top_title_panel@common_janger.top_title_panel": {} },
+      { "world_resource_packs_content@world_resource_packs_janger.world_resource_packs_content": {} },
+      { "bottom_back_panel@bottom_panel": { } }
+    ],
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "world_resource_packs_view",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  "world_resource_packs_content@resource_packs_janger.resource_packs_screen_content_panel": {
+    "$selected_pack_items": "#selected_pack_items_level",
+    "$available_pack_items": "#available_pack_items_level",
+    "$unowned_pack_items": "#unowned_pack_items_level",
+    "$default_item_texture": "#default_item_texture_level",
+    "$default_item_file_system": "#default_item_file_system_level",
+    "$default_item_zip": "#default_item_zip_level",
+    "$default_item_title": "menu.globalpacks",
+    "$default_item_description": "resourcePack.description.default.level",
+    "$selected_grid_dimensions": "#selected_grid_dimensions_level",
+    "$available_grid_dimensions": "#available_grid_dimensions_level",
+    "$unowned_grid_dimensions": "#unowned_grid_dimensions_level",
+    "$button.selected_pack": "button.selected_pack_level",
+    "$button.deselected_pack": "button.deselected_pack_level",
+    "$button.available_pack": "button.available_pack_level",
+    "$button.unowned_pack": "button.unowned_pack_level",
+    "$button.move_left": "button.move_left_level",
+    "$button.sort_up": "button.sort_up_level",
+    "$button.sort_down": "button.sort_down_level",
+    "$button.report_errors": "button.report_errors_level",
+    "$selected_title_text": "resourcePack.selected.title",
+    "$available_title_text": "resourcePack.available.title",
+    "$view_more_unowned_content_button_text": "resourcePack.suggestedContent.button.viewMore",
+    "$total_size_binding": "#total_size_binding_level",
+    "$invalid_pack_items": "#invalid_pack_items_level",
+    "$invalid_grid_dimensions": "#invalid_grid_dimensions_level",
+    "$button.invalid_pack": "button.invalid_pack_level",
+    "$button.pack_warning": "button.pack_warning_level",
+    "$button.resource_pack_options_exit": "button.resource_pack_options_exit_level",
+    "$button.pack_settings": "button.pack_settings_level",
+    "$options_slider_name": "content_tier_slider_level",
+    "$no_available_packs_visibility_binding": "#no_available_packs_visibility_level",
+    "$view_more_unowned_content_button_visibility_binding": "#suggested_content_visible_level",
+    "$force_pack_download_binding_type": "global"
+  },
+
+  "bottom_panel": {
+    "type": "panel",
+    "size": [ "100%", 43.5 ],
+    "controls": [
+      {
+        "content": {
+          "type": "panel",
+          "size": [ 310, 20 ],
+          "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+          "offset": [ 0, 2 ],
+          "controls": [
+            {
+              "force_players": {
+                "type": "panel",
+                "size": [ 150, 20 ],
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "controls": [
+                  { "force_players_toggle@world_resource_packs_janger.force_players_toggle": {} }
+                ],
+                "bindings": [
+                  {
+                    "binding_name": "#force_pack_download_enabled_level",
+                    "binding_name_override": "#enabled",
+                    "binding_type": "$force_pack_download_binding_type"
+                  },
+                  {
+                    "binding_name": "#force_pack_download_locked_level",
+                    "binding_name_override": "#enabled",
+                    "binding_type": "$force_pack_download_binding_type"
+                  }
+                ]
+              }
+            },
+            { "force_players_info@force_players_info": {} },
+            { "back_button@world_resource_packs_janger.not_world_resource_packs_button": { "size": [ 150, 20 ], "offset": [ 160, 0 ] } }
+          ]
+        }
+      }
+    ]
+  },
+
+  "force_players_toggle@option_toggle_janger.option_toggle": {
+    "$toggle_name": "force_user_agreement_level",
+    "$toggle_state_binding_name": "#force_user_agreement_level",
+    "$toggle_enabled_binding_name": "#force_user_agreement_level_enabled",
+    "$option_label": "resourcePack.forcePlayers"
+  },
+
+  "force_players_info": {
+    "type": "label",
+    "text": "resourcePack.forcePlayersInfo",
+    "shadow": true,
+    "color": "$description_text_color",
+    "layer": 10,
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "offset": [ 2, 21 ]
+  }
+}

@@ -1,0 +1,724 @@
+{
+  //Options
+  "$logo_edition": "cpp", //"java" or "cpp"
+  "$ignore_recipe_book": false,
+  "$ignore_recipe_book_pages": false, //1.5 only
+  //If you're using an add-on that add blocks or in a version above 1.13, I recommend you use "bedrock". 1.5 only.
+  //"$creative_inventory_tabs_content_system": "java", //"bedrock" or "java"
+  //Colors
+  "$generic_button_text_color": [ 1.0, 1.0, 1.0 ], // for those times you find a button that's kind of used but shouldn't...
+
+  "$light_button_default_text_color": [ 0.3, 0.3, 0.3 ],
+  "$light_button_hover_text_color": [ 1.0, 1.0, 1.0 ],
+  "$light_button_pressed_text_color": [ 1.0, 1.0, 1.0 ],
+  "$light_button_locked_text_color": [ 0.7, 0.7, 0.7 ],
+
+  "$light_toggle_default_text_color": [ 0.3, 0.3, 0.3 ],
+  "$light_toggle_hover_text_color": [ 1.0, 1.0, 1.0 ],
+  "$light_toggle_checked_default_text_color": [ 0.3, 0.3, 0.3 ],
+  "$light_toggle_checked_hover_text_color": [ 1.0, 1.0, 1.0 ],
+
+  "$dark_button_default_text_color": [ 1.0, 1.0, 1.0 ],
+  "$dark_button_hover_text_color": [ 1.0, 1.0, 1.0 ],
+  "$dark_button_pressed_text_color": [ 1.0, 1.0, 1.0 ],
+  "$dark_button_locked_text_color": [ 0.7, 0.7, 0.7 ],
+
+  "$dark_toggle_default_text_color": [ 1.0, 1.0, 1.0 ],
+  "$dark_toggle_hover_text_color": [ 1.0, 1.0, 1.0 ],
+  "$dark_toggle_checked_default_text_color": [ 1.0, 1.0, 1.0 ],
+  "$dark_toggle_checked_hover_text_color": [ 1.0, 1.0, 1.0 ],
+
+  "$light_button_secondary_default_text_color": [ 0.7, 0.7, 0.7 ],
+  "$light_button_secondary_hover_text_color": [ 0.7, 0.7, 0.7 ],
+  "$light_button_secondary_pressed_text_color": [ 0.7, 0.7, 0.7 ],
+  "$light_button_secondary_locked_text_color": [ 0.7, 0.7, 0.7 ],
+
+  "$dark_button_secondary_default_text_color": [ 0.7, 0.7, 0.7, 1.0 ],
+  "$dark_button_secondary_hover_text_color": [ 0.7, 0.7, 0.7 ],
+  "$dark_button_secondary_pressed_text_color": [ 0.7, 0.7, 0.7 ],
+  "$dark_button_secondary_locked_text_color": [ 0.7, 0.7, 0.7 ],
+
+  "$title_text_color": [ 0.3, 0.3, 0.3 ],
+  "$pocket_title_text_color": [ 0.3, 0.3, 0.3 ],
+
+  "$main_header_text_color": [ 1.0, 1.0, 1.0 ],
+  "$sub_header_text_color": [ 1.0, 1.0, 1.0 ],
+
+  "$tab_unchecked_text_color": [ 0.6953, 0.6953, 0.6953 ],
+  "$tab_unchecked_hover_text_color": [ 0.6953, 0.6953, 0.6953 ],
+  "$tab_unchecked_locked_text_color": [ 0.6953, 0.6953, 0.6953 ],
+  "$tab_unchecked_locked_hover_text_color": [ 0.6953, 0.6953, 0.6953 ],
+  "$tab_checked_text_color": [ 0.3, 0.3, 0.3 ],
+  "$tab_checked_hover_text_color": [ 0.3, 0.3, 0.3 ],
+  "$tab_checked_locked_text_color": [ 0.3, 0.3, 0.3 ],
+  "$tab_checked_locked_hover_text_color": [ 0.3, 0.3, 0.3 ],
+
+  "$tab_secondary_unchecked_text_color": [ 1.0, 1.0, 1.0 ],
+  "$tab_secondary_unchecked_hover_text_color": [ 1.0, 1.0, 1.0 ],
+  "$tab_secondary_unchecked_locked_text_color": [ 1.0, 1.0, 1.0 ],
+  "$tab_secondary_unchecked_locked_hover_text_color": [ 1.0, 1.0, 1.0 ],
+  "$tab_secondary_checked_text_color": [ 1.0, 1.0, 1.0 ],
+  "$tab_secondary_checked_hover_text_color": [ 1.0, 1.0, 1.0 ],
+  "$tab_secondary_checked_locked_text_color": [ 1.0, 1.0, 1.0 ],
+  "$tab_secondary_checked_locked_hover_text_color": [ 1.0, 1.0, 1.0 ],
+
+  "$tab_unchecked_glyph_color": [ 0.3, 0.3, 0.3 ],
+  "$tab_unchecked_hover_glyph_color": [ 0.3, 0.3, 0.3 ],
+  "$tab_unchecked_locked_glyph_color": [ 0.3, 0.3, 0.3 ],
+  "$tab_unchecked_locked_hover_glyph_color": [ 0.3, 0.3, 0.3 ],
+  "$tab_checked_glyph_color": [ 0.3, 0.3, 0.3 ],
+  "$tab_checked_hover_glyph_color": [ 0.3, 0.3, 0.3 ],
+  "$tab_checked_locked_glyph_color": [ 0.3, 0.3, 0.3 ],
+  "$tab_checked_locked_hover_glyph_color": [ 0.3, 0.3, 0.3 ],
+
+  "$item_stack_count_color": [ 1.0, 1.0, 1.0 ],
+  "$selected_item_stack_count_color": [ 1.0, 1.0, 0.0 ],
+
+  "$item_hover_text_color": [ 1.0, 1.0, 1.0 ], // Color of hover text gets overwrritten by text color format codes, so this is just for not failing unit tests
+
+  "$pocket_item_details_color": [ 1.0, 1.0, 1.0 ],
+
+  "$tool_tip_text": [ 1.0, 1.0, 1.0 ],
+  "$structure_editor_text": [ 1.0, 1.0, 1.0 ],
+
+  "$text_box_text_color": [ 1.0, 1.0, 1.0 ],
+  "$text_box_locked_text_color": [ 1.0, 1.0, 1.0 ],
+  "$place_holder_text_color": [ 0.5, 0.5, 0.5 ],
+
+  "$title_command_text_color": [ 1.0, 1.0, 1.0 ],
+  "$subtitle_command_text_color": [ 1.0, 1.0, 1.0 ],
+
+  "$boss_name_text_color": [ 1.0, 1.0, 1.0 ],
+
+  "$body_text_color": [ 1.0, 1.0, 1.0 ],
+  "$dark_body_text_color": [ 0.3, 0.3, 0.3 ],
+
+  "$dark_grid_item_text_color": [ 1.0, 1.0, 1.0 ],
+  "$light_grid_item_text_color": [ 1.0, 1.0, 1.0 ],
+
+  "$enchanting_runes_color": [ 0.54, 0.37, 0.36 ],
+  "$enchanting_runes_fail_color": [ 0.408, 0.368, 0.29 ],
+
+  "$enchanting_cost_success_color": [ 0.5, 1, 0.125 ],
+  "$enchanting_cost_fail_color": [ 0.54, 0.37, 0.36 ],
+
+  "$beacon_power_title_text_color": [ 1.0, 1.0, 1.0 ],
+
+  "$anvil_cost_success_text_color": [ 0.5, 1, 0.125 ],
+  "$anvil_cost_fail_text_color": [ 1.0, 0.35, 0.35 ],
+  "$smithing_table_cost_success_text_color": [ 0.5, 1, 0.125 ],
+  "$smithing_table_cost_fail_text_color": [ 0.3, 0.3, 0.3 ],
+
+  "$gamepad_button_generic_text_color": [ 1.0, 1.0, 1.0 ],
+  "$gamepad_a_button_text_color": [ 0.0, 1.0, 0.0 ],
+  "$gamepad_b_button_text_color": [ 1.0, 0.0, 0.0 ],
+  "$gamepad_x_button_text_color": [ 0.0, 0.0, 1.0 ],
+  "$gamepad_y_button_text_color": [ 1.0, 1.0, 0.0 ],
+  "$gamepad_description_text_color": [ 1.0, 1.0, 1.0 ],
+
+  "$keyboard_helper_keys": [ 1.0, 1.0, 0.0 ],
+  "$achievement_text_color": [ 1.0, 1.0, 1.0 ],
+
+  "$xbl_signin_text_color": [ 1.0, 1.0, 1.0 ],
+
+  "$toast_text_color": [ 1.0, 1.0, 1.0 ],
+
+  "$chat_text_color": [ 1.0, 1.0, 1.0 ],
+
+  "$hud_gamertag_color": [ 1.0, 1.0, 1.0 ],
+
+  "$realms_text_color": [ 0.57, 0.29, 0.67 ],
+
+  "$death_text_color": [ 1.0, 1.0, 1.0 ],
+
+  "$loading_text_color": [ 1.0, 1.0, 1.0 ],
+
+  "$feed_text_color": [ 1.0, 1.0, 1.0 ],
+
+  "$warning_text_color": [ 0.8, 0.7, 0.0 ],
+  "$error_text_color": [ 1.0, 0.0, 0.0 ],
+
+  "$alert_label_text_color": [ 0.0, 0.0, 0.0 ],
+
+  "$debug_store_text_color": [ 0.0, 1.0, 0.0 ],
+
+  "$x_axis_text_color": [ 1.0, 0.0, 0.0 ],
+  "$y_axis_text_color": [ 0.0, 1.0, 0.0 ],
+  "$z_axis_text_color": [ 0.0, 0.6392, 1.0 ],
+
+  "$book_page_number_color": [ 0.74, 0.64, 0.53 ],
+  "$book_page_text_color": [ 0.0, 0.0, 0.0 ],
+  "$book_title_color": [ 1.0, 1.0, 1.0 ],
+  "$book_title_placeholder_color": [ 0.667, 0.667, 0.667 ],
+  "$book_title_label_color": [ 1.0, 1.0, 1.0 ],
+  "$book_author_color": [ 1.0, 1.0, 1.0 ],
+  "$book_author_label_color": [ 0.667, 0.667, 0.667 ],
+  "$book_warning_color": [ 1.0, 1.0, 1.0 ],
+
+  "$npc_dialog_text_color": [ 0.0, 0.0, 0.0 ],
+  "$npc_url_text_color": [ 0.0, 0.0, 1.0 ],
+
+  "$wtc_pack_desc_text_color": [ 0.75, 0.75, 0.75 ],
+  //Anims
+  "$new_offers_transition_duration": 0.75,
+    ///////// Settings ////////////////////////////////////////////////////////////////
+    
+    //Debug
+      "$mc_beta_render": false,
+      "$pack_info": true,
+    
+    //Only one can be activated. This is under "Minecraft"
+      "$mc_java_edition": true,
+      "$mc_cpp_edition": false,
+      "$mc_bedrock_edition": false,
+    
+    //Toolbar
+    //Only one can be activated. This is the toolbar style
+      "$mc_toolbar_dark": true,
+      "$mc_toolbar_light": false,
+      "$mc_toolbar_flat": false,
+    //Toolbar Side
+    /* //////////////////////////
+    //Top
+      "$mc_toolbar_top": false,
+        "$mc_toolbar_top_left": false,
+        "$mc_toolbar_top_right": true,
+    */ //////////////////////////
+    //Bottom
+      "$mc_toolbar_bottom": false,
+        "$mc_toolbar_top_left": false,
+        "$mc_toolbar_top_right": true,
+    //Left
+      "$mc_toolbar_left": false,
+        "$mc_toolbar_left_top": true,
+        "$mc_toolbar_left_bottom": false,
+    //Right
+      "$mc_toolbar_right": true,
+        "$mc_toolbar_right_top": true,
+        "$mc_toolbar_right_bottom": false,
+    
+    //Others
+      "$mc_show_platform": false,
+      "$mc_additional sections": true,
+      "$mc_highlight_slot_touch": true, 
+      "$mc_container_toolbar": true,
+      "$mc_upgrade_mobile_chat_to_java_chat": true,
+    
+    //Texts
+      "$mc_platform": "Minecraft",
+      "$mc_version": "#version",
+      "$mc_development_version": "#development_version",
+      "$mc_copyright": "Copyright Mojang AB. Do not distribute!",
+      "$arrow_left": "<",
+      "$arrow_right": ">",
+      "$pack_info_right_text": "Created by @FMarquesPTO",
+      "$pack_info_left_text": "JavaUI v0.4",
+      "$pack_info_font_size": "small",
+    
+    ///////// Color Format Colors ////////////////////////////////////////////////////
+    
+      "$0_color_format": [ 0.0, 0.0, 0.0 ], // Black
+      "$1_color_format": [ 0.0, 0.0, 0.667 ], // Dark Blue
+      "$2_color_format": [ 0.0, 0.667, 0 ], // Dark Green
+      "$3_color_format": [ 0.0, 0.667, 0.667 ], // Dark Aqua
+      "$4_color_format": [ 0.667, 0.0, 0.0 ], // Dark Red
+      "$5_color_format": [ 0.667, 0.0, 0.667 ], // Dark Purple
+      "$6_color_format": [ 1.0, 0.667, 0.0 ], // Gold
+      "$7_color_format": [ 0.667, 0.667, 0.667 ], // Gray
+      "$8_color_format": [ 0.333, 0.333, 0.333 ], // Dark Gray
+      "$9_color_format": [ 0.333, 0.333, 1.0 ], // Blue
+      "$a_color_format": [ 0.333, 1.0, 0.333 ], // Green
+      "$b_color_format": [ 0.333, 1.0, 1.0 ], // Aqua
+      "$c_color_format": [ 1.0, 0.333, 0.333 ], // Red
+      "$d_color_format": [ 1.0, 0.333, 1.0 ], // Light Purple
+      "$e_color_format": [ 1.0, 1.0, 0.333 ], // Yellow
+      "$f_color_format": [ 1.0, 1.0, 1.0 ], // White
+    
+    ///////// Text Color /////////////////////////////////////////////////////////////
+    //General
+      "$debug_text_color": [ 0.87, 0.87, 0.87 ],
+      "$info_text_color": [ 0.97, 0.97, 0.97 ],
+      "$container_title_text_color": [ 0.3, 0.3, 0.3 ],
+      "$container_title_inventory_text_color": [ 0.3, 0.3, 0.3 ],
+
+
+    //Buttons
+      "$button_default_label_color": [ 0.87, 0.87, 0.87 ],
+      "$button_hover_label_color": [ 1.0, 1.0, 0.62 ],
+      "$button_pressed_label_color": [ 1.0, 1.0, 0.62 ],
+      "$button_locked_label_color": [ 0.62, 0.62, 0.62 ],
+    
+    //Scoreboard
+      "$player_name_color": [ 1.0, 1.0, 1.0, 1.0 ],
+      "$objective_title_color": [ 1.0, 1.0, 1.0, 1.0 ],
+      "$player_score_color": [ 1.0, 0.0, 0.0, 1.0 ],
+      "$player_list_score_color": [ 1.0, 1.0, 0.33, 1.0 ],
+    
+    //Gamepad and Keyboard
+    
+    //Chemistry
+      "$proton_color": [ 0.321, 0.486, 0.886, 1.0 ],
+      "$electron_color": [ 0.886, 0.4, 0.321, 1.0 ],
+      "$neutron_color": [ 0.894, 0.698, 0.341, 1.0 ],
+    
+    //Store
+      "$coin_color": [ 0.87, 0.84, 0.02, 1.0 ],
+      "$store_author_text_color": [ 0.7, 0.7, 0.7 ],
+      "$store_sales_banner_text_color": [ 0.3, 0.3, 0.3 ],
+      "$store_product_detail_strikethru_color": [ 0.5585, 0.5585, 0.5585 ],
+      "$new_offer_icon_text_color": [ 0.3, 0.3, 0.3 ],
+      "$store_offer_type_icon_color": [ 0.7, 0.7, 0.7 ],
+      "$store_rating_text_panel_color": [ 0.7, 0.7, 0.7 ],
+      "$store_white_text_color": [ 1, 1, 1 ],
+      "$store_dark_grey_text_color": [ 0.3, 0.3, 0.3 ],
+      "$store_light_grey_text_color": [ 0.7, 0.7, 0.7 ],
+    
+    //Others
+      "$anvil_cost_fail_text_shadow": [ 0.2, 0.09, 0.09 ],
+      "$anvil_cost_success_text_shadow": [ 0.1, 0.2, 0.03 ],
+ 
+      "$experience_text_color": [ 0.5, 1.0, 0.0 ],
+      "$experience_border_color": [ 0.0, 0.0, 0.0 ],
+    
+    ///////// Textures Color /////////////////////////////////////////////////////////
+    
+      "$highlight_slot_color": [ 1.0, 1.0, 1.0 ],
+      "$red_highlight_slot_color": [ 1.0, 0.0, 0.0 ],
+      "$text_edit_box_border_color": [ 0.4, 0.4, 0.4 ],
+      "$text_edit_box_bg_color": [ 0.0, 0.0, 0.0 ],
+      "$scroll_box_bg_color": [ 0.3, 0.3, 0.3 ],
+      "$scroll_box_border_color": [ 0.7, 0.7, 0.7 ],
+      "$in_game_background_color": [ 0.0, 0.0, 0.0 ],
+    
+    ///////// Transition times ///////////////////////////////////////////////////////
+    
+      "$transition_time_push_size": 0.6,
+      "$transition_time_pop_size": 0.25,
+      "$transition_time_push": 0.4,
+      "$transition_time_pop": 0.4,
+      "$container_transition_time_push": 0.4,
+      "$container_transition_time_pop": 0.4,
+      "$loading_bar_transition": 3.0,
+    
+    ///////// Screens and Others Alpha Bg /////////////////////////////////////////////////////
+    
+      "$in_game_background_alpha": 0.1,
+      "$in_container_background_alpha": 0.3,
+      "$more_dark_in_game_background_alpha": 0.3,
+    
+      "$highlight_slot_alpha": 0.4,
+      "$highlight_slot_border_alpha": 0.9,
+    
+    ///////// Resolutions ///////////////////////////////////////////////////////////
+    
+    //Toolbar (By JavaUI)
+      "$toolbar_texture": "textures/gui/toolbar",
+      "$toolbar_1_1_bg_uv": [ 0, 0 ],
+      "$toolbar_1_1_bg_uv_size": [ 23, 23 ],
+      "$toolbar_1_2_bg_uv": [ 23, 0 ],
+      "$toolbar_1_2_bg_uv_size": [ 23, 40 ],
+      "$toolbar_1_3_bg_uv": [ 46, 0 ],
+      "$toolbar_1_3_bg_uv_size": [ 23, 57 ],
+      "$toolbar_2_1_bg_uv": [ 69, 0 ],
+      "$toolbar_2_1_bg_uv_size": [ 40, 23 ],
+      "$toolbar_3_1_bg_uv": [ 69, 23 ],
+      "$toolbar_3_1_bg_uv_size": [ 57, 23 ],
+      "$toolbar_light_button_default_uv": [ 188, 0 ],
+      "$toolbar_dark_button_default_uv": [ 154, 0 ],
+      "$toolbar_flat_button_default_uv": [ 222, 0 ],
+      "$toolbar_custom_button_default_uv": [],
+      "$toolbar_light_button_hover_uv": [ 188, 17 ],
+      "$toolbar_dark_button_hover_uv": [ 154, 17 ],
+      "$toolbar_flat_button_hover_uv": [ 222, 17 ],
+      "$toolbar_custom_button_hover_uv": [],
+      "$toolbar_light_button_pressed_uv": [ 205, 17 ],
+      "$toolbar_dark_button_pressed_uv": [ 171, 17 ],
+      "$toolbar_flat_button_pressed_uv": [ 239, 17 ],
+      "$toolbar_custom_button_pressed_uv": [],
+      "$toolbar_button_uv_size": [ 17, 17 ],
+      "$toolbar_light_icon_exit_uv": [ 1, 93 ],
+      "$toolbar_dark_icon_exit_uv": [ 35, 93 ],
+      "$toolbar_light_icon_help_uv": [ 18, 93 ],
+      "$toolbar_dark_icon_help_uv": [ 52, 93 ],
+      "$toolbar_icon_inventory_uv": [ 1, 110 ],
+      "$toolbar_icon_crafting_uv": [ 18, 110 ],
+      "$toolbar_icon_recipe_book_uv": [ 35, 110 ],
+      "$toolbar_icon_uv_size": [ 15, 15 ],
+    
+    //Title
+      "$minecraft_texture": "assets/minecraft/textures/gui/title/minecraft",
+      "$minecraft_edu_texture": "assets/minecraft/textures/gui/title/minecraft_education",
+      "$java_edition_texture": "assets/minecraft/textures/gui/title/edition",
+      "$edu_edition_texture": "textures/gui/title/education_edition",
+      "$cpp_edition_texture": "textures/gui/title/cpp_edition",
+      "$bedrock_edition_texture": "textures/gui/title/bedrock_edition",
+      "$minec_uv": [ 0, 0 ],
+      "$minec_uv_size": [ 1097, 324 ],
+      "$raft_uv": [ 0, 324 ],
+      "$raft_uv_size": [ 840, 324 ],
+      "$minec_uv": [ 0, 0 ],
+      "$minec_uv_size": [ 155, 44 ],
+      "$raft_uv": [ 0, 45 ],
+      "$raft_uv_size": [ 119, 44 ],
+      "$edition_uv": [ 0, 0 ],
+      "$java_edition_uv_size": [ 98, 14 ],
+      "$cpp_edition_uv_size": [ 88, 14 ],
+      "$bedrock_edition_uv_size": [],
+      "$edu_edition_uv_size": [ 1176, 212 ],
+    
+    //Widgets
+      "$widgets_texture": "assets/minecraft/textures/gui/widgets",
+    
+    //Button(Also Toggle, Button Toggle)
+      "$button_200px_left_default_uv": [ 0, 66 ],
+      "$button_150px_left_default_uv": [ 0, 66 ],
+      "$button_98px_left_default_uv": [ 0, 66 ],
+      "$button_73px_left_default_uv": [ 0, 66 ],
+      "$button_50px_left_default_uv": [ 0, 66 ],
+      "$button_20px_left_default_uv": [ 0, 66 ],
+      "$button_200px_left_hover_uv": [ 0, 86 ],
+      "$button_150px_left_hover_uv": [ 0, 86 ],
+      "$button_98px_left_hover_uv": [ 0, 86 ],
+      "$button_73px_left_hover_uv": [ 0, 86 ],
+      "$button_50px_left_hover_uv": [ 0, 86 ],
+      "$button_20px_left_hover_uv": [ 0, 86 ],
+      "$button_200px_left_pressed_uv": [ 0, 86 ],
+      "$button_150px_left_pressed_uv": [ 0, 86 ],
+      "$button_98px_left_pressed_uv": [ 0, 86 ],
+      "$button_50px_left_pressed_uv": [ 0, 86 ],
+      "$button_73px_left_pressed_uv": [ 0, 86 ],
+      "$button_20px_left_pressed_uv": [ 0, 86 ],
+      "$button_200px_left_locked_uv": [ 0, 46 ],
+      "$button_150px_left_locked_uv": [ 0, 46 ],
+      "$button_98px_left_locked_uv": [ 0, 46 ],
+      "$button_73px_left_locked_uv": [ 0, 46 ],
+      "$button_50px_left_locked_uv": [ 0, 46 ],
+      "$button_20px_left_locked_uv": [ 0, 46 ],
+      "$button_200px_right_default_uv": [ 100, 66 ],
+      "$button_150px_right_default_uv": [ 125, 66 ],
+      "$button_98px_right_default_uv": [ 151, 66 ],
+      "$button_73px_right_default_uv": [ 163, 66 ],
+      "$button_50px_right_default_uv": [ 175, 66 ],
+      "$button_20px_right_default_uv": [ 190, 66 ],
+      "$button_200px_right_hover_uv": [ 100, 86 ],
+      "$button_150px_right_hover_uv": [ 125, 86 ],
+      "$button_98px_right_hover_uv": [ 151, 86 ],
+      "$button_73px_right_hover_uv": [ 163, 86 ],
+      "$button_50px_right_hover_uv": [ 175, 86 ],
+      "$button_20px_right_hover_uv": [ 190, 86 ],
+      "$button_200px_right_pressed_uv": [ 100, 86 ],
+      "$button_150px_right_pressed_uv": [ 125, 86 ],
+      "$button_98px_right_pressed_uv": [ 151, 86 ],
+      "$button_73px_right_pressed_uv": [ 163, 86 ],
+      "$button_50px_right_pressed_uv": [ 175, 86 ],
+      "$button_20px_right_pressed_uv": [ 190, 86 ],
+      "$button_200px_right_locked_uv": [ 100, 46 ],
+      "$button_150px_right_locked_uv": [ 125, 46 ],
+      "$button_98px_right_locked_uv": [ 151, 46 ],
+      "$button_73px_right_locked_uv": [ 163, 46 ],
+      "$button_50px_right_locked_uv": [ 175, 46 ],
+      "$button_20px_right_locked_uv": [ 190, 46 ],
+      "$button_200px_uv_size": [ 100, 20 ],
+      "$button_150px_uv_size": [ 75, 20 ],
+      "$button_98px_uv_size": [ 49, 20 ],
+      "$button_73px_uv_size": [ 36, 20 ],
+      "$button_73px_right_uv_size": [ 37, 20 ],
+      "$button_50px_uv_size": [ 25, 20 ],
+      "$button_20px_uv_size": [ 10, 20 ],
+      "$feedback_button_left_default_uv": [ 0, 106 ],
+      "$feedback_button_right_default_uv": [ 10, 106 ],
+      "$feedback_button_left_hover_uv": [ 0, 126 ],
+      "$feedback_button_right_hover_uv": [ 10, 126 ],
+      "$feedback_button_left_pressed_uv": [ 0, 126 ],
+      "$feedback_button_right_pressed_uv": [ 10, 126 ],
+      "$feedback_button_uv_size": [ 10, 20 ],
+    
+    //Slider
+      "$slider_310px_left_uv": [ 0, 46 ],
+      "$slider_150px_left_uv": [ 0, 46 ],
+      "$slider_310px_right_uv": [ 45, 46 ],
+      "$slider_150px_right_uv": [ 125, 46 ],
+      "$slider_310px_uv_size": [ 155, 20 ],
+      "$slider_150px_uv_size": [ 75, 20 ],
+      "$slider_button_left_uv": [ 0, 66 ],
+      "$slider_button_right_uv": [ 196, 66 ],
+      "$slider_button_uv_size": [ 4, 20 ],
+    
+    //Hotbar
+      "$hotbar_uv": [ 0, 0 ],
+      "$hotbar_uv_size": [ 182, 22 ],
+      "$hotbar_selected_uv": [ 0, 22 ],
+      "$hotbar_selected_uv_size": [ 24, 24 ],
+      "$hotbar_slot_offhand_uv": [ 24, 23 ],
+      "$hotbar_slot_offhand_uv_size": [ 22, 22 ],
+      "$realms_invite_icon_default_uv": [ 182, 24 ],
+      "$realms_invite_icon_hover_uv": [ 166, 24 ],
+      "$realms_invite_icon_pressed_uv": [ 166, 24 ],
+      "$realms_invite_icon_uv_size": [ 15, 12 ],
+    
+    //Resource Packs and World/Server Selection:
+      "$resource_packs_texture": "assets/minecraft/textures/gui/resource_packs",
+      "$world_selection_texture": "assets/minecraft/textures/gui/world_selection",
+      "$server_selection_texture": "assets/minecraft/textures/gui/server_selection",
+      "$rp_apply_button_default_uv": [ 0, 0 ],
+      "$rp_apply_button_hover_uv": [ 0, 32 ],
+      "$rp_apply_button_pressed_uv": [ 0, 32 ],
+      "$rp_apply_button_uv_size": [ 32, 32 ],
+      "$rp_remove_button_default_uv": [ 32, 0 ],
+      "$rp_remove_button_hover_uv": [ 32, 32 ],
+      "$rp_remove_button_pressed_uv": [ 32, 32 ],
+      "$rp_remove_button_uv_size": [ 32, 32 ],
+      "$rp_sort_up_button_default_uv": [ 96, 0 ],
+      "$rp_sort_up_button_hover_uv": [ 96, 32 ],
+      "$rp_sort_up_button_pressed_uv": [ 96, 32 ],
+      "$rp_sort_up_button_uv_size": [ 32, 32 ],
+      "$rp_sort_down_button_default_uv": [ 64, 0 ],
+      "$rp_sort_down_button_state_hover_uv": [ 64, 32 ],
+      "$rp_sort_down_button_state_pressed_uv": [ 64, 32 ],
+      "$rp_sort_down_button_uv_size": [ 32, 32 ],
+      "$ws_apply_button_state_default_uv": [],
+      "$ws_apply_button_state_hover_uv": [],
+      "$ws_apply_button_state_pressed_uv": [],
+      "$ws_apply_button_uv_size": [],
+      "$ws_warning_button_state_default_uv": [],
+      "$ws_warning_button_state_hover_uv": [],
+      "$ws_warning_error_button_state_hover_uv": [],
+      "$ws_warning_button_state_pressed_uv": [],
+      "$ws_warning_error_button_state_pressed_uv": [],
+      "$ws_warning_button_uv_size": [],
+      "$ss_apply_button_state_default_uv": [],
+      "$ss_apply_button_state_hover_uv": [],
+      "$ss_apply_button_state_pressed_uv": [],
+      "$ss_apply_button_uv_size": [],
+    
+    //Toasts
+      "$toasts_bg_texture": "assets/minecraft/textures/gui/toasts",
+      "$toast_black_uv": [ 0, 0 ],
+      "$toast_black_uv_size": [ 160, 32 ],
+      "$toast_white_uv": [ 0, 32],
+      "$toast_whiteblue_warning_uv": [ 0, 64 ],
+      "$toast_white_with_tips_uv": [ 0, 96 ],
+      "$toast_white_uv_size": [ 160, 32 ],
+    
+    //Achievement
+      "$achievement_window_texture": "assets/minecraft/textures/gui/advancements/window",
+      "$achievement_stone_bg_texture": "assets/minecraft/textures/gui/advancements/backgrounds/stone",
+      "$achievement_tabs_texture": "assets/minecraft/textures/gui/advancements/tabs",
+      "$achievement_window_bg_uv": [ 0, 0 ],
+      "$achievement_window_bg_uv_size": [ 252, 140 ],
+      "$achievement_main_tab_uv_unchecked": [ 0, 0 ],
+      "$achievement_main_tab_uv_checked": [ 0, 32 ],
+      "$achievement_achievements_tab_uv_unchecked": [ 28, 0 ],
+    
+      "$achievement_achievements_tab_uv_checked": [ 28, 32 ],
+      "$achievement_tab_uv_size": [ 28, 32 ],
+    
+    //Anvil
+      "$anvil_container_texture": "assets/minecraft/textures/gui/container/anvil",
+      "$anvil_container_bg_uv": [ 0, 0 ],
+      "$anvil_container_bg_uv_size": [ 176, 166 ],
+      "$anvil_cross_out_uv": [ 176, 0 ],
+      "$anvil_cross_out_uv_size": [ 27, 21 ],
+      "$anvil_box_uv_size": [ 110, 16 ],
+      "$anvil_box_active_uv": [ 0, 166 ],
+      "$anvil_box_inactive_uv": [ 0, 182 ],
+    
+    //Beacon
+      "$beacon_container_texture": "assets/minecraft/textures/gui/container/beacon",
+      "$beacon_container_bg_uv": [ 0, 0 ],
+      "$beacon_container_bg_uv_size": [ 230, 219 ],
+      "$beacon_button_default_uv": [ 0, 219 ],
+      "$beacon_button_selected_uv": [ 22, 219 ],
+      "$beacon_dark_button_default_uv": [ 44, 219 ],
+      "$beacon_dark_button_hover_uv": [ 66, 219 ],
+      "$beacon_confirm_icon_uv": [ 88, 220 ],
+      "$beacon_cancel_icon_uv": [ 110, 220 ],
+      "$beacon_icon_uv_size": [ 21, 21 ],
+      "$beacon_button_uv_size": [ 22, 22 ],
+    
+    //Brewing Stand
+      "$brewing_stand_container_texture": "assets/minecraft/textures/gui/container/brewing_stand",
+      "$brewing_stand_container_bg_uv": [ 0, 0 ],
+      "$brewing_stand_container_bg_uv_size": [ 176, 166 ],
+      "$brewing_stand_fuel_bar_full_uv": [ 176, 29 ],
+      "$brewing_stand_fuel_bar_full_uv_size": [ 18, 4 ],
+      "$brewing_stand_arrow_full_uv": [ 176, 0 ],
+      "$brewing_stand_arrow_full_uv_size": [ 9, 28 ],
+      "$brewing_stand_bubbles_full_uv": [ 185, 1 ],
+      "$brewing_stand_bubbles_full_uv_size": [ 12, 28 ],
+    
+    //Cartography Table
+      "$cartography_table_container_texture": "assets/minecraft/textures/gui/container/cartography_table",
+      "$cartography_table_container_bg_uv": [ 0, 0 ],
+      "$cartography_table_container_bg_uv_size": [ 176, 166 ],
+      "$cartography_table_map1_uv": [ 176, 0 ],
+      "$cartography_table_map2_uv": [ 176, 66 ],
+      "$cartography_table_map3_uv": [ 176, 132 ],
+      "$cartography_table_map_uv_size": [ 66, 66 ],
+      "$cartography_table_map3_uv_size": [ 50, 50 ],
+      "$cartography_table_lock_map_icon_uv": [ 52, 214 ],
+      "$cartography_table_lock_map_icon_uv_size": [ 10, 14 ],
+    
+    //Crafting Table
+      "$crafting_table_container_texture": "assets/minecraft/textures/gui/container/crafting_table",
+      "$crafting_table_container_bg_uv": [ 0, 0 ],
+      "$crafting_table_container_bg_uv_size": [ 176, 166 ],
+    
+    //Creative Inventory
+      "$creative_inventory_tab_item_search_texture": "assets/minecraft/textures/gui/container/creative_inventory/tab_item_search",
+      "$creative_inventory_tab_items_texture": "assets/minecraft/textures/gui/container/creative_inventory/tab_items",
+      "$creative_inventory_tab_inventory_texture": "assets/minecraft/textures/gui/container/creative_inventory/tab_inventory",
+      "$creative_inventory_tabs_texture": "assets/minecraft/textures/gui/container/creative_inventory/tabs",
+      "$creative_inventory_tab_container_bg_uv": [ 0, 0 ],
+      "$creative_inventory_tab_container_bg_uv_size": [ 195, 136 ],
+      "$creative_inventory_search_tab_uv_unchecked": [ 140, 0 ],
+      "$creative_inventory_search_tab_uv_checked": [ 140, 32 ],
+      "$creative_inventory_construction_tab_uv_unchecked": [ 0, 0 ],
+      "$creative_inventory_construction_tab_uv_checked": [ 0, 32 ],
+      "$creative_inventory_equipment_tab_uv_checked": [ 0, 32 ],
+      "$creative_inventory_equipment_tab_uv_unchecked": [ 28, 0 ],
+      "$creative_inventory_nature_tab_uv_unchecked": [ 56, 0 ],
+      "$creative_inventory_nature_tab_uv_checked": [ 56, 32 ],
+      "$creative_inventory_items_tab_uv_unchecked": [ 84, 0 ],
+      "$creative_inventory_items_tab_uv_checked": [ 84, 32 ],
+      "$creative_inventory_inventory_tab_uv_unchecked": [ 140, 64 ],
+      "$creative_inventory_inventory_tab_uv_checked": [ 140, 96],
+      "$creative_inventory_items_tab_uv_unchecked": [ 84, 0 ],
+      "$creative_inventory_tab_uv_size": [ 28, 32 ],
+    
+    //Chests
+      "$generic_54_container_texture": "assets/minecraft/textures/gui/container/generic_54",
+      "$shulker_box_container_texture": "assets/minecraft/textures/gui/container/shulker_box",
+      "$chest_container_uv": [ 0, 0 ],
+      "$large_chest_container_bg_uv_size": [ 176, 222 ],
+      "$small_chest_top_container_bg_uv_size": [ 176, 71 ],
+      "$small_chest_bottom_container_bg_uv": [ 0, 126 ],
+      "$small_chest_bottom_container_bg_uv_size": [ 176, 96 ],
+      "$shulker_box_container_bg_uv": [ 0, 0 ],
+      "$shulker_box_container_bg_uv_size": [ 176, 166 ],
+    
+    //Dispenser (and Dropper):
+      "$dispenser_container_texture": "assets/minecraft/textures/gui/container/dispenser",
+      "$dispenser_container_bg_uv": [ 0, 0 ],
+      "$dispenser_container_bg_uv_size": [ 176, 166 ],
+    
+    //Enchanting Table
+      "$enchanting_table_container_texture": "assets/minecraft/textures/gui/container/enchanting_table",
+      "$enchanting_table_container_bg_uv": [ 0, 0 ],
+      "$enchanting_table_container_bg_uv_size": [ 176, 166 ],
+      "$enchanting_table_dust_selectable_1_uv": [ 1, 223 ],
+      "$enchanting_table_dust_unselectable_1_uv": [ 1, 239 ],
+      "$enchanting_table_dust_selectable_2_uv": [ 17, 223 ],
+      "$enchanting_table_dust_unselectable_2_uv": [ 17, 239 ],
+      "$enchanting_table_dust_selectable_3_uv": [ 33, 223 ],
+      "$enchanting_table_dust_unselectable_3_uv": [ 33, 223 ],
+      "$enchanting_table_dust_uv_size": [ 16, 16 ],
+      "$enchanting_table_button_dark_uv": [ 0, 185 ],
+      "$enchanting_table_button_hover_uv": [ 0, 204 ],
+      "$enchanting_table_button_default_uv": [ 0, 166 ],
+      "$enchanting_table_button_uv_size": [ 108, 19 ],
+    
+    //Furnace
+      "$furnace_container_texture": "assets/minecraft/textures/gui/container/furnace",
+      "$furnace_container_bg_uv": [ 0, 0 ],
+      "$furnace_container_bg_uv_size": [ 176, 166 ],
+      "$furnace_arrow_full_uv": [ 176, 14 ],
+      "$furnace_arrow_full_uv_size": [ 24, 17 ],
+      "$furnace_flame_full_uv": [ 176, 0 ],
+      "$furnace_flame_full_uv_size": [ 14, 14 ],
+    
+    //Grindstone
+      "$grindstone_container_texture": "assets/minecraft/textures/gui/container/grindstone",
+      "$grindstone_container_bg_uv": [ 0, 0 ],
+      "$grindstone_container_bg_uv_size": [ 176, 166 ],
+      "$grindstone_cross_out_uv": [ 176, 0 ],
+      "$grindstone_cross_out_uv_size": [ 28, 21 ],
+    
+    //Hopper
+      "$hopper_container_texture": "assets/minecraft/textures/gui/container/hopper",
+      "$hopper_container_bg_uv": [ 0, 0 ],
+      "$hopper_container_bg_uv_size": [ 176, 133 ],
+    
+    //Horse
+      "$horse_container_texture": "assets/minecraft/textures/gui/container/horse",
+      "$horse_container_bg_uv": [ 0, 0 ],
+      "$horse_container_bg_uv_size": [ 176, 166 ],
+      "$horse_armor_cell_image_uv": [ 0, 220 ],
+      "$horse_saddle_cell_image_uv": [ 18, 220 ],
+      "$horse_carpet_cell_image_uv": [ 36, 220 ],
+      "$horse_cell_image_uv_size": [ 18, 18 ],
+      "$horse_donkey_chest_uv": [ 0, 166 ],
+      "$horse_donkey_chest_uv_size": [ 90, 54 ],
+      "$horse_llama_chest_uv": [ 54, 166 ],
+      "$horse_llama_chest_uv_size": [ 18, 18 ],
+    
+    //Inventory
+      "$inventory_container_texture": "assets/minecraft/textures/gui/container/inventory",
+      "$inventory_container_bg_uv": [ 0, 0 ],
+      "$inventory_container_bg_uv_size": [ 176, 166 ],
+    
+    //Loom
+      "$loom_container_texture": "assets/minecraft/textures/gui/container/loom",
+      "$loom_container_bg_uv": [ 0, 0 ],
+      "$loom_container_bg_uv_size": [ 176, 166 ],
+      "$loom_banner_empty_image_uv": [ 176, 0 ],
+      "$loom_dye_empty_image_uv": [ 192, 0 ],
+      "$loom_pattern_empty_image_uv": [ 208, 0 ],
+      "$loom_empty_image_uv_size": [ 16, 16 ],
+    
+    //Recipe Book
+      "$recipe_book_texture": "assets/minecraft/textures/gui/recipe_book",
+      "$recipe_button_texture": "assets/minecraft/textures/gui/recipe_button",
+      "$recipe_book_bg_uv": [ 1, 1 ],
+      "$recipe_book_bg_uv_size": [ 147, 166 ],
+      "$recipe_book_toggle_default_uv": [ 0, 0 ],
+      "$recipe_book_toggle_hover_uv": [ 0, 19 ],
+      "$recipe_book_toggle_uv_size": [ 20, 18 ],
+      "$recipe_book_tab_uv_unchecked": [ 150, 2 ],
+      "$recipe_book_tab_uv_checked": [ 188, 2 ],
+      "$recipe_book_tab_uv_size": [ 35, 26 ],
+      "$recipe_book_cell_default_uv": [ 29, 206 ],
+      "$recipe_book_cell_hover_uv": [ 29, 231 ],
+      "$recipe_book_cell_red_uv": [ 54, 206 ],
+      "$recipe_book_cell_red_hover_uv": [ 54, 231 ],
+      "$recipe_book_cell_uv_size": [ 25, 25 ],
+      "$recipe_book_filter_toggle_unchecked_uv": [ 152, 41 ],
+      "$recipe_book_filter_toggle_checked_uv": [ 180, 41 ],
+      "$recipe_book_filter_toggle_unchecked_hover_uv": [ 152, 59 ],
+      "$recipe_book_filter_toggle_checked_hover_uv": [ 180, 59 ],
+      "$recipe_book_filter_toggle_uv_size": [ 26, 16 ],
+    
+    //Villager Trade:
+      "$villager_trade_container_texture": "assets/minecraft/textures/gui/container/villager",
+      "$villager_trade_container_bg_uv": [ 0, 0 ],
+      "$villager_trade_container_bg_uv_size": [ 176, 166 ],
+    
+    //Realms
+      "$invite_icon_texture": "assets/realms/invite_icon",
+      "$popup_texture": "assets/realms/popup",
+      "$trial_icon_texture": "assets/realms/trial_icon",
+      "$invite_icon_state_default_uv": [ 0, 6 ],
+      "$invite_icon_state_hover_uv": [ 16, 6 ],
+      "$invite_icon_state_pressed_uv": [ 16, 6],
+      "$invite_icon_uv_size": [ 16, 16 ],
+      "$popup_uv": [ 0, 0 ],
+      "$popup_uv_size": [ 310, 119 ],
+      "$trial_icon_default_uv": [ 0, 0 ],
+      "$trial_icon_light_uv": [ 0, 8 ],
+      "$trial_icon_uv_size": [ 8, 8 ],
+    
+    //Stonecutter
+      "$stonecutter_container_texture": "assets/minecraft/textures/gui/container/stonecutter",
+      "$stonecutter_container_bg_uv": [ 0, 0 ],
+      "$stonecutter_container_bg_uv_size": [ 176, 166 ],
+      "$stonecutter_slot_default_uv": [ 0, 166 ],
+      "$stonecutter_slot_selected_uv": [ 0, 184 ],
+      "$stonecutter_slot_uv_size": [ 16, 18 ],
+    
+    //Others
+      "$options_background_texture": "assets/minecraft/textures/gui/options_background",
+      "$options_bg_tiled_scale": [ 2, 2 ],
+      "$white_base_image_texture": "textures/gui/white",
+      "$cell_image_uv": [ 8, 17 ],
+      "$cell_image_uv_size": [ 18, 18 ]
+    }

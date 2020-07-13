@@ -1,0 +1,158 @@
+/********************************************************
++*   @FMarquesPTO. All rights reserved. *
++*********************************************************/
+{
+  "namespace": "world_preferences_janger",
+
+  "world_preferences_button@new_button_toggle_janger.button_toggle": {
+    "$toggle_name": "game_settings",
+    "$control_name": "world_preferences_view",
+    "$toggle_text": "createWorld.settings.preferences",
+    "$toggle_index": 1
+  },
+
+  "not_world_preferences_button@new_button_toggle_janger.button_toggle": {
+    "$toggle_name": "game_settings",
+    "$control_name": "world_preferences_view",
+    "$toggle_text": "gui.done",
+    "$toggle_index": 0,
+    "$back_button": true,
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "size": [ 200, 20 ]
+  },
+
+  "world_preferences_content_panel": {
+    "type": "panel",
+    "$title_text": "createWorld.settings.preferences.title",
+    "controls": [
+      { "top_title_panel@new_common_janger.top_title_panel": {} },
+      { "world_preferences_content@world_preferences_janger.world_preferences_content": {} }
+    ],
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "world_preferences_view",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  "world_preferences_content": {
+    "type": "panel",
+    "size": [ 310, 182 ],
+     "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "offset": [ 0, 40 ],
+    "controls": [
+      { "bonus_chest_toggle@bonus_chest_toggle": { "offset": [ 0, 0 ] } },
+      { "starting_map_toggle@starting_map_toggle": { "offset": [ 160, 0 ] } },
+      { "show_coordinates_toggle@accessibility_janger.show_coordinates_toggle": { "offset": [ 0, 24 ] } },
+      { "immediate_respawn_toggle@immediate_respawn_toggle": { "offset": [ 160, 24 ] } },
+      { "pvp_toggle@pvp_toggle": { "offset": [ 0, 48 ] } },
+      { "natural_regeneration_toggle@natural_regeneration_toggle": { "offset": [ 160, 48 ] } },
+      { "tnt_explodes_toggle@tnt_explodes_toggle": { "offset": [ 0, 72 ] } },
+      { "fire_spreads_toggle@fire_spreads_toggle": { "offset": [ 160, 72 ] } },
+      { "mob_loot_toggle@mob_loot_toggle": { "offset": [ 0, 96 ] } },
+      { "tile_drops_toggle@tile_drops_toggle": { "offset": [ 160, 96 ] } },
+      { "not_world_preferences_button@world_preferences_janger.not_world_preferences_button": { "offset": [ 0, 152 ] } }
+    ]
+  },
+
+  "starting_map_toggle@option_toggle_janger.option_toggle": {
+    "$tts_section_header": "createWorld.settings.preferences.title",
+    "$enabled": "(not $education_edition)",
+    "$option_label": "createWorld.settings.startWithMap",
+    "$option_binding_name": "#start_with_map",
+    "$option_enabled_binding_name": "#start_with_map_enabled",
+    "$toggle_name": "start_with_map",
+    "$focus_override_right": "FOCUS_OVERRIDE_STOP"
+  },
+
+  "bonus_chest_toggle@option_toggle_janger.option_toggle": {
+    "$tts_section_header": "createWorld.settings.preferences.title",
+    "$enabled": "(not $education_edition or not $trial)",
+    "$option_label": "createWorld.settings.bonusItems",
+    "$option_binding_name": "#bonus_chest",
+    "$option_enabled_binding_name": "#bonus_chest_enabled",
+    "$toggle_name": "bonus_chest",
+    "$focus_override_right": "FOCUS_OVERRIDE_STOP"
+  },
+
+  "pvp_toggle@option_toggle_janger.option_toggle": {
+    "$tts_section_header": "createWorld.settings.preferences.title",
+    "ignored": "$education_edition",
+    "$option_label": "createWorld.settings.pvp",
+    "$option_binding_name": "#pvp",
+    "$option_enabled_binding_name": "#pvp_enabled",
+    "$toggle_name": "pvp",
+    "$focus_override_right": "FOCUS_OVERRIDE_STOP",
+    "$toggle_binding_condition": "always_when_visible"
+  },
+
+  "fire_spreads_toggle@option_toggle_janger.option_toggle": {
+    "$tts_section_header": "createWorld.settings.preferences.title",
+    "$enabled": "(not $education_edition)",
+    "$option_label": "createWorld.settings.fireSpreads",
+    "$option_binding_name": "#fire_spreads",
+    "$option_enabled_binding_name": "#fire_spreads_enabled",
+    "$toggle_name": "fire_spreads",
+    "$focus_override_right": "FOCUS_OVERRIDE_STOP",
+    "$toggle_binding_condition": "always_when_visible"
+  },
+
+  "tnt_explodes_toggle@option_toggle_janger.option_toggle": {
+    "$tts_section_header": "createWorld.settings.preferences.title",
+    "$enabled": "(not $education_edition)",
+    "$option_label": "createWorld.settings.tntExplodes",
+    "$option_binding_name": "#tnt_explodes",
+    "$option_enabled_binding_name": "#tnt_explodes_enabled",
+    "$toggle_name": "tnt_explodes",
+    "$focus_override_right": "FOCUS_OVERRIDE_STOP",
+    "$toggle_binding_condition": "always_when_visible"
+  },
+
+  "mob_loot_toggle@option_toggle_janger.option_toggle": {
+    "$tts_section_header": "createWorld.settings.preferences.title",
+    "$enabled": "(not $education_edition)",
+    "$option_label": "createWorld.settings.mobLoot",
+    "$option_binding_name": "#mob_loot",
+    "$option_enabled_binding_name": "#mob_loot_enabled",
+    "$toggle_name": "mob_loot",
+    "$focus_override_right": "FOCUS_OVERRIDE_STOP",
+    "$toggle_binding_condition": "always_when_visible"
+  },
+
+  "natural_regeneration_toggle@option_toggle_janger.option_toggle": {
+    "$tts_section_header": "createWorld.settings.preferences.title",
+    "$enabled": "(not $education_edition)",
+    "$option_label": "createWorld.settings.naturalRegeneration",
+    "$option_binding_name": "#natural_regeneration",
+    "$option_enabled_binding_name": "#natural_regeneration_enabled",
+    "$toggle_name": "natural_regeneration",
+    "$focus_override_right": "FOCUS_OVERRIDE_STOP",
+    "$toggle_binding_condition": "always_when_visible"
+  },
+
+  "tile_drops_toggle@option_toggle_janger.option_toggle": {
+    "$tts_section_header": "createWorld.settings.preferences.title",
+    "$enabled": "(not $education_edition)",
+    "$option_label": "createWorld.settings.tileDrops",
+    "$option_binding_name": "#tile_drops",
+    "$option_enabled_binding_name": "#tile_drops_enabled",
+    "$toggle_name": "tile_drops",
+    "$focus_override_right": "FOCUS_OVERRIDE_STOP",
+    "$toggle_binding_condition": "always_when_visible"
+  },
+
+  "immediate_respawn_toggle@option_toggle_janger.option_toggle": {
+    "$tts_section_header": "createWorld.settings.preferences.title",
+    "$option_label": "createWorld.settings.immediateRespawn",
+    "$option_binding_name": "#immediaterespawn",
+    "$option_enabled_binding_name": "#immediaterespawn_enabled",
+    "$toggle_name": "doimmediaterespawn",
+    "$focus_override_right": "FOCUS_OVERRIDE_STOP",
+    "$toggle_binding_condition": "always_when_visible"
+  }
+}

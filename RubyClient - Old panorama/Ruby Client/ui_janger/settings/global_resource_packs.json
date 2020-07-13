@@ -1,0 +1,86 @@
+/********************************************************
++*   @FMarquesPTO. All rights reserved. *
++*********************************************************/
+{
+  "namespace": "global_resource_packs_janger",
+
+  "global_resource_packs_button@new_button_toggle_janger.button_toggle": {
+    "$toggle_name": "settings",
+    "$control_name": "global_resource_packs_view",
+    "$toggle_text": "options.resourcepack",
+    "$toggle_index": 107
+  },
+
+  "global_resource_packs_content_panel": {
+    "type": "panel",
+    "size": [ "100%", "100%" ],
+    "controls": [
+      { "dirt_background@common.dirt_background": {} },
+      {
+        "screen": {
+          "type": "stack_panel",
+          "size": [ "100%", "100%" ],
+          "$title_text": "resourcePacks.title",
+          "$title_offset": [ 0, 14 ],
+          "$back_button": "global_resource_packs_janger.global_resource_packs_button_back",
+          "$button_offset": [ 0, 2 ],
+          "controls": [
+            { "top_title_panel@common_janger.top_title_panel": {} },
+            { "global_resource_packs_content@global_resource_packs_janger.global_resource_packs_content": {} },
+            { "bottom_content@global_resource_packs_janger.bottom_content": { "size": [ "100%", 43.5 ] } }
+          ]
+        }
+      }
+    ],
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "global_resource_packs_view",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  "global_resource_packs_content@resource_packs_janger.resource_packs_screen_content_panel": {
+    "$selected_pack_items": "#selected_pack_items_global",
+    "$available_pack_items": "#available_pack_items_global",
+    "$unowned_pack_items": "#unowned_pack_items_global",
+    "$selected_grid_dimensions": "#selected_grid_dimensions_global",
+    "$available_grid_dimensions": "#available_grid_dimensions_global",
+    "$unowned_grid_dimensions": "#unowned_grid_dimensions_global",
+    "$button.selected_pack": "button.selected_pack_global",
+    "$button.deselected_pack": "button.deselected_pack_global",
+    "$button.available_pack": "button.available_pack_global",
+    "$button.unowned_pack": "button.unowned_pack_global",
+    "$button.move_left": "button.move_left_global",
+    "$button.sort_up": "button.sort_up_global",
+    "$button.sort_down": "button.sort_down_global",
+    "$button.report_errors": "button.report_errors_global",
+    "$selected_title_text": "resourcePack.selected.title",
+    "$available_title_text": "resourcePack.available.title",
+    "$view_more_unowned_content_button_text": "resourcePack.suggestedContent.button.viewMore",
+    "$default_item_texture": "#default_item_texture_global",
+    "$default_item_file_system": "#default_item_file_system_global",
+    "$default_item_zip": "#default_item_zip_global",
+    "$default_item_title": "resourcePack.vanilla.name",
+    "$default_item_description": "resourcePack.vanilla.description",
+    "$total_size_binding": "#total_size_binding_global",
+    "$invalid_pack_items": "#invalid_pack_items_global",
+    "$invalid_grid_dimensions": "#invalid_grid_dimensions_global",
+    "$button.invalid_pack": "button.invalid_pack_global",
+    "$button.pack_warning": "button.pack_warning_global",
+    "$button.resource_pack_options_exit": "button.resource_pack_options_exit_global",
+    "$button.pack_settings": "button.pack_settings_global",
+    "$no_available_packs_visibility_binding": "#no_available_packs_visibility_global",
+    "$view_more_unowned_content_button_visibility_binding": "#suggested_content_visible_global"
+  },
+
+  "bottom_content": {
+    "type": "panel",
+    "size": [ "100%", 43.5 ],
+    "controls": [
+      { "settings_button@settings_janger.settings_button": { "offset": [ 0, 2 ],  "size": [ 200, 20 ] } }
+    ]
+  }
+}

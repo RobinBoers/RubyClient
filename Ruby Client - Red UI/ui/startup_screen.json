@@ -1,0 +1,29 @@
+{
+  "namespace": "startup",
+
+  "offset_push": {
+    "anim_type": "offset",
+    "easing": "out_cubic",
+    "duration": 1.0,
+    "from": [ 0, 0 ],
+    "to": [ 0, "-50%+22px" ]
+  },
+
+  "startup_screen": {
+    "type": "screen",
+    "send_telemetry": false,
+    "load_screen_immediately": true,
+    "controls": [
+      { "loading_image@title_image.title_image": {
+	      "layer": 4,
+          "anims": [
+            "@startup.offset_push",
+            "@startup.offset_pop"
+	      ]
+	    }
+	  },
+      { "stone_background@base_screen.stone_background": { "layer": 2 } },
+      { "background@base_screen.background": { "layer": 3 } }
+    ]
+  }
+}

@@ -1,0 +1,174 @@
+/********************************************************
++*   @FMarquesPTO. All rights reserved. *
++*********************************************************/
+{
+  "namespace": "world_create_janger",
+
+  "world_create_screen_content_panel": {
+    "type": "panel",
+    "controls": [
+      { "world_create_content_panel@world_create_janger.world_create_content_panel": {} },
+      { "more_options_content_panel@more_options_janger.more_options_content_panel": {} },
+      {
+        "popup_dialog_factory": {
+          "type": "factory",
+          "control_ids": {
+            "purchase_failed": "@realms_create.popup_dialog__purchase_failed",
+            "purchase_in_progress": "@realms_create.popup_dialog__purchase_in_progress",
+            "share_by_link": "@realms_whitelist.popup_dialog__share_by_link",
+            "options_modal": "@realms_whitelist.popup_dialog__options",
+            "backups_modal": "@realms_settings.popup_dialog__backups"
+          }
+        }
+      }
+    ]
+  },
+
+  "world_create_content_panel": {
+    "type": "panel",
+    "$title_text": "selectWorld.create",
+    "controls": [
+      { "top_title_panel@new_common_janger.top_title_panel": {} },
+      { "world_create_content@world_create_janger.world_create_content": {} },
+      { "bottom_content@world_create_janger.bottom_content": {} }
+    ],
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "more_options_view",
+        "source_property_name": "(not #toggle_state)",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  "world_create_content": {
+    "type": "panel",
+    "size": [ 202, 182 ],
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "offset": [ 0, 40 ],
+    "controls": [
+      { "enter_name_box@world_create_janger.enter_name_box": {} },
+      { "game_mode_multioption_panel@world_create_janger.game_mode_multioption_panel": { "offset": [ 26, 65 ] } },
+      { "creative_info_panel@world_create_janger.creative_info_panel": {} },
+      { "survival_info_panel@world_create_janger.survival_info_panel": {} },
+      { "more_options_button@more_options_janger.more_options_button": { "offset": [ 26, 142 ] } }
+    ]
+  },
+
+  "enter_name_box@option_text_edit_box_janger.option_text_edit_box": {
+    "$option_label": "selectWorld.enterName",
+    "$option_binding_name": "#world_name",
+    "$option_enabled_binding_name": "#world_name_enabled",
+    "$text_box_name": "world_name_text_box",
+    "$focus_override_right": "FOCUS_OVERRIDE_STOP",
+    "$allow_data_binding": false
+  },
+
+  "game_mode_multioption_panel@multioption_janger.multioption_panel": {
+    "$option_label": "selectWorld.gameMode",
+    "$multi_options": [
+      {
+        "creative@multioption_janger.multi_option_toggle": {
+          "$chooser_text_last": "selectWorld.gameMode.creative",
+          "$next_option_name": "#world_game_mode_radio_survival",
+          "$last_option_name": "#world_game_mode_radio_creative"
+        }
+      },
+      {
+        "creative@multioption_janger.multi_option_toggle": {
+          "$chooser_text_last": "selectWorld.gameMode.survival",
+          "$next_option_name": "#world_game_mode_radio_creative",
+          "$last_option_name": "#world_game_mode_radio_survival"
+        }
+      }
+    ]
+  },
+
+  "creative_info_panel": {
+    "type": "panel",
+    "size": [ "100%", 20 ],
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "offset": [ 0, 86 ],
+    "controls": [
+      {
+        "creative_line_1@info_base": {
+          "offset": [ 0, 0 ],
+          "text": "selectWorld.gameMode.creative.line1"
+       }
+     },
+     {
+        "creative_line_2@info_base": {
+          "offset": [ 0, 10 ],
+          "text": "selectWorld.gameMode.creative.line2"
+        }
+      }
+    ],
+    "bindings": [
+      {
+        "binding_name": "#world_game_mode_radio_creative",
+        "binding_name_override": "#visible"
+      }
+    ]
+  },
+
+  "survival_info_panel": {
+    "type": "panel",
+    "size": [ "100%", 20 ],
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "offset": [ 0, 86 ],
+    "controls": [
+      {
+        "survival_line_1@info_base": {
+          "offset": [ 0, 0 ],
+          "text": "selectWorld.gameMode.survival.line1"
+       }
+     },
+     {
+        "survival_line_2@info_base": {
+          "offset": [ 0, 10 ],
+          "text": "selectWorld.gameMode.survival.line2"
+        }
+      }
+    ],
+    "bindings": [
+      {
+        "binding_name": "#world_game_mode_radio_survival",
+        "binding_name_override": "#visible"
+      }
+    ]
+  },
+
+  "info_base": {
+    "type": "label",
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "text_alignment": "center",
+    "color": [ 0.62, 0.62, 0.62 ],
+    "layer": 10,
+    "shadow": true
+  },
+
+  "bottom_content": {
+    "type": "stack_panel",
+    "orientation": "horizontal",
+    "size": [ 310, 20 ],
+    "anchor_from": "bottom_middle",
+    "anchor_to": "bottom_middle",
+    "offset": [ 0, -13 ],
+    "controls": [
+      { "create_world_button@create_world_button": {} },
+      { "spacer": { "type": "panel", "size": [ 10, "100%" ] } },
+      { "exit_button@settings_janger.exit_button": { "size": [ 150, 20 ], "$button_text": "gui.cancel" } }
+    ]
+  },
+
+  "create_world_button@button_janger.action_button": {
+    "$button_text": "selectWorld.create",
+    "$pressed_button_name": "create_world_button",
+    "$focus_override_up": "FOCUS_OVERRIDE_STOP"
+  }
+}

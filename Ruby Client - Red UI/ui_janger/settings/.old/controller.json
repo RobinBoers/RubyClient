@@ -1,0 +1,109 @@
+/********************************************************
++*   @FMarquesPTO. All rights reserved. *
++*********************************************************/
+{
+  "namespace": "controller_janger",
+
+  "controller_button@button_toggle_janger.button_toggle": {
+    "$enter_name": "controller",
+    "$toggle_text": "Controller...",
+    "$toggle_group_forced_index": 48
+  },
+
+  "controller_button_back@button_toggle_janger.button_toggle_back": {
+    "$back_name": "settings_controller",
+    "$toggle_size": [ 150, 20 ]
+  },
+
+  "controller_content_panel@common_janger.scrolling_screen_content_panel": {
+    "$title_text": "controls.title",
+    "$title_offset": [ 0, 5 ],
+    "$top_zone_size": [ "100%", 40 ],
+    "$top_content": "controller_janger.top_panel",
+    "$scrolling_content": "controller_janger.scrolling_content",
+   "$bottom_content": "controller_janger.bottom_panel",
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "controller_button_toggle",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "controller_more_options_toggle_button",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  "top_panel": {
+    "type": "panel",
+    "size": [ 310, 20 ],
+    "offset": [ 0, 7 ],
+    "controls": [
+      { "auto_jump_toggle@auto_jump_toggle": { "offset": [ 160, 0 ] } },
+      { "gamepad_more_options_button@controller_more_options_janger.controller_more_options_button": { "offset": [ 0, 0 ] } }
+    ]
+  },
+
+  "sensitivity_slider@option_slider_janger.option_slider": {
+    "$option_label": "#controller_sensitivity_slider_label",
+    "$slider_name": "controller_sensitivity",
+    "$slider_value_binding_name": "#controller_sensitivity",
+    "$slider_tts_text_value": "#controller_sensitivity_text_value",
+    "$option_enabled_binding_name": "#controller_sensitivity_enabled",
+    "$focus_override_right": "FOCUS_OVERRIDE_STOP",
+    "$label_bindings": [
+      {
+        "binding_name": "$option_label"
+      }
+    ]
+  },
+
+  "invert_y_axis_toggle@option_toggle_janger.option_toggle": {
+    "$option_label": "options.invertYAxis",
+    "$option_binding_name": "#controller_invert_y_axis",
+    "$option_enabled_binding_name": "#controller_invert_y_axis_enabled",
+    "$toggle_name": "controller_invert_y_axis",
+    "$focus_override_right": "FOCUS_OVERRIDE_STOP"
+  },
+
+  "auto_jump_toggle@option_toggle_janger.option_toggle": {
+    "$option_label": "options.autojump",
+    "$option_binding_name": "#controller_autojump",
+    "$option_enabled_binding_name": "#controller_autojump_enabled",
+    "$toggle_name": "controller_autojump",
+    "$focus_override_right": "FOCUS_OVERRIDE_STOP"
+  },
+
+  "scrolling_content": {
+    "type": "panel",
+    "size": [ 326, "100%c" ],
+    "$keymapping_grid_dimension": "#gamepad_grid_dimension",
+    "$keymapping_collection": "gamepad_collection",
+    "controls": [
+      { "scrolling_dirt_background@scrolling_janger.scrolling_dirt_background": {} },
+      { "gamepad_keymapping_grid@controls_janger.gamepad_mapping_grid": {} }
+    ]
+  },
+
+  "bottom_panel": {
+    "type": "stack_panel",
+    "size": [ 310, 20 ],
+    "offset": [ 0, -4 ],
+    "orientation": "horizontal",
+    "controls": [
+      { "reset_button@controller_janger.reset_button": {} },
+      { "spacer": { "type": "panel", "size": [ 10, "100%" ] } },
+      { "controller_button_back@controller_janger.controller_button_back": {} }
+    ]
+  },
+
+  "reset_button@button_janger.action_button": {
+    "$pressed_button_name": "button.reset_gamepad_bindings",
+    "$button_text": "Reset Keys",
+    "$focus_override_right": "FOCUS_OVERRIDE_STOP"
+  }
+}

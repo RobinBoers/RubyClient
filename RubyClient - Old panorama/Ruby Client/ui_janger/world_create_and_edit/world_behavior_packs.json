@@ -1,0 +1,94 @@
+/********************************************************
++*   @FMarquesPTO. All rights reserved. *
++*********************************************************/
+{
+  "namespace": "world_behavior_packs_janger",
+
+  "world_behavior_packs_button@new_button_toggle_janger.button_toggle": {
+    "$toggle_name": "game_settings",
+    "$control_name": "world_behavior_packs_view",
+    "$toggle_text": "options.behaviorpack",
+    "$toggle_index": 4
+  },
+
+  "not_world_behavior_packs_button@new_button_toggle_janger.button_toggle": {
+    "$toggle_name": "game_settings",
+    "$control_name": "world_behavior_packs_view",
+    "$toggle_text": "gui.done",
+    "$toggle_indes": 0,
+    "$back_button": true
+  },
+
+  "world_behavior_packs_content_panel": {
+    "type": "stack_panel",
+    "size": [ "100%", "100%" ],
+    "$title_text": "resourcePacks.behavior.title",
+    "$title_offset": [ 0, 13 ],
+    "controls": [
+      { "top_title_panel@new_common_janger.top_title_panel": {} },
+      { "world_behavior_packs_content@world_behavior_packs_janger.world_behavior_packs_content": {} },
+      { "bottom_back_panel@bottom_panel": { } }
+    ],
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "world_behavior_packs_view",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  "world_behavior_packs_content@resource_packs_janger.resource_packs_screen_content_panel": {
+    "$selected_pack_items": "#selected_pack_items_addon",
+    "$available_pack_items": "#available_pack_items_addon",
+    "$unowned_pack_items": "#unowned_pack_items_addon",
+    "$selected_grid_dimensions": "#selected_grid_dimensions_addon",
+    "$available_grid_dimensions": "#available_grid_dimensions_addon",
+    "$unowned_grid_dimensions": "#unowned_grid_dimensions_addon",
+    "$default_item_texture": "#default_item_texture_addon",
+    "$default_item_file_system": "#default_item_file_system_addon",
+    "$default_item_zip": "#default_item_zip_addon",
+    "$default_item_title": "gui.default",
+    "$default_item_description": "resourcePack.description.default.behaviorPacks",
+    "$button.selected_pack": "button.selected_pack_addon",
+    "$button.deselected_pack": "button.deselected_pack_addon",
+    "$button.available_pack": "button.available_pack_addon",
+    "$button.unowned_pack": "button.unowned_pack_addon",
+    "$button.move_left": "button.move_left_addon",
+    "$button.sort_up": "button.sort_up_addon",
+    "$button.sort_down": "button.sort_down_addon",
+    "$button.report_errors": "button.report_errors_addon",
+    "$selected_title_text": "resourcePack.behavior.selected.title",
+    "$available_title_text": "resourcePack.behavior.available.title",
+    "$total_size_binding": "#total_size_binding_addon",
+    "$invalid_pack_items": "#invalid_pack_items_addon",
+    "$invalid_grid_dimensions": "#invalid_grid_dimensions_addon",
+    "$button.invalid_pack": "button.invalid_pack_addon",
+    "$button.pack_warning": "button.pack_warning_addon",
+    "$button.resource_pack_options_exit": "button.resource_pack_options_exit_addon",
+    "$button.pack_settings": "button.pack_settings_addon",
+    "$options_slider_name": "content_tier_slider_addon",
+    "$no_available_packs_visibility_binding": "#no_available_packs_visibility_addon",
+    "$view_more_unowned_content_button_visibility_binding": "#suggested_content_visible_addon"
+  },
+
+  "bottom_panel": {
+    "type": "panel",
+    "size": [ "100%", 43.5 ],
+    "controls": [
+      {
+        "content": {
+          "type": "panel",
+          "size": [ 200, 20 ],
+          "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+          "offset": [ 0, 2 ],
+          "controls": [
+            { "back_button@world_behavior_packs_janger.not_world_behavior_packs_button": { "size": [ 200, 20 ] } }
+          ]
+        }
+      }
+    ]
+  }
+}

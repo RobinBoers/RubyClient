@@ -1,0 +1,107 @@
+/********************************************************
++*   @FMarquesPTO. All rights reserved. *
++*********************************************************/
+{
+  "namespace": "language_janger",
+
+  "language_button@button_toggle_janger.button_toggle": {
+    "$toggle_name": "settings",
+    "$control_name": "language_view",
+    "$toggle_index": 105,
+    "$toggle_text": "options.language"
+  },
+
+  "language_content_panel@common_janger.scrolling_screen_content_panel": {
+    "$title_text": "options.language.title",
+    "$title_offset": [ 0, 12 ],
+    "$top_content": "language_janger.top_content",
+    "$scrolling_content": "language_janger.scrolling_content",
+    "$bottom_content": "language_janger.bottom_content",
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "language_view",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  /*Top Content*/
+
+  "top_content": {
+    "type": "panel",
+    "controls": [
+      { "top_title_panel@common_janger.top_title_panel": {} }
+    ]
+  },
+
+  /*Middle Content*/
+
+  "scrolling_content": {
+    "type": "panel",
+    "size": [ 270, "100%c" ],
+    "controls": [
+      { "scrolling_dirt_background@scrolling_janger.scrolling_dirt_background": {} },
+      {
+        "language_list_grid": {
+          "type": "grid",
+          "size": [ "100%", "100%c" ],
+          "grid_item_template": "language_janger.language_grid_item",
+          "grid_dimension_binding": "#language_grid_dimension",
+          "collection_name": "languages",
+          "bindings": [
+            {
+              "binding_name": "#language_grid_dimension",
+              "binding_condition": "visible"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  /*Bottom Content*/
+
+  "bottom_content": {
+    "type": "panel",
+    "controls": [
+      { "settings_button@settings_janger.settings_button": { "offset": [ 0, 5 ] } }
+    ]
+  },
+
+  /*Content*/
+
+  "language_grid_item@option_radio_janger.option_radio": {
+    "$toggle_state_binding_name": "#language_initial_selected",
+    "$radio_label_text": "#language_description",
+    "$radio_label_bindings": [
+      {
+        "binding_name": "#language_description",
+        "binding_type": "collection",
+        "binding_condition": "once",
+        "binding_collection_name": "languages"
+      }
+    ],
+    "$radio_toggle_group": true,
+    "$toggle_binding_type": "collection",
+    "$toggle_name": "languages",
+    "$toggle_grid_collection_name": "languages",
+    "$option_enabled_binding_name": "",
+    "bindings": [
+      {
+        "binding_name": "#default_focus_precedence",
+        "binding_type": "collection",
+        "binding_condition": "visible",
+        "binding_collection_name": "languages"
+      }
+    ]
+  },
+
+  "warning_text": {
+    "type": "label",
+    "text": "options.languageWarning",
+    "shadow": true,
+    "layer": 20
+  }
+}

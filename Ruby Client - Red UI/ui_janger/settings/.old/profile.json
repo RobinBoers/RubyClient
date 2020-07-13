@@ -1,0 +1,291 @@
+/********************************************************
++*   @FMarquesPTO. All rights reserved. *
++*********************************************************/
+{
+  "namespace": "profile_janger",
+
+  "profile_button@button_toggle_janger.button_toggle": {
+    "$toggle_name": "settings",
+    "$control_name": "profile_view",
+    //Starts with 101, because I don't want the sections buttons index
+    //interfere with bedrock index(s)
+    "$toggle_index": 101,
+    "$toggle_text": "options.profile"
+  },
+
+  "profile_content_panel@common_janger.scrolling_screen_content_panel": {
+    "$title_text": "options.profile.title",
+    "$top_zone_size": [ "100%", 60 ],
+    "$top_content": "profile_janger.top_content",
+    "$scrolling_content": "profile_janger.scrolling_content",
+    "$bottom_content": "profile_janger.bottom_content",
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "profile_view",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  /*Top Content*/
+
+  "top_content": {
+    "type": "panel",
+    "controls": [
+      { "gamertag_controls@gamertag_controls": {} }
+    ]
+  },
+
+  "gamertag_controls": {
+    "type": "stack_panel",
+    "orientation": "vertical",
+    "size": [ 310, "100%c" ],
+    "anchor_from": "center",
+    "anchor_to": "center",
+    "controls": [
+      {
+        "gamertag_label": {
+          "type": "stack_panel",
+          "orientation": "horizontal",
+          "size": [ "100%", 20 ],
+          "controls": [
+            {
+              "panel_descriptor": {
+                "type": "panel",
+                "size": [ "100%c", "100%" ],
+                "offset": [ 0, 2 ],
+                "controls": [
+                  {
+                    "label_descriptor": {
+                      "type": "label",
+                      "color": "$main_header_text_color",
+                      "layer": 1,
+                      "text": "options.gamertag",
+                      "locked_alpha": 0.5
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "spacer": {
+                "type": "panel",
+                "size": [ 5, 0 ]
+              }
+            },
+            {
+              "panel_gamerpic": {
+                "type": "panel",
+                "size": [ 12, 20 ],
+                "controls": [
+                  {
+                    "gamerpic": {
+                      "type": "image",
+                      "size": [ 12, 12 ],
+                      "layer": 1,
+                      "anchor_from": "bottom_right",
+                      "anchor_to": "bottom_right",
+                      "bindings": [
+                        {
+                          "binding_name": "#gamerpic_texture_path",
+                          "binding_name_override": "#texture"
+                        },
+                        {
+                          "binding_name": "#gamerpic_texture_location_type",
+                          "binding_name_override": "#texture_file_system"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "spacer_2": {
+                "type": "panel",
+                "size": [ 5, 0 ]
+              }
+            },
+            {
+              "panel_gamertag": {
+                "type": "panel",
+                "size": [ "100%c", "100%" ],
+                "offset": [ 0, 2 ],
+                "controls": [
+                  {
+                    "gamertag_label": {
+                      "type": "label",
+                      "color": "$main_header_text_color",
+                      "layer": 1,
+                      "text": "#gamertag_label",
+                      "locked_alpha": 0.5,
+                      "bindings": [
+                        {
+                          "binding_name": "#gamertag_label"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "sign_out": {
+                "ignored": "($build_platform_UWP or not $is_pregame or $requires_xbl_signin_to_play)",
+                "type": "panel",
+                "size": [ "fill", 20 ],
+                "controls": [
+                  {
+                    "action_button@button_janger.action_button": {
+                      "size": [ 75, 20 ],
+                      "$pressed_button_name": "sign_out_button",
+                      "$button_text": "Sign out",
+                      "anchor_from": "top_right",
+                      "anchor_to": "top_right"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "spacer": {
+          "type": "panel",
+          "size": [ 0, 4 ]
+        }
+      },
+      {
+        "xboxlive_deep_link_buttons": {
+          "ignored": "($device_must_be_removed_for_xbl_signin or $fire_tv or not $is_pregame or $disable_gamertag_controls)",
+          "type": "panel",
+          "size": [ "100%", 20 ],
+          "controls": [
+            {
+              "action_button_0@button_janger.action_button": {
+                "enabled": "(not $is_windows_10_mobile)",
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "$pressed_button_name": "change_gamertag_button",
+                "$button_text": "options.changeGamertag"
+              }
+            },
+            {
+              "action_button_1@button_janger.action_button": {
+                "anchor_from": "top_right",
+                "anchor_to": "top_right",
+                "$pressed_button_name": "manage_account_button",
+                "$button_text": "options.manageAccount"
+              }
+            },
+            {
+              "spacer": {
+                "type": "panel",
+                "size": [ 0, 4 ]
+              }
+            },
+            {
+              "manage_invites_popup_button@button_janger.action_button": {
+                "ignored": "(not $is_holographic and not $fire_tv and not $nx_os and not $is_berwick)",
+                "$pressed_button_name": "button.manage_invites_popup",
+                "$button_text": "options.xboxLive.privacyControl"
+              }
+            },
+            {
+              "link_button@button_janger.classic_button": {
+                "ignored": true, //"($is_holographic or $fire_tv or $education_edition or $nx_os or $is_berwick)",
+                "anchor_from": "bottom_right",
+                "anchor_to": "bottom_right",
+                "$button_text": "options.xboxLive.privacyControl",
+                "$focus_id": "manage_invites",
+                "$focus_override_right": "manage_invites",
+                "property_bag": {
+                  "#hyperlink": "https://account.xbox.com/Settings"
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  /*Middle Content*/
+
+  "scrolling_content": {
+    "type": "stack_panel",
+    "size": [ 310, "100%c" ],
+    "controls": [
+      { "scrolling_dirt_background@scrolling_janger.scrolling_dirt_background": {} },
+      {
+        "row_one@video_janger.stacked_row": {
+          "$left_content": "profile_janger.auto_update_mode_panel"
+        }
+      },
+      {
+        "row_two@video_janger.stacked_row": {
+          "$left_content": "profile_janger.cellular_data_toggle",
+          "$right_content": "profile_janger.websocket_encryption_toggle"
+        }
+      }
+    ]
+  },
+
+  /*Bottom Content*/
+
+  "bottom_content": {
+    "type": "panel",
+    "controls": [
+      { "settings_button@settings_janger.settings_button": { "offset": [ 0, 5 ] } }
+    ]
+  },
+
+  /*Content*/
+
+  "auto_update_mode_panel@multioption_janger.multioption_panel": {
+    "$option_label": "Auto Update",
+    "ignored": "($is_console or $is_settopbox or $win10_edition or $osx_edition or $education_edition)",
+    "$multi_options": [
+      {
+        "off@multioption_janger.multi_option_toggle": {
+          "$next_option_name": "#auto_update_mode_on_wifi_only",
+          "$last_option_name": "#auto_update_mode_off",
+          "$radio_label_text": "options.autoUpdateMode.off"
+        }
+      },
+      {
+        "wifi@multioption_janger.multi_option_toggle": {
+          "$last_option_name": "#auto_update_mode_on_wifi_only",
+          "$next_option_name": "#auto_update_mode_on_with_cellular",
+          "$radio_label_text": "options.autoUpdateMode.on.withWifiOnly"
+        }
+      },
+      {
+        "cellular@multioption_janger.multi_option_toggle": {
+          "$next_option_name": "#auto_update_mode_off",
+          "$last_option_name": "#auto_update_mode_on_with_cellular",
+          "$radio_label_text": "options.autoUpdateMode.on.withCellular"
+        }
+      }
+    ]
+  },
+
+  "cellular_data_toggle@option_toggle_janger.option_toggle": {
+    "$enabled": "(not $is_console or not $is_settopbox or not $win10_edition or not $osx_edition or not $education_edition_china)",
+    "$option_label": "options.allowCellularData",
+    "$option_binding_name": "#allow_cellular_data",
+    "$option_enabled_binding_name": "#allow_cellular_data_enabled",
+    "$toggle_name": "allow_cellular_data"
+  },
+
+  "websocket_encryption_toggle@option_toggle_janger.option_toggle": {
+    "$option_label": "options.websocketEncryption",
+    "$option_binding_name": "#websocket_encryption",
+    "$option_enabled_binding_name": "#websocket_encryption_enabled",
+    "$toggle_name": "websocket_encryption",
+    "$enabled": "(not $console_edition or not $education_edition_china)"
+  }
+}
