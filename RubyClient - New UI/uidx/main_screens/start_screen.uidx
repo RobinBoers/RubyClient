@@ -13,7 +13,7 @@
   },
 
   "copyright_text@start_dx.minecraft_text": {
-    "text": "(C) Mojang AB."
+    "text": "© Mojang AB"
   },
 
   "version_text@start_dx.minecraft_text": {
@@ -52,8 +52,8 @@
     "type": "panel",
     "anchor_from": "top_middle",
     "anchor_to": "top_middle",
-    "size": [ 400, 100 ],
-    "offset": [ 0, "8.5%" ],
+    "size": [ 800, 400 ],
+    "offset": [ 0, "-50%" ],
     "controls": [
       {
         "title_offset_padding": {
@@ -87,10 +87,7 @@
     "$button_text": "profileScreen.header"
   },
 
-  "achievements_button@start_dx.main_button": {
-    "$pressed_button_name": "button.menu_achievements",
-    "$button_text": "Advancements"
-  },
+  
 
   "settings_button@start_dx.main_button": {
     "size": [ 98, 20 ],
@@ -129,12 +126,11 @@
     "type": "stack_panel",
     "anchor_from": "center",
     "anchor_to": "top_middle",
-    "offset": [ 0, "-10%" ],
+    "offset": [ 0, "5%" ],
     "size": [ 200, "100%-108px" ],
     "controls": [
       { "button_0@start_dx.stacked_row": { "controls": [ { "play_button@start_dx.play_button": { } }, { "notification_icon@start_dx.notification_icon": {} } ] } },
       { "button_1@start_dx.stacked_row": { "controls": [ { "profile_button@start_dx.profile_button": { } } ] } },
-      { "button_2@start_dx.stacked_row": { "controls": [ { "achievements_button@start_dx.achievements_button": { } } ] } },
       { "fill_0@start_dx.stacked_row": { "size": [ "100%", 12 ] } },
       { "button_3@start_dx.stacked_row": { "controls": [ { "settings_button@start_dx.settings_button": { } }, { "exit_button@start_dx.exit_button": { } }, { "feedback_button@start_dx.feedback_button": { } } ] } },
       { "fill_1@start_dx.stacked_row": { "size": [ "100%", "fill" ], "controls": [ { "gamepad_helpers@start.gamepad_helpers": {} } ] } }
