@@ -1,0 +1,6 @@
+{
+  "slot_selected": {
+    "texture": "$slot_selected_texture",
+    "$slot_selected_texture|default": "textures/ui/pocket_ui_highlight_selected_slot"
+  }
+}

@@ -1,0 +1,69 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "CrisXolt_bars_dx",
+
+  "bar_name": {
+    "type": "label",
+    "color": "$boss_name_text_color",
+    "text": "#bossName",
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "offset": [ 0, 2 ],
+    "shadow": true,
+    "bindings": [
+      {
+        "binding_name": "#bossName",
+        "binding_type": "collection",
+        "binding_collection_name": "$collection_name"
+      }
+    ]
+  },
+
+  "bar_panel": {
+    "type": "panel",
+    "size": [ 182, 18 ],
+    "$bar_name_control": "bar_name",
+    "$collection_name": "boss_bars",
+    "$progress_bar_collection": "boss_bars",
+    "controls": [
+      { "$bar_name_control@CrisXolt_bars_dx.bar_name": { } },
+      { "ender_dragon_bar_panel@CrisXolt_bars_dx.ender_dragon_bar_panel": { } }
+    ],
+    "bindings": [
+      {
+        "binding_name": "#bar_visible",
+        "binding_type": "collection",
+        "binding_collection_name": "boss_bars",
+        "binding_name_override": "#visible"
+      }
+    ]
+  },
+
+  "ender_dragon_bar_panel@common.progress_bar_for_collections": {
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "offset": [ 0, 12 ],
+    "size": [ 182, 5 ],
+    "layer": 10,
+    "controls": [
+      { "boss_bar_empty@icons_java_dx.boss_bar_empty": { "layer": 1, "size": [ 182, 5 ] } },
+      { 
+        "boss_bar_full@icons_java_dx.boss_bar_full": {
+          "layer": 2,
+          "size": [ 182, 5 ],
+          "clip_direction": "left",
+          "clip_pixelperfect": true,
+          "bindings": [
+            {
+              "binding_name": "#progress_percentage",
+              "binding_name_override": "#clip_ratio",
+              "binding_type": "collection",
+              "binding_collection_name": "$progress_bar_collection"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
